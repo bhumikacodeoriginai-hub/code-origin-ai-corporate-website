@@ -35,10 +35,10 @@ export default function Testimonials() {
         </Reveal>
 
         {/* Testimonials grid */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={(i % 2) * 90} className="h-full">
-              <figure className="group relative flex h-full flex-col rounded-2xl border border-gold-500/15 bg-white/[0.02] p-7 transition duration-300 hover:-translate-y-1 hover:border-gold-500/40 hover:bg-gold-500/[0.04]">
+            <Reveal key={t.name} delay={(i % 3) * 90} className="h-full">
+              <figure className="group relative flex h-full flex-col rounded-2xl border border-gold-500/15 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-gold-500/40 hover:bg-gold-500/[0.04] sm:p-7">
                 <Quote className="h-8 w-8 text-gold-500/40" />
                 <div className="mt-3 flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, s) => (
@@ -49,15 +49,10 @@ export default function Testimonials() {
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3.5 border-t border-gold-500/10 pt-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-sm font-bold text-ink-950">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-base font-bold text-ink-950">
                     {t.initials}
                   </span>
-                  <div>
-                    <p className="font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-stone-400">
-                      {t.role}, {t.company}
-                    </p>
-                  </div>
+                  <p className="font-semibold text-white">{t.name}</p>
                 </figcaption>
               </figure>
             </Reveal>
