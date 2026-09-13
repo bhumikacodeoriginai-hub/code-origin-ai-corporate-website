@@ -18,9 +18,9 @@ export const showreel = {
 };
 
 export const stats = [
-  { value: 11, suffix: "+", label: "Projects Delivered" },
-  { value: 7, suffix: "", label: "Live Deployments" },
-  { value: 4, suffix: "", label: "In Development" },
+  { value: 14, suffix: "+", label: "Projects Delivered" },
+  { value: 8, suffix: "", label: "Live Deployments" },
+  { value: 6, suffix: "", label: "In Development" },
   { value: 5, suffix: "+", label: "Internship Streams" },
 ];
 
@@ -86,6 +86,33 @@ export const projects: Project[] = [
     tags: ["Next.js", "Node.js", "PostgreSQL"],
     status: "Deployed",
     emoji: "🏭",
+  },
+  {
+    name: "Sri Annapurneshwari Electricals",
+    category: "Electrical / Retail",
+    description:
+      "Complete e-commerce and business management platform for one of Chitradurga's most trusted electrical stores since 2001. Inventory management, billing system, and customer portal.",
+    tags: ["React", "Node.js", "MongoDB"],
+    status: "Deployed",
+    emoji: "⚡",
+  },
+  {
+    name: "Advaita Matrimony",
+    category: "Matrimony / Social",
+    description:
+      "Modern matrimonial platform with advanced matching algorithms, verified profiles, secure messaging, and family-centric features for finding meaningful connections.",
+    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    status: "In Development",
+    emoji: "💍",
+  },
+  {
+    name: "Srividya University",
+    category: "EdTech / Vedic Science",
+    description:
+      "Digital learning platform for India's premier Vedic science institution. Course management, live classes, student portal, and certification system spanning a decade of wisdom.",
+    tags: ["React", "Django", "PostgreSQL"],
+    status: "In Development",
+    emoji: "🕉️",
   },
   {
     name: "FinTrack Pro",
@@ -354,6 +381,27 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
+      "After 23 years in the electrical business, we finally have a modern digital presence thanks to Code Origin.ai. The inventory system and billing platform they built has transformed how we operate. Our customers love the new online experience!",
+    name: "Sri Annapurneshwari Electricals",
+    initials: "SA",
+    rating: 5,
+  },
+  {
+    quote:
+      "The Advaita Matrimony platform is exactly what we envisioned. Code Origin.ai understood our vision for a family-centric, values-based matrimonial service. The development is progressing excellently and we're excited for the launch!",
+    name: "Advaita Matrimony",
+    initials: "AM",
+    rating: 5,
+  },
+  {
+    quote:
+      "As a Vedic education institution with a decade of experience, we needed a partner who understood the blend of tradition and technology. Code Origin.ai is building us a world-class learning platform that honors our heritage while embracing modern education.",
+    name: "Srividya University",
+    initials: "SU",
+    rating: 5,
+  },
+  {
+    quote:
       "Working with the team was a smooth experience from start to finish. They understood exactly what I wanted and delivered on time. Very happy with the result.",
     name: "Kantha Raj",
     initials: "K",
@@ -398,13 +446,16 @@ export const industries = [
   "Logistics",
   "Real Estate",
   "Warehousing",
+  "Electrical",
+  "Matrimony",
+  "Vedic Science",
   "SaaS",
   "AI / ML",
 ];
 
 /* Quick trust signals for the hero / about sections */
 export const trustSignals = [
-  { value: "11+", label: "Projects delivered" },
+  { value: "14+", label: "Projects delivered" },
   { value: "100%", label: "On-time delivery" },
   { value: "24/7", label: "Support & monitoring" },
   { value: "5.0★", label: "Average client rating" },
