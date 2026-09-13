@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import Stats from "./components/Stats";
 import About from "./components/About";
+import Gallery from "./components/Gallery";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
@@ -37,6 +38,9 @@ export default function App() {
         
         {/* About the Company */}
         <About />
+        
+        {/* Life at Code Origin.AI — real team & culture photos */}
+        <Gallery />
         
         {/* Services Offered */}
         <Services />

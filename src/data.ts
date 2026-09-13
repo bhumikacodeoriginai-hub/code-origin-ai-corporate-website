@@ -42,6 +42,19 @@ export const company = {
   country: "India",
 };
 
+/* Real company photos — team, culture & office (served from /public/images).
+   Used by the "Life at Code Origin.AI" gallery on the landing page. */
+export type GalleryPhoto = { src: string; alt: string };
+
+export const galleryPhotos: GalleryPhoto[] = [
+  { src: "/images/companypic.jpg", alt: "The Code Origin.AI team at our Chitradurga office" },
+  { src: "/images/team-1.jpg", alt: "Code Origin.AI team celebrating together at a team outing" },
+  { src: "/images/team-2.jpg", alt: "Code Origin.AI team on a group trip" },
+  { src: "/images/team-3.jpg", alt: "Code Origin.AI team bonding at a company event" },
+  { src: "/images/team-4.jpg", alt: "Code Origin.AI team enjoying an offsite together" },
+  { src: "/images/team-5.jpg", alt: "Code Origin.AI team culture and collaboration" },
+];
+
 /* Official contact details */
 export const EMAIL = "aicodeorigin@gmail.com";
 
