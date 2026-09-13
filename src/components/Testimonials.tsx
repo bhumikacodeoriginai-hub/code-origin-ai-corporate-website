@@ -1,4 +1,4 @@
-import { Quote, Star, BadgeCheck } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { industries, testimonials, trustSignals } from "../data";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -56,23 +56,11 @@ export default function Testimonials() {
                   "{t.quote}"
                 </blockquote>
                 
-                {/* Author info with image */}
+                {/* Author info with initials */}
                 <figcaption className="mt-6 flex items-center gap-4 border-t border-gold-500/10 pt-5">
-                  {t.image ? (
-                    <div className="relative">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="h-12 w-12 rounded-full object-cover ring-2 ring-gold-500/20"
-                        loading="lazy"
-                      />
-                      <BadgeCheck className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-ink-950 text-emerald-400" />
-                    </div>
-                  ) : (
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-base font-bold text-ink-950">
-                      {t.initials}
-                    </span>
-                  )}
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-sm font-bold text-ink-950 shadow-lg shadow-gold-500/20">
+                    {t.initials}
+                  </span>
                   <div>
                     <p className="font-semibold text-white">{t.name}</p>
                     {t.role && (
