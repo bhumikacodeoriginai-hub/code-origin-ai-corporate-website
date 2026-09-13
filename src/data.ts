@@ -54,6 +54,14 @@ export const contact = {
     "https://www.google.com/maps/search/?api=1&query=Kotla%20Arcade%20Chitradurga%20Karnataka%20577501",
 };
 
+/* Social media links */
+export const socials = {
+  instagram: "https://www.instagram.com/codeoriginai",
+  linkedin: "https://www.linkedin.com/company/codeorigin-ai",
+  github: "https://github.com/codeoriginai",
+  twitter: "https://twitter.com/codeoriginai",
+};
+
 export const waLink = (message: string) =>
   `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`;
 
