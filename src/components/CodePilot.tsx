@@ -1,5 +1,5 @@
-import { ArrowRight, Award, Briefcase, Rocket, Users, Wallet, CheckCircle2, Play } from "lucide-react";
-import { codepilotTracks } from "../data";
+import { ArrowRight, Award, Briefcase, Camera, Rocket, Users, Wallet, CheckCircle2 } from "lucide-react";
+import { codePilotPhotos, codePilotTrackImages, codepilotTracks } from "../data";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -9,17 +9,6 @@ const perks = [
   { icon: Award, title: "Certification", desc: "Earn an industry-recognized completion certificate." },
   { icon: Wallet, title: "Performance stipend", desc: "Get rewarded for great work during the program." },
   { icon: Briefcase, title: "Placement support", desc: "Access PPOs and job referrals on completion." },
-];
-
-const trackImages = [
-  "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80",
 ];
 
 export default function CodePilot() {
@@ -70,19 +59,18 @@ export default function CodePilot() {
               <div className="overflow-hidden rounded-3xl border border-gold-500/15 shadow-2xl">
                 <div className="relative">
                   <img
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
-                    alt="Code Pilot interns learning software development in modern workspace"
+                    src="/images/training-1.jpg"
+                    alt="Code Pilot trainer teaching a full classroom of students"
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/30 to-transparent" />
-                  
-                  {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold-500/20 backdrop-blur-sm ring-2 ring-gold-400/50 transition hover:bg-gold-500/30 cursor-pointer">
-                      <Play className="h-8 w-8 text-gold-400 ml-1" />
-                    </div>
-                  </div>
+
+                  {/* Live training badge */}
+                  <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/40 backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Live Training Session
+                  </span>
                 </div>
               </div>
               
@@ -117,6 +105,50 @@ export default function CodePilot() {
           </Reveal>
         </div>
 
+        {/* Training in Action — real Code Pilot sessions */}
+        <div className="mt-20">
+          <Reveal className="text-center">
+            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-200">
+              <Camera className="h-3.5 w-3.5" />
+              Training in Action
+            </span>
+            <h3 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">
+              Real classrooms. Real mentorship. <span className="text-gradient">Real projects.</span>
+            </h3>
+            <p className="mx-auto mt-3 max-w-2xl text-stone-400">
+              Every Code Pilot batch learns hands-on — live sessions, workshops and seminars led by our
+              senior engineers. This is training actually happening, not stock photos.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Continuous auto-scrolling strip of real training photos */}
+        <Reveal className="mt-10">
+          <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <div className="flex w-max animate-marquee items-stretch gap-4 pr-4 group-hover:[animation-play-state:paused] sm:gap-5 sm:pr-5">
+              {[...codePilotPhotos, ...codePilotPhotos].map((photo, i) => (
+                <figure
+                  key={`${photo.src}-${i}`}
+                  className="group/card relative h-52 w-72 shrink-0 overflow-hidden rounded-2xl border border-gold-500/20 bg-ink-900 shadow-xl shadow-black/40 transition-colors duration-500 hover:border-gold-500/45 sm:h-64 sm:w-[24rem]"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover/card:scale-110"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" />
+                  <span className="pointer-events-none absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-ink-950/70 px-3 py-1 text-[11px] font-medium text-gold-200 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover/card:opacity-100">
+                    <Camera className="h-3 w-3" />
+                    Code Pilot Training
+                  </span>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
         {/* Tracks */}
         <div className="mt-20">
           <Reveal className="text-center">
@@ -135,7 +167,7 @@ export default function CodePilot() {
                   {/* Track image */}
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <img
-                      src={trackImages[i] || trackImages[0]}
+                      src={codePilotTrackImages[i] || codePilotTrackImages[0]}
                       alt={`${t.title} track`}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

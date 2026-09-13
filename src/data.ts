@@ -55,6 +55,34 @@ export const galleryPhotos: GalleryPhoto[] = [
   { src: "/images/team-5.jpg", alt: "Code Origin.AI team culture and collaboration" },
 ];
 
+/* Real Code Pilot training & seminar photos (served from /public/images).
+   Shown in the "Training in Action" gallery inside the Code Pilot section. */
+export const codePilotPhotos: GalleryPhoto[] = [
+  { src: "/images/training-1.jpg", alt: "Code Pilot trainer teaching a full classroom of students" },
+  { src: "/images/training-2.jpg", alt: "Code Pilot training session in progress" },
+  { src: "/images/training-4.jpg", alt: "Students attending a Code Pilot hands-on workshop" },
+  { src: "/images/training-5.jpg", alt: "Interactive Code Pilot classroom session" },
+  { src: "/images/training-6.jpg", alt: "Code Pilot seminar with engaged students" },
+  { src: "/images/training-8.jpg", alt: "Code Pilot practical training and mentorship" },
+  { src: "/images/training-9.jpg", alt: "Code Pilot students during a technical session" },
+  { src: "/images/training-10.jpg", alt: "Code Pilot workshop at a partner college" },
+  { src: "/images/training-11.jpg", alt: "Code Pilot training program in action" },
+  { src: "/images/training-3.jpg", alt: "Code Pilot student presentation moment" },
+  { src: "/images/training-7.jpg", alt: "Code Pilot mentor guiding a student one-on-one" },
+];
+
+/* Landscape training photos used as Code Pilot track card imagery. */
+export const codePilotTrackImages = [
+  "/images/training-2.jpg",
+  "/images/training-4.jpg",
+  "/images/training-5.jpg",
+  "/images/training-6.jpg",
+  "/images/training-8.jpg",
+  "/images/training-9.jpg",
+  "/images/training-10.jpg",
+  "/images/training-11.jpg",
+];
+
 /* Official contact details */
 export const EMAIL = "aicodeorigin@gmail.com";
 
