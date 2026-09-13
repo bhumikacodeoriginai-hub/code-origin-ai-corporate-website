@@ -291,12 +291,13 @@ export const bizWhatsApp = waLink(
   "Hi Code Origin.ai! I'd like to discuss a project for my business. Here are a few details:"
 );
 
-/* Social proof — client testimonials */
+/* Social proof — client testimonials.
+   NOTE: quote text below is placeholder — replace each `quote` with the real
+   review the client sends you. Names are shown exactly as provided (no roles,
+   no company names). */
 export type Testimonial = {
   quote: string;
   name: string;
-  role: string;
-  company: string;
   initials: string;
   rating: number;
 };
@@ -304,38 +305,44 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Code Origin.ai delivered our platform ahead of schedule and the quality was outstanding. Their team felt like an extension of our own — proactive, transparent and genuinely invested in our success.",
-    name: "Rahul Mehta",
-    role: "Founder & CEO",
-    company: "FinTrack Pro",
-    initials: "RM",
+      "Working with the team was a smooth experience from start to finish. They understood exactly what I wanted and delivered on time. Very happy with the result.",
+    name: "Kantha Raj",
+    initials: "K",
     rating: 5,
   },
   {
     quote:
-      "We needed a scalable cloud architecture that could handle rapid growth. They designed it right the first time. Six months in, we've scaled 4x without a single major incident.",
-    name: "Ananya Sharma",
-    role: "CTO",
-    company: "MediCare+",
-    initials: "AS",
+      "Great communication throughout the project. They kept me updated at every step and the final product worked exactly as promised. Highly recommended.",
+    name: "Mukund",
+    initials: "M",
     rating: 5,
   },
   {
     quote:
-      "From the first call it was clear these were serious engineers. Clean code, clear communication and on-time delivery. We've since handed them two more projects.",
-    name: "David Chen",
-    role: "Product Director",
-    company: "ShopSphere",
-    initials: "DC",
+      "Professional and skilled team. The quality of the work was excellent and they were patient with all my changes and requests. Would work with them again.",
+    name: "Shivraj",
+    initials: "S",
     rating: 5,
   },
   {
     quote:
-      "Their AI assistant cut our support workload by nearly half. The ROI was obvious within the first quarter. Highly recommended for any business exploring AI.",
-    name: "Priya Nair",
-    role: "Head of Operations",
-    company: "LearnHub",
-    initials: "PN",
+      "They turned my idea into a real, working product. Clean design, fast, and easy to use on both mobile and laptop. Thank you for the great support.",
+    name: "Sheetal",
+    initials: "S",
+    rating: 5,
+  },
+  {
+    quote:
+      "Very reliable and honest team. They explained everything clearly and delivered a solution that fit my budget perfectly. Genuinely impressed.",
+    name: "Ananya",
+    initials: "A",
+    rating: 5,
+  },
+  {
+    quote:
+      "Excellent service and support. The whole process was transparent and stress-free. My website looks modern and professional. Highly satisfied.",
+    name: "Priya",
+    initials: "P",
     rating: 5,
   },
 ];

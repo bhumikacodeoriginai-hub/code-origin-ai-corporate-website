@@ -33,8 +33,15 @@ function getReply(raw: string): string {
   if (/(test|qa|playwright|selenium|automation|cypress)/.test(t)) {
     return "🧪 Automation Testing & QA — a core part of what we teach.\n\nOur stack includes Playwright, Selenium, Cypress, Jest & Postman. Interns write real end-to-end tests on live projects. Want the full tech stack list?";
   }
+  if (
+    /(quote|estimate|proposal|consultation|hire you|work with|build (a|my|me)|develop (a|my|me)|need a (website|web|app|application|software)|for my business|my (startup|company|business)|project (cost|price|quote|budget))/.test(
+      t
+    )
+  ) {
+    return "💼 Great — we'd love to help build it!\n\nWe design, build and scale custom websites, apps, AI and cloud products for businesses. Every project starts with a *free consultation* where we understand your goals and give you a clear plan & estimate.\n\nTap 'Book a Free Consultation' on the page, message us on WhatsApp, or email " + contact.email + " and we'll reply within 24–48 hours.";
+  }
   if (/(stipend|salary|paid|fee|fees|cost|price|charge|money|free|payment)/.test(t)) {
-    return "💰 Stipend & fees:\n\n• Internship: performance-based stipend\n• Program: affordable & industry-focused\n• No hidden costs\n\nTop performers also earn PPOs. For exact current details, message us on WhatsApp or email — happy to share!";
+    return "💰 Pricing:\n\n• Business projects: quoted after a free consultation, based on scope\n• Internship: performance-based stipend, affordable program\n• No hidden costs\n\nFor an exact project estimate, message us on WhatsApp or email — happy to help!";
   }
   if (/(eligible|eligibility|qualification|who can|degree|graduate|mca|bca|bsc|msc|btech|engineering)/.test(t)) {
     return "🎓 Eligibility — Code Pilot is open to graduates & final-year students in:\n\n• B.E / B.Tech (Engineering)\n• MCA\n• BCA\n• B.Sc Computer Science\n• M.Sc Computer Science\n\nNo prior experience required!";
@@ -82,7 +89,7 @@ function getReply(raw: string): string {
     return "🤖 AI & Cloud are our specialty!\n\nWe build chatbots, LLM apps, predictive models and cloud-native systems on AWS. Interns learn these hands-on through Code Pilot.";
   }
   if (/(about|company|code origin|who are we)/.test(t)) {
-    return "🏢 Code Origin.ai is an enterprise AI & cloud solutions company (Est. 2024). We build real systems for businesses and train engineers through Code Pilot.\n\n'Build Real Systems. Start Your Career.'";
+    return "🏢 Code Origin.ai is a software development company (Est. 2024) building custom AI, cloud and web products for businesses. We also train engineers through our Code Pilot program.\n\n'AI & Cloud Products That Grow Your Business.'";
   }
   if (/(thank|thanks|thx|great|awesome|nice|helpful)/.test(t)) {
     return "You're welcome! 😊 Anything else I can help you with?";
