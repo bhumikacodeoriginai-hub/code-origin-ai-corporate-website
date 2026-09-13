@@ -101,7 +101,7 @@ export default function CTA() {
                 </h3>
                 <p className="mt-3 max-w-lg text-stone-400">
                   Join the Code Pilot program — work on real projects, learn from senior engineers, 
-                  and build a portfolio that gets you hired.
+                  and build a portfolio that strengthens your career prospects.
                 </p>
 
                 <div className="mt-5 flex flex-wrap justify-center gap-4 text-xs text-stone-500 lg:justify-start">

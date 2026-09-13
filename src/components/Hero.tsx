@@ -137,8 +137,8 @@ export default function Hero() {
             {/* Subheadline */}
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-stone-400 sm:text-lg lg:mx-0">
               Code Origin.AI is your end-to-end technology partner. We design, build and deploy{" "}
-              <span className="font-semibold text-gold-300">custom software, AI solutions & cloud infrastructure</span>{" "}
-              that transform businesses — and train tomorrow's engineers through Code Pilot.
+              <span className="font-semibold text-gold-300">custom software, AI solutions and cloud infrastructure</span>{" "}
+              that solve real business challenges — and we develop future-ready engineers through our Code Pilot program.
             </p>
 
             {/* Code snippet animation */}
