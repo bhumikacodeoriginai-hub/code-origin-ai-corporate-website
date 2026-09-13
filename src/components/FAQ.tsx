@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 
 const faqs = [
   {
-    q: "What does Code Origin.ai do?",
+    q: "What does Code Origin.AI do?",
     a: "We're an enterprise AI & cloud solutions company. We design, build and scale web, mobile and AI-powered products for businesses — and train the next generation of engineers through our Code Pilot program.",
   },
   {
@@ -34,7 +34,7 @@ const faqs = [
     a: "You'll work hands-on with React, Next.js, Node.js, Python, AI/ML tools, AWS cloud, Docker, Kubernetes, and automation testing with Playwright — plus specialized tracks in Cybersecurity and Digital Marketing.",
   },
   {
-    q: "How do I start a project with Code Origin.ai?",
+    q: "How do I start a project with Code Origin.AI?",
     a: "Simply reach out via WhatsApp, email or the contact form. We'll schedule a free consultation to understand your requirements and propose a clear plan.",
   },
 ];

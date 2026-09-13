@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-sm text-stone-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Code Origin.ai — Established 2024. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Code Origin.AI Private Limited — Established 2024. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="transition hover:text-gold-400">
               @codeoriginai

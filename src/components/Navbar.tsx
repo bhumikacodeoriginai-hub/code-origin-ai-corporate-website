@@ -58,7 +58,7 @@ export default function Navbar() {
           scrolled && "py-3"
         )}
       >
-        <a href="#home" aria-label="Code Origin.ai home">
+        <a href="#home" aria-label="Code Origin.AI home">
           <Logo />
         </a>
 

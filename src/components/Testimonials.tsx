@@ -19,7 +19,7 @@ export default function Testimonials() {
               Businesses trust us to <span className="text-gradient">deliver results</span>
             </>
           }
-          subtitle="We measure our success by yours. Here's what founders and product leaders say about partnering with Code Origin.ai."
+          subtitle="We measure our success by yours. Here's what founders and product leaders say about partnering with Code Origin.AI."
         />
 
         {/* Trust signals */}

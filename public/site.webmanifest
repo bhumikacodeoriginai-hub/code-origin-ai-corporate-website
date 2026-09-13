@@ -1,6 +1,6 @@
 {
-  "name": "Code Origin.ai — AI & Cloud Software Development",
-  "short_name": "Code Origin.ai",
+  "name": "Code Origin.AI — AI & Cloud Software Development",
+  "short_name": "Code Origin.AI",
   "description": "Custom AI, cloud & web solutions for businesses. We build scalable software products.",
   "start_url": "/",
   "display": "standalone",
@@ -30,7 +30,7 @@
       "sizes": "1280x720",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "Code Origin.ai Homepage"
+      "label": "Code Origin.AI Homepage"
     }
   ],
   "related_applications": [],

@@ -136,7 +136,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-stone-400 sm:text-lg lg:mx-0">
-              Code Origin.ai is your end-to-end technology partner. We design, build and deploy{" "}
+              Code Origin.AI is your end-to-end technology partner. We design, build and deploy{" "}
               <span className="font-semibold text-gold-300">custom software, AI solutions & cloud infrastructure</span>{" "}
               that transform businesses — and train tomorrow's engineers through Code Pilot.
             </p>
@@ -277,7 +277,7 @@ export default function Hero() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src="/images/companypic.jpg"
-                  alt="Code Origin.ai Team - Developers, designers and engineers at Chitradurga office"
+                  alt="Code Origin.AI Team - Developers, designers and engineers at Chitradurga office"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 

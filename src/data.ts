@@ -27,9 +27,9 @@ export const stats = [
 /* Official contact details */
 export const EMAIL = "aicodeorigin@gmail.com";
 
-export const DEFAULT_SUBJECT = "Enquiry — Code Origin.ai";
+export const DEFAULT_SUBJECT = "Enquiry — Code Origin.AI";
 export const DEFAULT_BODY =
-  "Hi Code Origin.ai,\n\nI would like to know more about your services and the Code Pilot internship.\n\nName:\nPhone:\nMessage:\n\nThank you.";
+  "Hi Code Origin.AI,\n\nI would like to know more about your services and the Code Pilot internship.\n\nName:\nPhone:\nMessage:\n\nThank you.";
 
 /** Opens the default mail app with a pre-filled subject + body. */
 export const mailTo = (subject = DEFAULT_SUBJECT, body = DEFAULT_BODY) =>
@@ -357,7 +357,7 @@ export const allTech: TechItem[] = techStack.flatMap((g) => g.items);
 
 /* Pre-filled WhatsApp message for business enquiries */
 export const bizWhatsApp = waLink(
-  "Hi Code Origin.ai! I'd like to discuss a project for my business. Here are a few details:"
+  "Hi Code Origin.AI! I'd like to discuss a project for my business. Here are a few details:"
 );
 
 /* Social proof — client testimonials.
@@ -373,7 +373,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Code Origin.ai delivered an exceptional website and application for Arjun Realty. Their understanding of our warehousing business was impressive. The platform handles our 42 warehouses across India & UAE seamlessly. Highly professional team!",
+      "Code Origin.AI delivered an exceptional website and application for Arjun Realty. Their understanding of our warehousing business was impressive. The platform handles our 42 warehouses across India & UAE seamlessly. Highly professional team!",
     name: "Arjun Realty",
     initials: "AR",
     rating: 5,
@@ -381,7 +381,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "After 23 years in the electrical business, we finally have a modern digital presence thanks to Code Origin.ai. The inventory system and billing platform they built has transformed how we operate. Our customers love the new online experience!",
+      "After 23 years in the electrical business, we finally have a modern digital presence thanks to Code Origin.AI. The inventory system and billing platform they built has transformed how we operate. Our customers love the new online experience!",
     name: "Sri Annapurneshwari Electricals",
     initials: "SA",
     rating: 5,
@@ -389,7 +389,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The Advaita Matrimony platform is exactly what we envisioned. Code Origin.ai understood our vision for a family-centric, values-based matrimonial service. The development is progressing excellently and we're excited for the launch!",
+      "The Advaita Matrimony platform is exactly what we envisioned. Code Origin.AI understood our vision for a family-centric, values-based matrimonial service. The development is progressing excellently and we're excited for the launch!",
     name: "Advaita Matrimony",
     initials: "AM",
     rating: 5,
@@ -397,7 +397,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "As a Vedic education institution with a decade of experience, we needed a partner who understood the blend of tradition and technology. Code Origin.ai is building us a world-class learning platform that honors our heritage while embracing modern education.",
+      "As a Vedic education institution with a decade of experience, we needed a partner who understood the blend of tradition and technology. Code Origin.AI is building us a world-class learning platform that honors our heritage while embracing modern education.",
     name: "Srividya University",
     initials: "SU",
     rating: 5,

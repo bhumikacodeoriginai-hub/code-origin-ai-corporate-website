@@ -27,7 +27,7 @@ const latestTech = [
 ];
 
 /* Email resume link - works on all devices */
-const emailResumeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${encodeURIComponent("Code Pilot 2026 Application - Resume Attached")}&body=${encodeURIComponent(`Hi Code Origin.ai Team,
+const emailResumeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${encodeURIComponent("Code Pilot 2026 Application - Resume Attached")}&body=${encodeURIComponent(`Hi Code Origin.AI Team,
 
 I am interested in the Code Pilot 2026 internship program.
 
@@ -150,12 +150,12 @@ export default function Internship() {
               Applications open for the 2026 batch
             </h3>
             <p className="mx-auto mt-3 max-w-xl text-stone-300">
-              Limited seats per track. Apply today and start your engineering journey with Code Origin.ai.
+              Limited seats per track. Apply today and start your engineering journey with Code Origin.AI.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={waLink(
-                  "Hi Code Origin.ai! I'd like to apply for the Code Pilot 2026 program. Please share the details."
+                  "Hi Code Origin.AI! I'd like to apply for the Code Pilot 2026 program. Please share the details."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

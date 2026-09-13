@@ -2,7 +2,7 @@ import { CheckCircle2, Lightbulb, ShieldCheck, Target, Users, Award, Rocket, Map
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
-// Real Code Origin.ai team photo — served from public/images/companypic.jpg
+// Real Code Origin.AI team photo — served from public/images/companypic.jpg
 
 const values = [
   {
@@ -50,7 +50,7 @@ export default function About() {
             <div className="relative overflow-hidden rounded-3xl border-2 border-gold-500/30 shadow-2xl shadow-gold-500/10 glow-gold">
               <img
                 src="/images/companypic.jpg"
-                alt="Code Origin.ai team - Our talented developers, designers and engineers at our Chitradurga office"
+                alt="Code Origin.AI team - Our talented developers, designers and engineers at our Chitradurga office"
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -64,7 +64,7 @@ export default function About() {
                 </div>
                 <p className="mt-1 flex items-center gap-2 text-sm text-stone-300">
                   <MapPin className="h-4 w-4 text-gold-400" />
-                  Code Origin.ai Office, Chitradurga
+                  Code Origin.AI Office, Chitradurga
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export default function About() {
                 Enterprise AI & cloud, with an <span className="text-gradient">engineering-first</span> culture
               </>
             }
-            subtitle="Code Origin.ai partners with startups and enterprises to design, build and scale AI and cloud-powered products — from first line of code to live deployment and beyond."
+            subtitle="Code Origin.AI partners with startups and enterprises to design, build and scale AI and cloud-powered products — from first line of code to live deployment and beyond."
           />
 
           {/* Trust stats row */}

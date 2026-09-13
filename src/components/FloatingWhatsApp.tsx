@@ -14,27 +14,27 @@ const quickMessages = [
   {
     label: "Business Enquiry",
     icon: "💼",
-    message: "Hi Code Origin.ai! I'm interested in discussing a business project. Please share more details about your services.",
+    message: "Hi Code Origin.AI! I'm interested in discussing a business project. Please share more details about your services.",
   },
   {
     label: "Code Pilot Program",
     icon: "🎓",
-    message: "Hi Code Origin.ai! I'm interested in the Code Pilot internship program. Please share the details about eligibility and how to apply.",
+    message: "Hi Code Origin.AI! I'm interested in the Code Pilot internship program. Please share the details about eligibility and how to apply.",
   },
   {
     label: "Skill Enhancement",
     icon: "💻",
-    message: "Hi Code Origin.ai! I'm a working professional interested in your skill enhancement programs. Please share the available courses and schedule.",
+    message: "Hi Code Origin.AI! I'm a working professional interested in your skill enhancement programs. Please share the available courses and schedule.",
   },
   {
     label: "Get a Quote",
     icon: "📝",
-    message: "Hi Code Origin.ai! I'd like to get a quote for my project. Here are the details:\n\nProject Type:\nBudget Range:\nTimeline:\nDescription:",
+    message: "Hi Code Origin.AI! I'd like to get a quote for my project. Here are the details:\n\nProject Type:\nBudget Range:\nTimeline:\nDescription:",
   },
   {
     label: "General Enquiry",
     icon: "❓",
-    message: "Hi Code Origin.ai! I have a question about your services. Can you please help?",
+    message: "Hi Code Origin.AI! I have a question about your services. Can you please help?",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function FloatingWhatsApp() {
   };
 
   const handleDirectChat = () => {
-    const link = waLink("Hi Code Origin.ai! I'd like to know more about your services.");
+    const link = waLink("Hi Code Origin.AI! I'd like to know more about your services.");
     window.open(link, "_blank", "noopener,noreferrer");
     setIsExpanded(false);
   };
@@ -90,7 +90,7 @@ export default function FloatingWhatsApp() {
                   <WhatsAppIcon className="h-6 w-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-bold text-white">Code Origin.ai</p>
+                  <p className="text-sm font-bold text-white">Code Origin.AI</p>
                   <p className="text-xs text-white/80">Typically replies within 1 hour</p>
                 </div>
                 <button

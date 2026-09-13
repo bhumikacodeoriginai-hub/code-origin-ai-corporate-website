@@ -255,7 +255,7 @@ export default function Contact() {
 ${bizForm.message}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Source: Code Origin.ai Website
+📍 Source: Code Origin.AI Website
 🕐 Sent: ${new Date().toLocaleString("en-IN")}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
     `.trim();
@@ -297,7 +297,7 @@ ${bizForm.message}
 ${internForm.message || "No additional message"}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Source: Code Origin.ai Website
+📍 Source: Code Origin.AI Website
 🕐 Sent: ${new Date().toLocaleString("en-IN")}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
     `.trim();
@@ -432,7 +432,7 @@ ${internForm.message || "No additional message"}
 
               {/* Why choose us mini */}
               <div className="rounded-2xl border border-gold-500/15 bg-gradient-to-br from-gold-500/5 to-transparent p-5">
-                <h4 className="font-display text-sm font-bold text-white">Why Code Origin.ai?</h4>
+                <h4 className="font-display text-sm font-bold text-white">Why Code Origin.AI?</h4>
                 <ul className="mt-3 space-y-2">
                   {[
                     "14+ projects delivered successfully",

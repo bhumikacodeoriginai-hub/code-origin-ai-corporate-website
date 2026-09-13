@@ -7,7 +7,7 @@ type LogoProps = {
 };
 
 /**
- * Code Origin.ai — official emblem + wordmark.
+ * Code Origin.AI — official emblem + wordmark.
  * The eagle/phoenix mark is reproduced from www.codeoriginai.com with the
  * brand's elite gold gradient (#C68B2C → #FFF3B0 → #C68B2C).
  */
@@ -61,7 +61,7 @@ export default function Logo({ className, light = true, showWordmark = true }: L
             light ? "text-white" : "text-ink-900"
           )}
         >
-          Code Origin<span className="text-gradient">.ai</span>
+          Code Origin<span className="text-gradient">.AI</span>
         </span>
       )}
     </div>

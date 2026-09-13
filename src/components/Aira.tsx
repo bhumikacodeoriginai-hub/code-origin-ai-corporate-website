@@ -6,7 +6,7 @@ import { WhatsAppIcon } from "./icons";
 
 /* ═══════════════════════════════════════════════════════════
    AIRA - AI-Powered Virtual Assistant
-   Professional chatbot for Code Origin.ai
+   Professional chatbot for Code Origin.AI
    Handles: Clients, Students, Freshers, Working Professionals
 ═══════════════════════════════════════════════════════════ */
 
@@ -109,7 +109,7 @@ function getReply(raw: string, state: ChatState): { text: string; newState: Part
   
   if (/^(hi|hii+|hello|hey|namaste|namaskar|hai|hola|good\s*(morning|afternoon|evening|day))\b/.test(t)) {
     return {
-      text: `Hello! 👋 Welcome to Code Origin.ai — I'm AIRA, your AI assistant.
+      text: `Hello! 👋 Welcome to Code Origin.AI — I'm AIRA, your AI assistant.
 
 I'm here to help you 24/7 with:
 • 💼 **Business clients** — Custom software, AI & cloud solutions
@@ -130,7 +130,7 @@ Who am I speaking with today? Just tell me a bit about yourself, or pick a quick
     return {
       text: `Excellent! 💼 Welcome, valued business partner!
 
-I'm here to help you explore how Code Origin.ai can bring your vision to life.
+I'm here to help you explore how Code Origin.AI can bring your vision to life.
 
 **What we offer businesses:**
 • 🤖 AI & Machine Learning solutions
@@ -187,7 +187,7 @@ Which track interests you? Or would you like to know about eligibility & how to 
     return {
       text: `Welcome! 🚀 Being a fresher is exciting — you're at the start of an amazing journey!
 
-**How Code Origin.ai helps freshers:**
+**How Code Origin.AI helps freshers:**
 
 **Option 1: Code Pilot Program (Recommended)**
 → Gain 3-6 months of real project experience
@@ -251,7 +251,7 @@ What's your current role? I can suggest the best track for your career goals!`,
   if (/(quote|estimate|pricing|cost|price|how much|budget|rate)/i.test(t)) {
     if (userType === "client" || /(project|build|develop|website|app|software)/i.test(t)) {
       return {
-        text: `💰 **Project Pricing at Code Origin.ai**
+        text: `💰 **Project Pricing at Code Origin.AI**
 
 We provide **transparent, value-based pricing** tailored to your specific needs.
 
@@ -375,7 +375,7 @@ Which method works best for you?`,
 
   if (/(timeline|how long|duration|delivery|when.*ready|deadline)/i.test(t) && (userType === "client" || /(project|build|develop)/i.test(t))) {
     return {
-      text: `⏱️ **Project Timelines at Code Origin.ai**
+      text: `⏱️ **Project Timelines at Code Origin.AI**
 
 **Typical delivery timelines:**
 
@@ -681,7 +681,7 @@ Would you like to see a sample certificate or know more about placement support?
 **Our placement assistance includes:**
 
 **1. Pre-Placement Offers (PPO)**
-→ Top performers get offers from Code Origin.ai
+→ Top performers get offers from Code Origin.AI
 → Work on exciting projects with us
 → Competitive salary packages
 
@@ -796,7 +796,7 @@ Thinking of switching careers into tech? You're making a smart move! Tech skills
 **Step 4:** Build portfolio with real projects
 **Step 5:** Leverage our placement support
 
-**Why Code Origin.ai for career switch:**
+**Why Code Origin.AI for career switch:**
 ✓ Real project experience (not just certificates)
 ✓ Mentorship from industry experts
 ✓ Flexible timing for working people
@@ -903,7 +903,7 @@ Looking for expertise in something specific?`,
 
   if (/(contact|email|phone|mobile|call|reach|whatsapp|number)/i.test(t)) {
     return {
-      text: `📞 **Contact Code Origin.ai**
+      text: `📞 **Contact Code Origin.AI**
 
 **Instant Response:**
 💬 **WhatsApp:** ${contact.phone}
@@ -924,7 +924,7 @@ Looking for expertise in something specific?`,
 
 **Social Media:**
 • Instagram: @codeoriginai
-• LinkedIn: Code Origin.ai
+• LinkedIn: Code Origin.AI
 
 **Response times:**
 • WhatsApp: Within 1-2 hours
@@ -941,7 +941,7 @@ How would you like to connect?`,
     return {
       text: `📍 **Our Office Location**
 
-**Code Origin.ai**
+**Code Origin.AI**
 ${contact.address}
 
 **Landmarks:**
@@ -996,10 +996,10 @@ Is there something urgent I can help with right now?`,
 
   if (/(about|company|code origin|who are you|team|background)/i.test(t) && !/about me|about you/.test(t)) {
     return {
-      text: `🏢 **About Code Origin.ai**
+      text: `🏢 **About Code Origin.AI**
 
 **Who we are:**
-Code Origin.ai is a software development company founded in 2024, building custom AI, cloud, and web products that help businesses grow.
+Code Origin.AI is a software development company founded in 2024, building custom AI, cloud, and web products that help businesses grow.
 
 **Our mission:**
 "AI & Cloud Products That Grow Your Business"
@@ -1038,7 +1038,7 @@ Want to know more about our work or team?`,
     return {
       text: `🤖 **I'm AIRA — AI Response Assistant**
 
-I'm Code Origin.ai's virtual assistant, powered by intelligent response matching to help you 24/7.
+I'm Code Origin.AI's virtual assistant, powered by intelligent response matching to help you 24/7.
 
 **What I can help with:**
 • Answer questions about our services
@@ -1441,7 +1441,7 @@ I'm not sure I understood that correctly. I'm here to help with:
 
 **General:**
 • Contact information
-• About Code Origin.ai
+• About Code Origin.AI
 
 Could you rephrase your question? Or tap one of the quick suggestions below!
 
@@ -1459,7 +1459,7 @@ export default function Aira() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "bot",
-      text: `Hello! 👋 I'm AIRA — your AI assistant at Code Origin.ai.
+      text: `Hello! 👋 I'm AIRA — your AI assistant at Code Origin.AI.
 
 I'm here 24/7 to help you with:
 • 💼 Business inquiries & project quotes
@@ -1694,7 +1694,7 @@ Who am I speaking with today? Select an option below or just start typing!`,
               FOOTER — WhatsApp CTA
           ───────────────────────────────────────────────────── */}
           <a
-            href={waLink("Hi Code Origin.ai! I'd like to speak with your team. Here's my query:")}
+            href={waLink("Hi Code Origin.AI! I'd like to speak with your team. Here's my query:")}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 border-t border-gold-500/10 bg-wa/10 px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-wa/20 btn-press"
