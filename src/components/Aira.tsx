@@ -285,9 +285,15 @@ Shall I help you get started with a quote?`,
 
   if (/(portfolio|work|projects|case study|delivered|previous work|examples)/i.test(t)) {
     return {
-      text: `📦 **Our Portfolio — 10+ Projects Delivered**
+      text: `📦 **Our Portfolio — 11+ Projects Delivered**
 
-**Live Deployments (6):**
+**Live Deployments (7):**
+
+🏭 **Arjun Realty** — Real Estate / Warehousing
+→ Corporate website & warehouse management
+→ 42 warehouses across India & UAE
+→ Trusted by Amazon, Zepto, Swiggy
+→ Visit: arjun-realty.com
 
 🏥 **MediCare+** — HealthTech
 → Telemedicine platform with appointment booking
@@ -997,8 +1003,8 @@ Code Origin.ai is a software development company founded in 2024, building custo
 3. **Upskill professionals** with industry-relevant courses
 
 **Our track record:**
-• 10+ projects delivered
-• 6 live deployments
+• 11+ projects delivered
+• 7 live deployments
 • 100% on-time delivery
 • 5.0★ average client rating
 

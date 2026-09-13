@@ -154,7 +154,7 @@ export default function WhyChooseUs() {
       },
     },
     students: {
-      primary: { label: "Apply for Code Pilot", href: "#contact" },
+      primary: { label: "Apply for Code Pilot", href: "#apply-internship" },
       secondary: {
         label: "Enquire on WhatsApp",
         href: waLink("Hi! I'm a student interested in the Code Pilot program. Please share details."),

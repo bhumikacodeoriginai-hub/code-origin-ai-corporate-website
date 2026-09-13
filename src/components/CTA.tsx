@@ -132,7 +132,7 @@ export default function CTA() {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="#contact"
+                  href="#apply-internship"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500/10 active:scale-[0.98]"
                 >
                   Fill Application Form
