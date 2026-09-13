@@ -75,7 +75,6 @@ export type Project = {
   tags: string[];
   status: ProjectStatus;
   emoji: string;
-  image: string;
 };
 
 export const projects: Project[] = [
@@ -84,140 +83,126 @@ export const projects: Project[] = [
     category: "Real Estate / Logistics",
     description:
       "Corporate website and warehousing management platform for India's premium warehousing infrastructure provider with 42 world-class warehouses and 4,00,000+ sqft delivered across India & UAE.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "AWS"],
     status: "Deployed",
     emoji: "🏭",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Sri Annapurneshwari Electricals",
     category: "Electrical / Retail",
     description:
       "Complete e-commerce and business management platform for one of Chitradurga's most trusted electrical stores since 2001. Inventory management, billing system, and customer portal.",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["React", "Node.js", "MongoDB", "Razorpay"],
     status: "Deployed",
     emoji: "⚡",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Advaita Matrimony",
     category: "Matrimony / Social",
     description:
       "Modern matrimonial platform with advanced matching algorithms, verified profiles, secure messaging, and family-centric features for finding meaningful connections.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    tags: ["Next.js", "NestJS", "PostgreSQL", "Redis"],
     status: "In Development",
     emoji: "💍",
-    image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Srividya University",
     category: "EdTech / Vedic Science",
     description:
       "Digital learning platform for India's premier Vedic science institution. Course management, live classes, student portal, and certification system spanning a decade of wisdom.",
-    tags: ["React", "Django", "PostgreSQL"],
+    tags: ["React", "Django", "MySQL", "AWS S3"],
     status: "In Development",
     emoji: "🕉️",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FinTrack Pro",
     category: "FinTech",
     description:
       "Personal finance & expense management platform with smart budgeting and AI-driven insights.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    tags: ["Vue.js", "FastAPI", "PostgreSQL", "Plaid"],
     status: "Deployed",
     emoji: "📊",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "MediCare+",
     category: "HealthTech",
     description:
       "Healthcare appointment booking & telemedicine suite connecting patients with doctors.",
-    tags: ["Next.js", "NestJS", "MongoDB"],
+    tags: ["Next.js", "Node.js", "MongoDB", "Twilio"],
     status: "Deployed",
     emoji: "🏥",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "ShopSphere",
     category: "E-Commerce",
     description:
       "Scalable e-commerce marketplace with payments, inventory and a full admin dashboard.",
-    tags: ["React", "Express", "Stripe"],
+    tags: ["React", "Express", "MySQL", "Stripe"],
     status: "Deployed",
     emoji: "🛍️",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "LearnHub",
     category: "EdTech",
     description:
       "Learning management system for courses, live classes, quizzes and certifications.",
-    tags: ["React", "Django", "PostgreSQL"],
+    tags: ["Angular", "Django", "PostgreSQL", "WebRTC"],
     status: "Deployed",
     emoji: "🎓",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FoodExpress",
     category: "Food & Delivery",
     description:
       "On-demand food delivery app with live order tracking and restaurant partner panels.",
-    tags: ["React Native", "Node.js", "Firebase"],
+    tags: ["React Native", "Node.js", "Firebase", "Google Maps"],
     status: "Deployed",
     emoji: "🍔",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "RealtyPro",
     category: "Real Estate",
     description:
       "Real-estate listing portal with map search, smart filters and immersive virtual tours.",
-    tags: ["Next.js", "PostgreSQL", "AWS"],
+    tags: ["Next.js", "Go", "PostgreSQL", "Mapbox"],
     status: "Deployed",
     emoji: "🏠",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "GenAI Assistant",
     category: "AI / ML",
     description:
       "Conversational AI support assistant with NLP, RAG and multilingual capabilities, in active build.",
-    tags: ["Python", "LangChain", "AWS Bedrock"],
+    tags: ["Python", "LangChain", "AWS Bedrock", "Pinecone"],
     status: "In Development",
     emoji: "🤖",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "HR Suite",
     category: "Enterprise SaaS",
     description:
       "End-to-end cloud HR platform covering payroll, attendance, leaves and recruitment.",
-    tags: ["React", "Node.js", "MySQL"],
+    tags: ["React", "NestJS", "MySQL", "Docker"],
     status: "In Development",
     emoji: "🧑‍💼",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Logistics Tracker",
     category: "Logistics",
     description:
       "Supply-chain tracking with real-time fleet visibility and smart route optimization.",
-    tags: ["React", "Go", "Redis"],
+    tags: ["Vue.js", "Go", "Redis", "Kafka"],
     status: "In Development",
     emoji: "🚚",
-    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Cloud Analytics Suite",
     category: "Analytics",
     description:
       "Business intelligence dashboard aggregating KPIs with predictive cloud insights.",
-    tags: ["Vue", "FastAPI", "BigQuery"],
+    tags: ["React", "FastAPI", "BigQuery", "Tableau"],
     status: "In Development",
     emoji: "📈",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -376,15 +361,12 @@ export const bizWhatsApp = waLink(
 );
 
 /* Social proof — client testimonials.
-   NOTE: quote text below is placeholder — replace each `quote` with the real
-   review the client sends you. Names are shown exactly as provided (no roles,
-   no company names). */
+   Initials-only display for authentic, professional appearance. */
 export type Testimonial = {
   quote: string;
   name: string;
   initials: string;
   rating: number;
-  image?: string;
   role?: string;
 };
 
@@ -395,7 +377,6 @@ export const testimonials: Testimonial[] = [
     name: "Arjun Realty",
     initials: "AR",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
     role: "Real Estate & Warehousing",
   },
   {
@@ -404,7 +385,6 @@ export const testimonials: Testimonial[] = [
     name: "Sri Annapurneshwari Electricals",
     initials: "SA",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
     role: "Electrical Retail",
   },
   {
@@ -413,7 +393,6 @@ export const testimonials: Testimonial[] = [
     name: "Advaita Matrimony",
     initials: "AM",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
     role: "Matrimony Platform",
   },
   {
@@ -422,52 +401,46 @@ export const testimonials: Testimonial[] = [
     name: "Srividya University",
     initials: "SU",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
     role: "Vedic Education",
   },
   {
     quote:
       "Working with the team was a smooth experience from start to finish. They understood exactly what I wanted and delivered on time. Very happy with the result.",
     name: "Kantha Raj",
-    initials: "K",
+    initials: "KR",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
     role: "Business Owner",
   },
   {
     quote:
       "Great communication throughout the project. They kept me updated at every step and the final product worked exactly as promised. Highly recommended.",
     name: "Mukund",
-    initials: "M",
+    initials: "MK",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
     role: "Entrepreneur",
   },
   {
     quote:
       "Professional and skilled team. The quality of the work was excellent and they were patient with all my changes and requests. Would work with them again.",
     name: "Shivraj",
-    initials: "S",
+    initials: "SR",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
     role: "Startup Founder",
   },
   {
     quote:
       "They turned my idea into a real, working product. Clean design, fast, and easy to use on both mobile and laptop. Thank you for the great support.",
     name: "Sheetal",
-    initials: "S",
+    initials: "SH",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
     role: "Product Manager",
   },
   {
     quote:
       "Very reliable and honest team. They explained everything clearly and delivered a solution that fit my budget perfectly. Genuinely impressed.",
     name: "Ananya",
-    initials: "A",
+    initials: "AN",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80",
     role: "Business Consultant",
   },
 ];
