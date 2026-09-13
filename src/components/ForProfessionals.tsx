@@ -6,6 +6,7 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
+  ExternalLink,
   Globe2,
   GraduationCap,
   Laptop,
@@ -82,7 +83,7 @@ export default function ForProfessionals() {
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="For Working Professionals"
+          eyebrow="Skill Enhancement Programs"
           title={
             <>
               Upskill, transition, <span className="text-gradient">level up</span>

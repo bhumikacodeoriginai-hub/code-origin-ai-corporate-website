@@ -100,7 +100,7 @@ export default function CTA() {
                   Ready to <span className="text-emerald-300">launch your tech career?</span>
                 </h3>
                 <p className="mt-3 max-w-lg text-stone-400">
-                  Join the Code Pilot internship — work on real projects, learn from senior engineers, 
+                  Join the Code Pilot program — work on real projects, learn from senior engineers, 
                   and build a portfolio that gets you hired.
                 </p>
 
@@ -122,10 +122,10 @@ export default function CTA() {
 
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <a
-                  href={waLink("Hi! I'm a student interested in the Code Pilot internship. Please share the details and how to apply.")}
+                  href={waLink("Hi! I'm a student interested in the Code Pilot program. Please share the details and how to apply.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-500"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-500 active:scale-[0.98]"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   Apply via WhatsApp
@@ -133,7 +133,7 @@ export default function CTA() {
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500/10 active:scale-[0.98]"
                 >
                   Fill Application Form
                 </a>

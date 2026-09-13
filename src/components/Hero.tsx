@@ -209,7 +209,7 @@ export default function Hero() {
               </a>
               <span className="text-stone-600">|</span>
               <a
-                href={waLink("Hi! I'm interested in the Code Pilot internship. Please share details.")}
+                href={waLink("Hi! I'm interested in the Code Pilot program. Please share details.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-400 transition hover:text-gold-300"
