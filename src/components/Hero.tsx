@@ -61,12 +61,12 @@ export default function Hero() {
       ═══════════════════════════════════════════════════════════ */}
       <div className="absolute inset-0 -z-30">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1920&q=80"
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover opacity-30"
+          className="h-full w-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/95 via-ink-950/80 to-ink-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/90 via-ink-950/70 to-ink-950" />
       </div>
       
       {/* Animated grid overlay */}

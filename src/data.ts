@@ -75,6 +75,7 @@ export type Project = {
   tags: string[];
   status: ProjectStatus;
   emoji: string;
+  image: string;
 };
 
 export const projects: Project[] = [
@@ -86,6 +87,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Node.js", "PostgreSQL"],
     status: "Deployed",
     emoji: "🏭",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Sri Annapurneshwari Electricals",
@@ -95,6 +97,7 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "MongoDB"],
     status: "Deployed",
     emoji: "⚡",
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Advaita Matrimony",
@@ -104,6 +107,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Node.js", "PostgreSQL"],
     status: "In Development",
     emoji: "💍",
+    image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Srividya University",
@@ -113,6 +117,7 @@ export const projects: Project[] = [
     tags: ["React", "Django", "PostgreSQL"],
     status: "In Development",
     emoji: "🕉️",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FinTrack Pro",
@@ -122,6 +127,7 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "PostgreSQL"],
     status: "Deployed",
     emoji: "📊",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "MediCare+",
@@ -131,6 +137,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "NestJS", "MongoDB"],
     status: "Deployed",
     emoji: "🏥",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "ShopSphere",
@@ -140,6 +147,7 @@ export const projects: Project[] = [
     tags: ["React", "Express", "Stripe"],
     status: "Deployed",
     emoji: "🛍️",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "LearnHub",
@@ -149,6 +157,7 @@ export const projects: Project[] = [
     tags: ["React", "Django", "PostgreSQL"],
     status: "Deployed",
     emoji: "🎓",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FoodExpress",
@@ -158,6 +167,7 @@ export const projects: Project[] = [
     tags: ["React Native", "Node.js", "Firebase"],
     status: "Deployed",
     emoji: "🍔",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "RealtyPro",
@@ -167,6 +177,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "PostgreSQL", "AWS"],
     status: "Deployed",
     emoji: "🏠",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "GenAI Assistant",
@@ -176,6 +187,7 @@ export const projects: Project[] = [
     tags: ["Python", "LangChain", "AWS Bedrock"],
     status: "In Development",
     emoji: "🤖",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "HR Suite",
@@ -185,6 +197,7 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "MySQL"],
     status: "In Development",
     emoji: "🧑‍💼",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Logistics Tracker",
@@ -194,6 +207,7 @@ export const projects: Project[] = [
     tags: ["React", "Go", "Redis"],
     status: "In Development",
     emoji: "🚚",
+    image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Cloud Analytics Suite",
@@ -203,6 +217,7 @@ export const projects: Project[] = [
     tags: ["Vue", "FastAPI", "BigQuery"],
     status: "In Development",
     emoji: "📈",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -369,6 +384,8 @@ export type Testimonial = {
   name: string;
   initials: string;
   rating: number;
+  image?: string;
+  role?: string;
 };
 
 export const testimonials: Testimonial[] = [
@@ -378,6 +395,8 @@ export const testimonials: Testimonial[] = [
     name: "Arjun Realty",
     initials: "AR",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
+    role: "Real Estate & Warehousing",
   },
   {
     quote:
@@ -385,6 +404,8 @@ export const testimonials: Testimonial[] = [
     name: "Sri Annapurneshwari Electricals",
     initials: "SA",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+    role: "Electrical Retail",
   },
   {
     quote:
@@ -392,6 +413,8 @@ export const testimonials: Testimonial[] = [
     name: "Advaita Matrimony",
     initials: "AM",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    role: "Matrimony Platform",
   },
   {
     quote:
@@ -399,6 +422,8 @@ export const testimonials: Testimonial[] = [
     name: "Srividya University",
     initials: "SU",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+    role: "Vedic Education",
   },
   {
     quote:
@@ -406,6 +431,8 @@ export const testimonials: Testimonial[] = [
     name: "Kantha Raj",
     initials: "K",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
+    role: "Business Owner",
   },
   {
     quote:
@@ -413,6 +440,8 @@ export const testimonials: Testimonial[] = [
     name: "Mukund",
     initials: "M",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+    role: "Entrepreneur",
   },
   {
     quote:
@@ -420,6 +449,8 @@ export const testimonials: Testimonial[] = [
     name: "Shivraj",
     initials: "S",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    role: "Startup Founder",
   },
   {
     quote:
@@ -427,6 +458,8 @@ export const testimonials: Testimonial[] = [
     name: "Sheetal",
     initials: "S",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+    role: "Product Manager",
   },
   {
     quote:
@@ -434,6 +467,8 @@ export const testimonials: Testimonial[] = [
     name: "Ananya",
     initials: "A",
     rating: 5,
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80",
+    role: "Business Consultant",
   },
 ];
 
