@@ -14,11 +14,11 @@ export default function CTA() {
             <div className="absolute inset-0 -z-10 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
             <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
-              Ready to build — or <span className="text-shimmer">start your career?</span>
+              Let's turn your idea into a <span className="text-shimmer">product that scales.</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-stone-300">
-              Whether you're a business with a bold idea or a graduate ready to learn by building real
-              systems, Code Origin.ai is ready to get you there.
+              Book a free, no-obligation consultation. Tell us about your business goals and we'll show
+              you exactly how AI and cloud can get you there — faster and more affordably than you think.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

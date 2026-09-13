@@ -76,10 +76,10 @@ export default function Navbar() {
 
         <div className="hidden lg:block">
           <a
-            href="#internship"
+            href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/20 transition hover:shadow-gold-500/40"
           >
-            Apply for Internship
+            Start a Project
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -115,11 +115,11 @@ export default function Navbar() {
               </a>
             </div>
             <a
-              href="#internship"
+              href="#contact"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-3 text-sm font-semibold text-ink-950"
             >
-              Apply for Internship
+              Start a Project
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>

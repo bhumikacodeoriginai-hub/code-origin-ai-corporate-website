@@ -1,28 +1,29 @@
-import { ArrowRight, CheckCircle2, Cloud, Cpu, Sparkles, Terminal } from "lucide-react";
-import { waLink } from "../data";
-
-const codeLines = [
-  { text: "// Code Origin.ai — Enterprise AI & Cloud", cls: "text-stone-500" },
-  { text: "const company = {", cls: "text-stone-200" },
-  { text: "  name: 'Code Origin.ai',", cls: "text-stone-300" },
-  { text: "  projects: 10,", cls: "text-stone-300" },
-  { text: "  deployed: 6,", cls: "text-stone-300" },
-  { text: "  training: 'Code Pilot',", cls: "text-stone-300" },
-  { text: "};", cls: "text-stone-200" },
-  { text: "", cls: "" },
-  { text: "async function ship(product) {", cls: "text-stone-200" },
-  { text: "  await design(product);", cls: "text-gold-300" },
-  { text: "  await build(product);", cls: "text-gold-300" },
-  { text: "  return deploy(product); // 🚀", cls: "text-gold-400" },
-  { text: "}", cls: "text-stone-200" },
-];
+import { useRef, useState } from "react";
+import { ArrowRight, CheckCircle2, Cloud, Cpu, Pause, Play, Sparkles, Star } from "lucide-react";
+import { bizWhatsApp, showreel } from "../data";
+import { WhatsAppIcon } from "./icons";
 
 const trust = [
   { icon: Cloud, label: "Enterprise AI & Cloud Solutions" },
-  { icon: Cpu, label: "AWS Advanced Partner" },
+  { icon: Cpu, label: "AWS-Certified Engineering Team" },
 ];
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(true);
+
+  const toggleVideo = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      void v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
+
   return (
     <section id="home" className="relative overflow-hidden pt-32 pb-16 sm:pt-36 lg:pt-44 lg:pb-24">
       {/* Background image + overlays */}
@@ -44,81 +45,113 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Left */}
         <div>
-          <a
-            href="#internship"
-            className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold text-gold-200 backdrop-blur transition hover:bg-gold-500/20"
-          >
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold text-gold-200 backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-300 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
             </span>
             <Sparkles className="h-3.5 w-3.5 text-gold-300" />
-            Code Pilot Internship 2026 — Applications Open
-          </a>
+            Trusted software partner — Established 2024
+          </span>
 
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Build Real Systems.
+            AI & Cloud Products
             <br />
-            <span className="text-shimmer">Start Your Career.</span>
+            That <span className="text-shimmer">Grow Your Business.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-300">
-            We provide <span className="font-semibold text-gold-300">AI and Cloud solutions</span> for
-            businesses — and help students learn by working on real projects through our Code Pilot
-            training & internship program.
+            Code Origin.ai is your end-to-end technology partner. We design, build and scale{" "}
+            <span className="font-semibold text-gold-300">custom software, AI and cloud solutions</span>{" "}
+            that help businesses launch faster, cut costs and win more customers.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#projects"
+              href="#contact"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-7 py-3.5 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/50"
             >
-              Explore Our Work
+              Book a Free Consultation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={waLink("Hi Code Origin.ai! I'd like to apply for the Code Pilot internship.")}
+              href={bizWhatsApp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-wa/40 bg-wa/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-wa/20"
             >
-              Apply on WhatsApp
+              <WhatsAppIcon className="h-5 w-5 text-wa" />
+              Chat on WhatsApp
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-stone-400">
-            <span className="inline-flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-gold-400" /> 6 live deployments
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-stone-400">
+            <span className="inline-flex items-center gap-1.5">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
+              ))}
+              <span className="ml-1 font-semibold text-white">5.0</span> client rating
             </span>
             <span className="inline-flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-gold-400" /> 10 projects delivered
+              <CheckCircle2 className="h-4 w-4 text-gold-400" /> 10+ projects delivered
             </span>
             <span className="inline-flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-gold-400" /> 5+ internship streams
+              <CheckCircle2 className="h-4 w-4 text-gold-400" /> 100% on-time delivery
             </span>
           </div>
         </div>
 
-        {/* Right — code window */}
+        {/* Right — showreel video */}
         <div className="relative">
-          <div className="relative rounded-2xl border border-gold-500/20 bg-ink-900/85 shadow-2xl shadow-black/60 backdrop-blur-xl glow-gold">
+          <div className="group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-ink-900/85 shadow-2xl shadow-black/60 backdrop-blur-xl glow-gold">
             <div className="flex items-center gap-2 border-b border-gold-500/10 px-5 py-3.5">
               <span className="h-3 w-3 rounded-full bg-rose-400" />
               <span className="h-3 w-3 rounded-full bg-amber-400" />
               <span className="h-3 w-3 rounded-full bg-emerald-400" />
               <span className="ml-3 inline-flex items-center gap-1.5 text-xs font-medium text-stone-400">
-                <Terminal className="h-3.5 w-3.5" /> codeorigin.ts
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500" />
+                </span>
+                Code Origin.ai — Showreel
               </span>
             </div>
-            <div className="space-y-1.5 px-5 py-6 font-mono text-[13px] leading-relaxed sm:text-sm">
-              {codeLines.map((line, i) => (
-                <div key={i} className="flex">
-                  <span className="mr-4 w-5 shrink-0 select-none text-right text-stone-600">
-                    {i + 1}
-                  </span>
-                  <span className={line.cls}>{line.text || "\u00A0"}</span>
+
+            <div className="relative aspect-video overflow-hidden">
+              <video
+                ref={videoRef}
+                className="h-full w-full object-cover"
+                poster={showreel.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
+                <source src={showreel.src} type="video/mp4" />
+                <source src={showreel.srcAlt} type="video/mp4" />
+              </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-ink-950/10" />
+
+              {/* caption */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-4">
+                <div>
+                  <p className="font-display text-sm font-semibold text-white sm:text-base">
+                    Engineering that ships.
+                  </p>
+                  <p className="text-xs text-stone-300">Design → Build → Deploy → Scale</p>
                 </div>
-              ))}
+              </div>
+
+              {/* play / pause control */}
+              <button
+                type="button"
+                onClick={toggleVideo}
+                aria-label={playing ? "Pause showreel" : "Play showreel"}
+                className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-ink-950/60 text-white backdrop-blur transition hover:bg-ink-950/80"
+              >
+                {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-0.5" />}
+              </button>
             </div>
           </div>
 
@@ -138,8 +171,8 @@ export default function Hero() {
               <Sparkles className="h-5 w-5" />
             </span>
             <div>
-              <p className="text-sm font-bold text-white">Code Pilot</p>
-              <p className="text-xs text-stone-400">Train & intern with us</p>
+              <p className="text-sm font-bold text-white">AI-First</p>
+              <p className="text-xs text-stone-400">Future-ready builds</p>
             </div>
           </div>
         </div>
