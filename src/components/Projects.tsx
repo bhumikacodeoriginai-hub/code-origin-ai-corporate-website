@@ -54,18 +54,25 @@ export default function Projects() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((p, i) => (
             <Reveal key={p.name} delay={(i % 3) * 80}>
-              <article className="group flex h-full flex-col rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.04] to-transparent p-6 transition duration-500 hover:-translate-y-2 hover:border-gold-500/40 hover:shadow-2xl hover:shadow-gold-500/10 sm:p-7">
-                {/* Header with emoji and status */}
-                <div className="flex items-start justify-between gap-3">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500/20 to-gold-500/5 text-3xl ring-1 ring-gold-500/20">
-                    {p.emoji}
-                  </span>
+              <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.04] to-transparent transition duration-500 hover:-translate-y-2 hover:border-gold-500/40 hover:shadow-2xl hover:shadow-gold-500/10">
+                {/* Project Image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/40 to-transparent" />
+                  
+                  {/* Status badge */}
                   <span
                     className={cn(
-                      "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold",
+                      "absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold backdrop-blur-md",
                       p.status === "Deployed"
-                        ? "bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/25"
-                        : "bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25"
+                        ? "bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-500/40"
+                        : "bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/40"
                     )}
                   >
                     {p.status === "Deployed" ? (
@@ -75,28 +82,33 @@ export default function Projects() {
                     )}
                     {p.status === "Deployed" ? "Live" : "Building"}
                   </span>
+
+                  {/* Emoji badge */}
+                  <span className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-ink-900/90 text-2xl shadow-xl ring-1 ring-white/10 backdrop-blur-sm">
+                    {p.emoji}
+                  </span>
                 </div>
 
-                {/* Project info */}
-                <div className="mt-5 flex-1">
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="flex items-center gap-2 font-display text-lg font-bold text-white">
                     {p.name}
                     <ArrowUpRight className="h-4 w-4 text-gold-400 opacity-0 transition-opacity group-hover:opacity-100" />
                   </h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-400">{p.category}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-stone-400">{p.description}</p>
-                </div>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-stone-400">{p.description}</p>
 
-                {/* Tech tags */}
-                <div className="mt-5 flex flex-wrap gap-2 border-t border-gold-500/10 pt-5">
-                  {p.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-lg border border-gold-500/15 bg-gold-500/5 px-2.5 py-1 text-xs font-medium text-stone-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {/* Tech tags */}
+                  <div className="mt-5 flex flex-wrap gap-2 border-t border-gold-500/10 pt-5">
+                    {p.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-lg border border-gold-500/15 bg-gold-500/5 px-2.5 py-1 text-xs font-medium text-stone-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </article>
             </Reveal>

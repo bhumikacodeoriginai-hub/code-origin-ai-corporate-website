@@ -75,6 +75,7 @@ export type Project = {
   tags: string[];
   status: ProjectStatus;
   emoji: string;
+  image: string;
 };
 
 export const projects: Project[] = [
@@ -86,15 +87,17 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "PostgreSQL", "AWS"],
     status: "Deployed",
     emoji: "🏭",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Sri Annapurneshwari Electricals",
-    category: "Electrical / Retail",
+    category: "Solar & Battery / Electrical Retail",
     description:
-      "Complete e-commerce and business management platform for one of Chitradurga's most trusted electrical stores since 2001. Inventory management, billing system, and customer portal.",
+      "Complete e-commerce and business management platform for Chitradurga's most trusted electrical store since 2001. Solar panels, inverters, batteries, and complete electrical solutions with inventory management and billing system.",
     tags: ["React", "Node.js", "MongoDB", "Razorpay"],
     status: "Deployed",
     emoji: "⚡",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Advaita Matrimony",
@@ -104,6 +107,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "NestJS", "PostgreSQL", "Redis"],
     status: "In Development",
     emoji: "💍",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Srividya University",
@@ -113,6 +117,7 @@ export const projects: Project[] = [
     tags: ["React", "Django", "MySQL", "AWS S3"],
     status: "In Development",
     emoji: "🕉️",
+    image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FinTrack Pro",
@@ -122,6 +127,7 @@ export const projects: Project[] = [
     tags: ["Vue.js", "FastAPI", "PostgreSQL", "Plaid"],
     status: "Deployed",
     emoji: "📊",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "MediCare+",
@@ -131,6 +137,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Node.js", "MongoDB", "Twilio"],
     status: "Deployed",
     emoji: "🏥",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "ShopSphere",
@@ -140,6 +147,7 @@ export const projects: Project[] = [
     tags: ["React", "Express", "MySQL", "Stripe"],
     status: "Deployed",
     emoji: "🛍️",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "LearnHub",
@@ -149,6 +157,7 @@ export const projects: Project[] = [
     tags: ["Angular", "Django", "PostgreSQL", "WebRTC"],
     status: "Deployed",
     emoji: "🎓",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "FoodExpress",
@@ -158,6 +167,7 @@ export const projects: Project[] = [
     tags: ["React Native", "Node.js", "Firebase", "Google Maps"],
     status: "Deployed",
     emoji: "🍔",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "RealtyPro",
@@ -167,6 +177,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Go", "PostgreSQL", "Mapbox"],
     status: "Deployed",
     emoji: "🏠",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "GenAI Assistant",
@@ -176,6 +187,7 @@ export const projects: Project[] = [
     tags: ["Python", "LangChain", "AWS Bedrock", "Pinecone"],
     status: "In Development",
     emoji: "🤖",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "HR Suite",
@@ -185,6 +197,7 @@ export const projects: Project[] = [
     tags: ["React", "NestJS", "MySQL", "Docker"],
     status: "In Development",
     emoji: "🧑‍💼",
+    image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Logistics Tracker",
@@ -194,6 +207,7 @@ export const projects: Project[] = [
     tags: ["Vue.js", "Go", "Redis", "Kafka"],
     status: "In Development",
     emoji: "🚚",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Cloud Analytics Suite",
@@ -203,6 +217,7 @@ export const projects: Project[] = [
     tags: ["React", "FastAPI", "BigQuery", "Tableau"],
     status: "In Development",
     emoji: "📈",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
