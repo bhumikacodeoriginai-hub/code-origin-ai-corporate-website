@@ -1,16 +1,15 @@
 import { useRef, useState } from "react";
 import {
   ArrowRight,
-  Award,
   CheckCircle2,
-  Cloud,
+  Code2,
   Cpu,
   GraduationCap,
   Pause,
   Play,
+  Rocket,
   Sparkles,
   Star,
-  Users,
   Zap,
 } from "lucide-react";
 import { bizWhatsApp, contact, showreel, socials, waLink } from "../data";
@@ -32,10 +31,11 @@ function LinkedinIcon({ className }: { className?: string }) {
   );
 }
 
-const trustBadges = [
-  { icon: Cloud, label: "Enterprise AI & Cloud" },
-  { icon: Award, label: "AWS-Certified Team" },
-  { icon: Users, label: "10+ Projects Delivered" },
+/* Animated code lines for tech aesthetic */
+const codeSnippets = [
+  { text: "const solution = await codeOrigin.build(yourIdea);", delay: 0 },
+  { text: "// Transforming businesses with AI & Cloud", delay: 0.5 },
+  { text: "ship({ quality: 'enterprise', timeline: 'fast' });", delay: 1 },
 ];
 
 export default function Hero() {
@@ -55,73 +55,134 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative overflow-hidden pt-28 pb-12 sm:pt-32 lg:pt-40 lg:pb-20">
-      {/* Background image + overlays */}
-      <div className="absolute inset-0 -z-20">
+    <section id="home" className="relative min-h-screen overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-32">
+      {/* ═══════════════════════════════════════════════════════════
+          BACKGROUND EFFECTS - High-tech aesthetic
+      ═══════════════════════════════════════════════════════════ */}
+      <div className="absolute inset-0 -z-30">
         <img
           src="https://images.pexels.com/photos/17483873/pexels-photo-17483873.png?auto=compress&cs=tinysrgb&w=1920"
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover opacity-40"
+          className="h-full w-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/90 via-ink-950/75 to-ink-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/95 via-ink-950/80 to-ink-950" />
       </div>
-      <div className="absolute inset-0 -z-10 bg-noise opacity-[0.04]" />
-      <div className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_70%)]" />
-      <div className="absolute -top-40 left-1/2 -z-10 h-[35rem] w-[35rem] -translate-x-1/2 rounded-full bg-gold-500/25 blur-[140px]" />
-      <div className="absolute -left-40 top-1/3 -z-10 h-96 w-96 rounded-full bg-gold-600/20 blur-[120px]" />
-      <div className="absolute -right-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-gold-400/15 blur-[120px]" />
+      
+      {/* Animated grid overlay */}
+      <div className="absolute inset-0 -z-20 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
+      
+      {/* Hexagon pattern */}
+      <div className="absolute inset-0 -z-20 bg-hexagon opacity-30" />
+      
+      {/* Noise texture */}
+      <div className="absolute inset-0 -z-10 bg-noise opacity-[0.03]" />
+      
+      {/* Glowing orbs */}
+      <div className="absolute -top-40 left-1/4 -z-10 h-[40rem] w-[40rem] rounded-full bg-gold-500/20 blur-[150px] animate-pulse" />
+      <div className="absolute -left-40 top-1/2 -z-10 h-[30rem] w-[30rem] rounded-full bg-gold-600/15 blur-[120px]" />
+      <div className="absolute -right-40 top-1/3 -z-10 h-[35rem] w-[35rem] rounded-full bg-emerald-500/10 blur-[130px]" />
+      <div className="absolute -bottom-40 right-1/4 -z-10 h-[25rem] w-[25rem] rounded-full bg-gold-400/15 blur-[100px]" />
+
+      {/* Floating particles effect */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute h-1 w-1 rounded-full bg-gold-400/40"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
+              animation: `float ${6 + i}s ease-in-out infinite`,
+              animationDelay: `${i * 0.5}s`,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Top banner — dual audience */}
-        <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
+        {/* ═══════════════════════════════════════════════════════════
+            TOP ANNOUNCEMENT BANNERS
+        ═══════════════════════════════════════════════════════════ */}
+        <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-xs font-semibold text-gold-200 backdrop-blur transition hover:bg-gold-500/20"
+            className="group glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold text-gold-200 transition hover:border-gold-400/40"
           >
-            <Zap className="h-3.5 w-3.5 text-gold-300" />
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-500" />
+            </span>
+            <Rocket className="h-3.5 w-3.5 text-gold-400" />
             <span>For Businesses — Free Consultation</span>
             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
-            href="#internship"
-            className="group inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold text-emerald-200 backdrop-blur transition hover:bg-emerald-500/20"
+            href="#contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-xs font-semibold text-emerald-200 backdrop-blur transition hover:bg-emerald-500/20"
           >
-            <GraduationCap className="h-3.5 w-3.5 text-emerald-300" />
-            <span>For Students — Internship 2026 Open</span>
+            <GraduationCap className="h-3.5 w-3.5 text-emerald-400" />
+            <span>Code Pilot Internship 2026 — Apply Now</span>
             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
 
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left — content */}
+          {/* ═══════════════════════════════════════════════════════════
+              LEFT CONTENT
+          ═══════════════════════════════════════════════════════════ */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-ink-900/80 px-4 py-2 text-xs font-medium text-stone-300 backdrop-blur">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
-              Trusted Software Partner — Established 2024
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/20 bg-ink-900/80 px-4 py-2 text-xs font-medium text-stone-300 backdrop-blur">
+              <Code2 className="h-4 w-4 text-gold-400" />
+              <span>Trusted Technology Partner</span>
+              <span className="h-1 w-1 rounded-full bg-gold-500" />
+              <span className="font-semibold text-gold-400">Est. 2024</span>
             </div>
 
-            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              We Build <span className="text-shimmer">AI & Cloud Products</span>
-              <br className="hidden sm:block" />
-              <span className="text-stone-300"> That Grow Your Business</span>
+            {/* Main Headline */}
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+              We Build{" "}
+              <span className="relative">
+                <span className="text-shimmer">AI & Cloud</span>
+                <Sparkles className="absolute -right-6 -top-2 h-5 w-5 text-gold-400 animate-bounce-subtle" />
+              </span>
+              <br />
+              <span className="text-stone-300">Products That</span>{" "}
+              <span className="text-gradient">Scale</span>
             </h1>
 
+            {/* Subheadline */}
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-stone-400 sm:text-lg lg:mx-0">
-              Code Origin.ai is your end-to-end technology partner. We design, build and scale{" "}
-              <span className="font-semibold text-gold-300">custom software, AI and cloud solutions</span>{" "}
-              — and train the next generation of engineers through our Code Pilot program.
+              Code Origin.ai is your end-to-end technology partner. We design, build and deploy{" "}
+              <span className="font-semibold text-gold-300">custom software, AI solutions & cloud infrastructure</span>{" "}
+              that transform businesses — and train tomorrow's engineers through Code Pilot.
             </p>
 
-            {/* Dual CTA buttons */}
+            {/* Code snippet animation */}
+            <div className="mt-6 hidden rounded-xl border border-gold-500/20 bg-ink-900/60 p-4 font-mono text-xs backdrop-blur lg:block">
+              {codeSnippets.map((snippet, i) => (
+                <div
+                  key={i}
+                  className="text-stone-400"
+                  style={{ 
+                    animation: `slide-up 0.5s ease-out forwards`,
+                    animationDelay: `${snippet.delay}s`,
+                    opacity: 0,
+                  }}
+                >
+                  <span className="text-gold-500">&gt;</span> {snippet.text}
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#contact"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-7 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/30 transition hover:shadow-gold-500/50 sm:w-auto"
+                className="btn-shine group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/30 transition hover:shadow-gold-500/50 sm:w-auto"
               >
+                <Zap className="h-4 w-4" />
                 Book Free Consultation
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -129,17 +190,17 @@ export default function Hero() {
                 href={bizWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-wa/40 bg-wa/15 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-wa/25 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-wa/40 bg-wa/15 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-wa/25 sm:w-auto"
               >
                 <WhatsAppIcon className="h-5 w-5 text-wa" />
                 Chat on WhatsApp
               </a>
             </div>
 
-            {/* Secondary CTA for students */}
+            {/* Student CTA */}
             <div className="mt-4 flex items-center justify-center gap-4 lg:justify-start">
               <a
-                href="#internship"
+                href="#contact"
                 className="inline-flex items-center gap-2 text-sm font-medium text-emerald-300 transition hover:text-emerald-200"
               >
                 <GraduationCap className="h-4 w-4" />
@@ -148,7 +209,7 @@ export default function Hero() {
               </a>
               <span className="text-stone-600">|</span>
               <a
-                href={waLink("Hi! I'm interested in the Code Pilot internship. Please share the details.")}
+                href={waLink("Hi! I'm interested in the Code Pilot internship. Please share details.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-400 transition hover:text-gold-300"
@@ -158,31 +219,31 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Trust stats */}
+            {/* Trust Stats */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm lg:justify-start">
               <span className="inline-flex items-center gap-1.5">
                 {[0, 1, 2, 3, 4].map((i) => (
                   <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
                 ))}
-                <span className="ml-1 font-semibold text-white">5.0</span>
-                <span className="text-stone-400">client rating</span>
+                <span className="ml-1 font-bold text-white">5.0</span>
+                <span className="text-stone-500">rating</span>
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
-                <CheckCircle2 className="h-4 w-4 text-gold-400" /> 10+ projects delivered
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 10+ projects
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
-                <CheckCircle2 className="h-4 w-4 text-gold-400" /> 100% on-time
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% on-time
               </span>
             </div>
 
-            {/* Social proof links */}
+            {/* Social Links */}
             <div className="mt-6 flex items-center justify-center gap-3 lg:justify-start">
               <span className="text-xs font-medium text-stone-500">Follow us:</span>
               <a
                 href={socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gold-500/20 bg-white/5 text-stone-400 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-300"
+                className="glass flex h-10 w-10 items-center justify-center rounded-xl text-stone-400 transition hover:text-gold-300"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-4 w-4" />
@@ -191,7 +252,7 @@ export default function Hero() {
                 href={socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gold-500/20 bg-white/5 text-stone-400 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-300"
+                className="glass flex h-10 w-10 items-center justify-center rounded-xl text-stone-400 transition hover:text-gold-300"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -200,7 +261,7 @@ export default function Hero() {
                 href={contact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-wa/30 bg-wa/10 text-wa transition hover:bg-wa/20"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-wa/30 bg-wa/10 text-wa transition hover:bg-wa/20"
                 aria-label="WhatsApp"
               >
                 <WhatsAppIcon className="h-4 w-4" />
@@ -208,22 +269,27 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — showreel video */}
+          {/* ═══════════════════════════════════════════════════════════
+              RIGHT - VIDEO SHOWCASE
+          ═══════════════════════════════════════════════════════════ */}
           <div className="relative">
-            <div className="group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-ink-900/90 shadow-2xl shadow-black/60 backdrop-blur-xl glow-gold">
-              <div className="flex items-center gap-2 border-b border-gold-500/10 px-4 py-3 sm:px-5">
-                <span className="h-3 w-3 rounded-full bg-rose-400" />
-                <span className="h-3 w-3 rounded-full bg-amber-400" />
-                <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                <span className="ml-3 inline-flex items-center gap-1.5 text-xs font-medium text-stone-400">
+            {/* Main video container */}
+            <div className="group relative overflow-hidden rounded-3xl border border-gold-500/20 bg-ink-900/90 shadow-2xl shadow-black/60 backdrop-blur-xl glow-gold">
+              {/* Browser chrome */}
+              <div className="flex items-center gap-2 border-b border-gold-500/10 bg-ink-900/80 px-4 py-3 sm:px-5">
+                <span className="h-3 w-3 rounded-full bg-rose-500" />
+                <span className="h-3 w-3 rounded-full bg-amber-500" />
+                <span className="h-3 w-3 rounded-full bg-emerald-500" />
+                <span className="ml-3 inline-flex items-center gap-2 text-xs font-medium text-stone-400">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-400 opacity-75" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500" />
                   </span>
-                  Code Origin.ai — Showreel
+                  codeorigin.ai — Live Showreel
                 </span>
               </div>
 
+              {/* Video */}
               <div className="relative aspect-video overflow-hidden">
                 <video
                   ref={videoRef}
@@ -238,23 +304,33 @@ export default function Hero() {
                   <source src={showreel.src} type="video/mp4" />
                   <source src={showreel.srcAlt} type="video/mp4" />
                 </video>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-ink-950/20" />
+                
+                {/* Gradient overlays */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-ink-950/30" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950/20 via-transparent to-ink-950/20" />
 
-                {/* Caption overlay */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-4">
-                  <div>
-                    <p className="font-display text-sm font-semibold text-white sm:text-base">
-                      Engineering that ships.
-                    </p>
-                    <p className="text-xs text-stone-300">Design → Build → Deploy → Scale</p>
-                  </div>
+                {/* Caption */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                  <p className="font-display text-base font-bold text-white sm:text-lg">
+                    Engineering that ships.
+                  </p>
+                  <p className="mt-1 flex items-center gap-2 text-xs text-stone-300">
+                    <span className="h-1 w-1 rounded-full bg-gold-400" />
+                    Design
+                    <span className="h-1 w-1 rounded-full bg-gold-400" />
+                    Build
+                    <span className="h-1 w-1 rounded-full bg-gold-400" />
+                    Deploy
+                    <span className="h-1 w-1 rounded-full bg-gold-400" />
+                    Scale
+                  </p>
                 </div>
 
-                {/* Play/pause control */}
+                {/* Play/pause */}
                 <button
                   type="button"
                   onClick={toggleVideo}
-                  aria-label={playing ? "Pause showreel" : "Play showreel"}
+                  aria-label={playing ? "Pause" : "Play"}
                   className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-ink-950/60 text-white backdrop-blur transition hover:bg-ink-950/80"
                 >
                   {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-0.5" />}
@@ -262,9 +338,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating chips */}
-            <div className="absolute -left-3 top-8 hidden animate-float rounded-xl border border-gold-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur sm:flex sm:items-center sm:gap-3 lg:-left-6">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-gold-600/30 to-gold-400/30 text-gold-300">
+            {/* Floating cards */}
+            <div className="absolute -left-4 top-8 hidden animate-float rounded-2xl border border-gold-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur sm:flex sm:items-center sm:gap-3 lg:-left-8">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-600/30 to-gold-400/30 text-gold-300">
                 <Cpu className="h-5 w-5" />
               </span>
               <div>
@@ -273,8 +349,8 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -right-2 hidden animate-float-delayed rounded-xl border border-gold-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur sm:flex sm:items-center sm:gap-3 lg:-right-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-600/30 to-emerald-400/30 text-emerald-300">
+            <div className="absolute -bottom-4 -right-2 hidden animate-float-delayed rounded-2xl border border-emerald-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur sm:flex sm:items-center sm:gap-3 lg:-right-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600/30 to-emerald-400/30 text-emerald-300">
                 <GraduationCap className="h-5 w-5" />
               </span>
               <div>
@@ -283,8 +359,8 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute -right-2 top-1/2 hidden -translate-y-1/2 animate-float rounded-xl border border-gold-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur xl:flex xl:items-center xl:gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-gold-600/30 to-gold-400/30 text-gold-300">
+            <div className="absolute -right-4 top-1/2 hidden -translate-y-1/2 animate-float rounded-2xl border border-gold-500/20 bg-ink-900/95 px-4 py-3 shadow-xl backdrop-blur xl:flex xl:items-center xl:gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-600/30 to-gold-400/30 text-gold-300">
                 <Sparkles className="h-5 w-5" />
               </span>
               <div>
@@ -292,22 +368,33 @@ export default function Hero() {
                 <p className="text-xs text-stone-400">Future-ready</p>
               </div>
             </div>
+
+            {/* Decorative ring */}
+            <div className="absolute -inset-4 -z-10 rounded-[2rem] border border-gold-500/10" />
+            <div className="absolute -inset-8 -z-20 rounded-[2.5rem] border border-gold-500/5" />
           </div>
         </div>
 
-        {/* Trust badges strip */}
-        <div className="mt-14 lg:mt-20">
-          <div className="flex flex-col items-center justify-center gap-4 border-t border-gold-500/15 pt-8 sm:flex-row sm:gap-8 lg:gap-12">
-            {trustBadges.map((t) => (
+        {/* ═══════════════════════════════════════════════════════════
+            TRUST BADGES
+        ═══════════════════════════════════════════════════════════ */}
+        <div className="mt-16 lg:mt-24">
+          <div className="flex flex-col items-center justify-center gap-4 border-t border-gold-500/10 pt-8 sm:flex-row sm:gap-8 lg:gap-12">
+            {[
+              { icon: Cpu, label: "Enterprise AI & Cloud" },
+              { icon: CheckCircle2, label: "AWS-Certified Team" },
+              { icon: Rocket, label: "10+ Projects Shipped" },
+            ].map((item) => (
               <span
-                key={t.label}
-                className="inline-flex items-center gap-2.5 text-sm font-medium tracking-wide text-stone-300"
+                key={item.label}
+                className="inline-flex items-center gap-2.5 text-sm font-medium tracking-wide text-stone-400"
               >
-                <t.icon className="h-5 w-5 text-gold-400" />
-                {t.label}
+                <item.icon className="h-5 w-5 text-gold-400" />
+                {item.label}
               </span>
             ))}
-            <span className="inline-flex items-center gap-2.5 text-sm font-semibold tracking-[0.2em] text-gold-500">
+            <span className="inline-flex items-center gap-2 text-sm font-bold tracking-[0.2em] text-gold-500">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
               ESTABLISHED 2024
             </span>
           </div>
