@@ -10,6 +10,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 import CodePilot from "./components/CodePilot";
 import Internship from "./components/Internship";
+import ForProfessionals from "./components/ForProfessionals";
 import FAQ from "./components/FAQ";
 import Process from "./components/Process";
 import CTA from "./components/CTA";
@@ -34,6 +35,7 @@ export default function App() {
         <Testimonials />
         <CodePilot />
         <Internship />
+        <ForProfessionals />
         <FAQ />
         <Process />
         <CTA />

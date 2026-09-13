@@ -5,6 +5,7 @@ export const navLinks = [
   { label: "Clients", href: "#testimonials" },
   { label: "Tech Stack", href: "#techstack" },
   { label: "Careers", href: "#internship" },
+  { label: "Upskill", href: "#professionals" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -232,6 +233,8 @@ export const techStack: TechGroup[] = [
       { name: "Next.js", url: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
       { name: "TypeScript", url: "https://cdn.simpleicons.org/typescript/3178C6" },
       { name: "Tailwind CSS", url: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+      { name: "Vue.js", url: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
+      { name: "Angular", url: "https://cdn.simpleicons.org/angular/DD0031" },
     ],
   },
   {
@@ -241,6 +244,8 @@ export const techStack: TechGroup[] = [
       { name: "Python", url: "https://cdn.simpleicons.org/python/3776AB" },
       { name: "Django", url: "https://cdn.simpleicons.org/django/ffffff" },
       { name: "FastAPI", url: "https://cdn.simpleicons.org/fastapi/009688" },
+      { name: "Express", url: "https://cdn.simpleicons.org/express/ffffff" },
+      { name: "NestJS", url: "https://cdn.simpleicons.org/nestjs/E0234E" },
     ],
   },
   {
@@ -250,6 +255,8 @@ export const techStack: TechGroup[] = [
       { name: "PyTorch", url: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
       { name: "OpenAI", url: "https://cdn.simpleicons.org/openai/ffffff" },
       { name: "LangChain", url: "https://cdn.simpleicons.org/langchain/ffffff" },
+      { name: "Pandas", url: "https://cdn.simpleicons.org/pandas/150458" },
+      { name: "Scikit-learn", url: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
     ],
   },
   {
@@ -259,6 +266,8 @@ export const techStack: TechGroup[] = [
       { name: "Docker", url: "https://cdn.simpleicons.org/docker/2496ED" },
       { name: "Kubernetes", url: "https://cdn.simpleicons.org/kubernetes/326CE5" },
       { name: "GitHub Actions", url: "https://cdn.simpleicons.org/githubactions/2088FF" },
+      { name: "Terraform", url: "https://cdn.simpleicons.org/terraform/7B42BC" },
+      { name: "Linux", url: "https://cdn.simpleicons.org/linux/FCC624" },
     ],
   },
   {
@@ -268,6 +277,8 @@ export const techStack: TechGroup[] = [
       { name: "PostgreSQL", url: "https://cdn.simpleicons.org/postgresql/4169E1" },
       { name: "MySQL", url: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "Firebase", url: "https://cdn.simpleicons.org/firebase/FFCA28" },
+      { name: "Redis", url: "https://cdn.simpleicons.org/redis/DC382D" },
+      { name: "Supabase", url: "https://cdn.simpleicons.org/supabase/3ECF8E" },
     ],
   },
   {
@@ -277,6 +288,8 @@ export const techStack: TechGroup[] = [
       { name: "React Native", url: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "Figma", url: "https://cdn.simpleicons.org/figma/F24E1E" },
       { name: "Git", url: "https://cdn.simpleicons.org/git/F05032" },
+      { name: "Swift", url: "https://cdn.simpleicons.org/swift/F05138" },
+      { name: "Kotlin", url: "https://cdn.simpleicons.org/kotlin/7F52FF" },
     ],
   },
   {
@@ -287,6 +300,18 @@ export const techStack: TechGroup[] = [
       { name: "Cypress", url: "https://cdn.simpleicons.org/cypress/69D3A7" },
       { name: "Jest", url: "https://cdn.simpleicons.org/jest/C21325" },
       { name: "Postman", url: "https://cdn.simpleicons.org/postman/FF6C37" },
+      { name: "Vitest", url: "https://cdn.simpleicons.org/vitest/6E9F18" },
+    ],
+  },
+  {
+    category: "APIs & Integration",
+    items: [
+      { name: "GraphQL", url: "https://cdn.simpleicons.org/graphql/E10098" },
+      { name: "REST API", url: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
+      { name: "Stripe", url: "https://cdn.simpleicons.org/stripe/008CDD" },
+      { name: "Twilio", url: "https://cdn.simpleicons.org/twilio/F22F46" },
+      { name: "Socket.io", url: "https://cdn.simpleicons.org/socketdotio/010101" },
+      { name: "RabbitMQ", url: "https://cdn.simpleicons.org/rabbitmq/FF6600" },
     ],
   },
 ];
