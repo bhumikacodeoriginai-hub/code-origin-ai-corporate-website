@@ -6,6 +6,7 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
 import WhyChooseUs from "./components/WhyChooseUs";
+import Testimonials from "./components/Testimonials";
 import CodePilot from "./components/CodePilot";
 import Internship from "./components/Internship";
 import FAQ from "./components/FAQ";
@@ -28,6 +29,7 @@ export default function App() {
         <Projects />
         <TechStack />
         <WhyChooseUs />
+        <Testimonials />
         <CodePilot />
         <Internship />
         <FAQ />

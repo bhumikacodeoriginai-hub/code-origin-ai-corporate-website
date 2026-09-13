@@ -1,12 +1,20 @@
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#projects" },
+  { label: "Clients", href: "#testimonials" },
   { label: "Tech Stack", href: "#techstack" },
-  { label: "Code Pilot", href: "#codepilot" },
-  { label: "Internship", href: "#internship" },
+  { label: "Careers", href: "#internship" },
   { label: "Contact", href: "#contact" },
 ];
+
+/* Landing-page showreel video (streamed from a CDN — falls back to poster image) */
+export const showreel = {
+  src: "https://videos.pexels.com/video-files/3129957/3129957-uhd_3840_2160_25fps.mp4",
+  srcAlt: "https://videos.pexels.com/video-files/3141210/3141210-sd_640_360_25fps.mp4",
+  poster:
+    "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1280",
+};
 
 export const stats = [
   { value: 10, suffix: "+", label: "Projects Delivered" },
@@ -276,3 +284,78 @@ export const techStack: TechGroup[] = [
 ];
 
 export const allTech: TechItem[] = techStack.flatMap((g) => g.items);
+
+
+/* Pre-filled WhatsApp message for business enquiries */
+export const bizWhatsApp = waLink(
+  "Hi Code Origin.ai! I'd like to discuss a project for my business. Here are a few details:"
+);
+
+/* Social proof — client testimonials */
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  initials: string;
+  rating: number;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Code Origin.ai delivered our platform ahead of schedule and the quality was outstanding. Their team felt like an extension of our own — proactive, transparent and genuinely invested in our success.",
+    name: "Rahul Mehta",
+    role: "Founder & CEO",
+    company: "FinTrack Pro",
+    initials: "RM",
+    rating: 5,
+  },
+  {
+    quote:
+      "We needed a scalable cloud architecture that could handle rapid growth. They designed it right the first time. Six months in, we've scaled 4x without a single major incident.",
+    name: "Ananya Sharma",
+    role: "CTO",
+    company: "MediCare+",
+    initials: "AS",
+    rating: 5,
+  },
+  {
+    quote:
+      "From the first call it was clear these were serious engineers. Clean code, clear communication and on-time delivery. We've since handed them two more projects.",
+    name: "David Chen",
+    role: "Product Director",
+    company: "ShopSphere",
+    initials: "DC",
+    rating: 5,
+  },
+  {
+    quote:
+      "Their AI assistant cut our support workload by nearly half. The ROI was obvious within the first quarter. Highly recommended for any business exploring AI.",
+    name: "Priya Nair",
+    role: "Head of Operations",
+    company: "LearnHub",
+    initials: "PN",
+    rating: 5,
+  },
+];
+
+/* Trusted across industries — shown as a scrolling strip */
+export const industries = [
+  "FinTech",
+  "HealthTech",
+  "E-Commerce",
+  "EdTech",
+  "Logistics",
+  "Real Estate",
+  "SaaS",
+  "AI / ML",
+];
+
+/* Quick trust signals for the hero / about sections */
+export const trustSignals = [
+  { value: "10+", label: "Projects delivered" },
+  { value: "100%", label: "On-time delivery" },
+  { value: "24/7", label: "Support & monitoring" },
+  { value: "5.0★", label: "Average client rating" },
+];
