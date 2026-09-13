@@ -20,15 +20,15 @@ const programs = [
     title: "Full Stack Development",
     duration: "3-6 months",
     mode: "Remote / Weekend",
-    skills: ["React", "Node.js", "PostgreSQL", "AWS"],
+    skills: ["React", "Next.js", "TypeScript", "Node.js"],
     icon: Laptop,
     color: "from-blue-600/30 to-blue-400/30",
   },
   {
-    title: "AI & Machine Learning",
+    title: "Generative AI & ML",
     duration: "4-6 months",
     mode: "Remote / Weekend",
-    skills: ["Python", "TensorFlow", "LLMs", "MLOps"],
+    skills: ["Python", "LLMs", "LangChain", "RAG & Agents"],
     icon: Sparkles,
     color: "from-purple-600/30 to-purple-400/30",
   },
@@ -36,7 +36,7 @@ const programs = [
     title: "Cloud & DevOps",
     duration: "3-4 months",
     mode: "Remote / Weekend",
-    skills: ["AWS", "Docker", "Kubernetes", "CI/CD"],
+    skills: ["AWS", "Docker", "Kubernetes", "Terraform"],
     icon: Globe2,
     color: "from-cyan-600/30 to-cyan-400/30",
   },
@@ -76,13 +76,13 @@ export default function ForProfessionals() {
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Skill Enhancement Programs"
+          eyebrow="Upskilling & Career Programs"
           title={
             <>
-              Upskill, transition, <span className="text-gradient">level up</span>
+              Upskill, transition, <span className="text-gradient">get job-ready</span>
             </>
           }
-          subtitle="Already working but want to switch to tech or advance your career? Our flexible programs are designed for professionals who want real skills, not just certificates."
+          subtitle="A working professional aiming higher, a career-switcher moving into tech, or a 2020–2026 graduate still searching for that first role? We rebuild your skills around what employers actually hire for today — AI, cloud, data and modern full-stack engineering."
         />
 
         {/* Badge */}
@@ -91,6 +91,14 @@ export default function ForProfessionals() {
             <TrendingUp className="h-4 w-4" />
             Weekend & Evening Batches Available
           </span>
+        </Reveal>
+
+        {/* Callout for graduates who haven't been placed yet */}
+        <Reveal className="mt-4 flex justify-center">
+          <p className="max-w-2xl text-center text-sm leading-relaxed text-stone-400">
+            <span className="font-semibold text-blue-300">Graduated between 2020–2026 but still not placed?</span>{" "}
+            Hiring has shifted toward AI, cloud and data roles. We help you re-skill to what the market actually needs today and rebuild a job-ready project portfolio.
+          </p>
         </Reveal>
 
         {/* Programs Grid */}

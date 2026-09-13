@@ -308,6 +308,10 @@ ${internForm.message || "No additional message"}
 
   return (
     <section id="contact" className="relative py-24 sm:py-28">
+      {/* Scroll anchor for "Apply for Internship" CTAs — lands below the fixed navbar
+          and the hashchange listener above switches to the internship tab. */}
+      <span id="apply-internship" aria-hidden="true" className="pointer-events-none absolute -top-24" />
+
       {/* Background effects */}
       <div className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
       <div className="absolute -left-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-gold-600/10 blur-[130px]" />
