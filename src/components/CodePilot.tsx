@@ -52,7 +52,7 @@ export default function CodePilot() {
           <Reveal className="relative">
             <div className="overflow-hidden rounded-3xl border border-gold-500/15">
               <img
-                src="https://images.pexels.com/photos/6805152/pexels-photo-6805152.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
                 alt="Code Pilot interns learning software development"
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"

@@ -10,10 +10,10 @@ export const navLinks = [
 
 /* Landing-page showreel video (streamed from a CDN — falls back to poster image) */
 export const showreel = {
-  src: "https://videos.pexels.com/video-files/3129957/3129957-uhd_3840_2160_25fps.mp4",
-  srcAlt: "https://videos.pexels.com/video-files/3141210/3141210-sd_640_360_25fps.mp4",
+  src: "https://videos.pexels.com/video-files/5496611/5496611-uhd_2560_1440_30fps.mp4",
+  srcAlt: "https://videos.pexels.com/video-files/5496611/5496611-sd_640_360_30fps.mp4",
   poster:
-    "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1280&q=80",
 };
 
 export const stats = [
