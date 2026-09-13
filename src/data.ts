@@ -107,8 +107,6 @@ export const contact = {
 export const socials = {
   instagram: "https://www.instagram.com/codeoriginai",
   linkedin: "https://www.linkedin.com/company/codeorigin-ai",
-  github: "https://github.com/codeoriginai",
-  twitter: "https://twitter.com/codeoriginai",
 };
 
 export const waLink = (message: string) =>
