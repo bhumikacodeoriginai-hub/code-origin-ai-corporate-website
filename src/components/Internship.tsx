@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Bot, Clock, Code2, Compass, GraduationCap, Mail, MapPin, Megaphone, Wallet, ExternalLink } from "lucide-react";
+import { ArrowRight, BadgeCheck, BarChart3, Bot, ClipboardCheck, Clock, Code2, Compass, GraduationCap, Mail, MapPin, Megaphone, PenTool, Wallet, ExternalLink } from "lucide-react";
 import { codepilotTracks, contact, eligibilityStreams, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
@@ -171,6 +171,70 @@ export default function Internship() {
                 </div>
               ))}
             </div>
+          </div>
+        </Reveal>
+
+        {/* Roles you can target — entry-friendly IT careers */}
+        <Reveal className="mt-8">
+          <div className="rounded-2xl border border-gold-500/15 bg-white/[0.02] p-6 sm:p-8">
+            <div className="text-center">
+              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
+                Roles you can <span className="text-gradient">target</span>
+              </h3>
+              <p className="mx-auto mt-2 max-w-2xl text-sm text-stone-400">
+                In-demand, entry-friendly IT careers our freshers and non-tech students train for.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  icon: BarChart3,
+                  role: "Data Analyst",
+                  desc: "Turn raw data into decisions with SQL, Excel and dashboards.",
+                  demand: "Very high demand",
+                },
+                {
+                  icon: Megaphone,
+                  role: "Digital Marketer",
+                  desc: "Run SEO, paid ads and analytics that grow real brands.",
+                  demand: "High demand",
+                },
+                {
+                  icon: ClipboardCheck,
+                  role: "QA / Test Engineer",
+                  desc: "Safeguard software quality with manual and automation testing.",
+                  demand: "Steady demand",
+                },
+                {
+                  icon: PenTool,
+                  role: "UI/UX Designer",
+                  desc: "Design clean, intuitive product experiences in Figma.",
+                  demand: "High demand",
+                },
+              ].map((r) => (
+                <div
+                  key={r.role}
+                  className="group rounded-xl border border-gold-500/10 bg-ink-900/40 p-5 transition duration-300 hover:-translate-y-1 hover:border-gold-500/35"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-600/25 to-gold-400/25 text-gold-300 transition duration-300 group-hover:scale-110">
+                    <r.icon className="h-5 w-5" />
+                  </span>
+                  <h4 className="mt-4 font-semibold text-white">{r.role}</h4>
+                  <p className="mt-1.5 text-sm leading-relaxed text-stone-400">{r.desc}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    {r.demand}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-relaxed text-stone-500">
+              Typical entry-level pay in India is around <span className="font-semibold text-stone-300">₹3–6 LPA</span> and
+              grows quickly with skills and a strong project portfolio. Figures are indicative market data (varies by
+              role, skills and city) — not a guarantee.
+            </p>
           </div>
         </Reveal>
 
