@@ -11,7 +11,6 @@ import {
   Navigation,
   Phone,
   Rocket,
-  Send,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";

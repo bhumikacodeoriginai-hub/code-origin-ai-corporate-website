@@ -5,11 +5,12 @@ import {
   Cpu,
   GraduationCap,
   Rocket,
+  ShieldCheck,
   Sparkles,
   Star,
   Zap,
 } from "lucide-react";
-import { bizWhatsApp, contact, socials, waLink } from "../data";
+import { bizWhatsApp, company, contact, socials, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -86,6 +87,19 @@ export default function Hero() {
         {/* ═══════════════════════════════════════════════════════════
             TOP ANNOUNCEMENT BANNERS
         ═══════════════════════════════════════════════════════════ */}
+        {/* Registered company trust strip — visible on all devices */}
+        <div className="mb-5 flex justify-center px-2">
+          <span
+            className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-gold-500/25 bg-gold-500/[0.06] px-4 py-2 text-center text-[11px] font-medium text-gold-200 sm:text-xs"
+            title="Registered with the Ministry of Corporate Affairs, Govt. of India"
+          >
+            <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-gold-400" />
+            <span>Registered Company — Govt. of India (MCA)</span>
+            <span className="hidden text-gold-500/60 sm:inline" aria-hidden="true">·</span>
+            <span className="font-mono font-semibold tracking-wide text-gold-100">CIN: {company.cin}</span>
+          </span>
+        </div>
+
         <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <a
             href="#contact"

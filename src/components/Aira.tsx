@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Send, Sparkles, X, Bot, User, Zap, Clock, MessageCircle } from "lucide-react";
+import { Send, Sparkles, X, Zap } from "lucide-react";
 import airaAvatar from "../assets/aira-avatar.jpg";
 import { contact, waLink, EMAIL } from "../data";
 import { WhatsAppIcon } from "./icons";

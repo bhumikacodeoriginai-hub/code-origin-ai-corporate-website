@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Menu, Phone, ShieldCheck, X } from "lucide-react";
 import Logo from "./Logo";
-import { contact, navLinks } from "../data";
+import { company, contact, navLinks } from "../data";
 import { cn } from "../utils/cn";
 
 export default function Navbar() {
@@ -47,7 +47,10 @@ export default function Navbar() {
               <MapPin className="h-3.5 w-3.5 text-gold-500" />
               Chitradurga, Karnataka
             </span>
-            <span className="font-semibold tracking-[0.2em] text-gold-500">ESTABLISHED 2024</span>
+            <span className="flex items-center gap-1.5 font-medium text-gold-400" title="Registered with the Ministry of Corporate Affairs, Govt. of India">
+              <ShieldCheck className="h-3.5 w-3.5 text-gold-500" />
+              CIN: {company.cin}
+            </span>
           </div>
         </div>
       </div>
@@ -115,6 +118,10 @@ export default function Navbar() {
               <a href={contact.emailHref} data-cta="email" data-cta-location="navbar-mobile" className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gold-500" /> {contact.email}
               </a>
+              <span className="mt-1 flex items-start gap-2 text-xs text-gold-400">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+                <span>Registered Company (MCA) · CIN: {company.cin}</span>
+              </span>
             </div>
             <a
               href="#contact"

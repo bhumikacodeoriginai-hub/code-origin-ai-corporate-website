@@ -1,23 +1,16 @@
 import {
   ArrowRight,
   Award,
-  BookOpen,
   Briefcase,
-  Calendar,
-  CheckCircle2,
   Clock,
-  ExternalLink,
   Globe2,
-  GraduationCap,
   Laptop,
-  Rocket,
   Sparkles,
   Target,
   TrendingUp,
   Users,
-  Zap,
 } from "lucide-react";
-import { contact, waLink } from "../data";
+import { waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";

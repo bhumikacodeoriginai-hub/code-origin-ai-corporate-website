@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Award, CheckCircle, Clock, Rocket, Users } from "lucide-react";
+import { Award, CheckCircle, Clock, Rocket } from "lucide-react";
 import Reveal from "./Reveal";
 
 const stats = [
