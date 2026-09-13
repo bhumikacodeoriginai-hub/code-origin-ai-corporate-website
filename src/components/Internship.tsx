@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Clock, GraduationCap, Mail, MapPin, Wallet, ExternalLink } from "lucide-react";
+import { ArrowRight, BadgeCheck, Bot, Clock, Code2, Compass, GraduationCap, Mail, MapPin, Megaphone, Wallet, ExternalLink } from "lucide-react";
 import { codepilotTracks, contact, eligibilityStreams, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
@@ -64,7 +64,7 @@ export default function Internship() {
         <Reveal className="mt-12 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-sm font-semibold text-gold-200">
             <GraduationCap className="h-4 w-4" />
-            Open to graduates & final-year students
+            Open to all graduates — tech & non-tech backgrounds welcome
           </span>
         </Reveal>
 
@@ -81,6 +81,74 @@ export default function Internship() {
             </Reveal>
           ))}
         </div>
+
+        {/* From ANY background to a tech career — non-tech students welcome */}
+        <Reveal className="mt-8">
+          <div className="rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/[0.05] to-transparent p-6 sm:p-8">
+            <div className="text-center">
+              <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-200">
+                <Compass className="h-3.5 w-3.5" />
+                From a non-tech background? You're welcome too
+              </span>
+              <h3 className="mt-4 font-display text-xl font-bold text-white sm:text-2xl">
+                BA, B.Com, BBA, Diploma or any degree —{" "}
+                <span className="text-gradient">start your IT career here</span>
+              </h3>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-stone-400">
+                No coding background? No problem. We start from the fundamentals and guide you into
+                today's most in-demand, job-oriented skills — at your pace.
+              </p>
+            </div>
+
+            {/* Non-tech-friendly skill directions */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                {
+                  icon: Megaphone,
+                  title: "Digital Marketing",
+                  desc: "SEO, social media, paid ads, content & analytics — a fast, tool-based entry into IT with strong hiring demand.",
+                },
+                {
+                  icon: Bot,
+                  title: "Job-Oriented AI",
+                  desc: "Practical AI: ChatGPT & GenAI tools, prompt engineering and AI automation — no heavy maths to get started.",
+                },
+                {
+                  icon: Code2,
+                  title: "Technical Foundations",
+                  desc: "Computer & web basics, then one job-ready track — frontend, software testing or data analytics.",
+                },
+              ].map((s) => (
+                <div key={s.title} className="rounded-xl border border-emerald-500/15 bg-ink-900/40 p-5">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300">
+                    <s.icon className="h-5 w-5" />
+                  </span>
+                  <h4 className="mt-4 font-semibold text-white">{s.title}</h4>
+                  <p className="mt-1.5 text-sm leading-relaxed text-stone-400">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Simple 4-step pathway */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-4">
+              {[
+                { n: "01", t: "Learn the fundamentals" },
+                { n: "02", t: "Pick a job-oriented track" },
+                { n: "03", t: "Build real projects" },
+                { n: "04", t: "Get interview-ready" },
+              ].map((step, i) => (
+                <div
+                  key={step.n}
+                  className="relative flex items-center gap-3 rounded-xl border border-gold-500/10 bg-white/[0.02] p-4"
+                >
+                  <span className="font-display text-lg font-bold text-emerald-300">{step.n}</span>
+                  <span className="text-sm font-medium text-stone-200">{step.t}</span>
+                  {i < 3 && <ArrowRight className="ml-auto hidden h-4 w-4 text-emerald-500/40 sm:block" />}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
         {/* Programs / courses offered */}
         <Reveal className="mt-12">

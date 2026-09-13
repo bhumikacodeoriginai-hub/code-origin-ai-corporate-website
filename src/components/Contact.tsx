@@ -89,6 +89,7 @@ type InternshipForm = {
   college: string;
   degree: string;
   year: string;
+  background: string;
   track: string;
   experience: string;
   message: string;
@@ -101,6 +102,7 @@ const initialInternshipForm: InternshipForm = {
   college: "",
   degree: "",
   year: "",
+  background: "",
   track: "",
   experience: "",
   message: "",
@@ -112,6 +114,12 @@ const degrees = [
   "BCA",
   "B.Sc Computer Science",
   "M.Sc Computer Science",
+  "B.Sc (Other)",
+  "B.Com",
+  "BA",
+  "BBA",
+  "Diploma",
+  "12th / PUC",
   "Other",
 ];
 
@@ -120,9 +128,18 @@ const years = [
   "2nd Year",
   "3rd Year",
   "Final Year",
+  "Passed Out (2020–2023)",
   "Passed Out (2024)",
   "Passed Out (2025)",
   "Passed Out (2026)",
+];
+
+/* Tech vs non-tech background — helps us route each applicant to the right
+   starting point (fundamentals-first for non-tech students). */
+const backgrounds = [
+  "Tech / IT background",
+  "Non-Tech background",
+  "Not sure — please guide me",
 ];
 
 const tracks = [
@@ -286,6 +303,7 @@ ${bizForm.message}
 • College: ${internForm.college}
 • Degree: ${internForm.degree}
 • Year: ${internForm.year}
+• Background: ${internForm.background}
 
 💻 *Internship Preferences*
 ━━━━━━━━━━━━━━━━━━
@@ -724,6 +742,15 @@ ${internForm.message || "No additional message"}
                         <option value="" disabled>Select year</option>
                         {years.map((y) => (
                           <option key={y} value={y}>{y}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-sm font-medium text-stone-300">Your Background *</label>
+                      <select required value={internForm.background} onChange={updateIntern("background")} className={inputClassEmerald}>
+                        <option value="" disabled>Tech or Non-Tech?</option>
+                        {backgrounds.map((b) => (
+                          <option key={b} value={b}>{b}</option>
                         ))}
                       </select>
                     </div>
