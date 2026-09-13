@@ -1,18 +1,15 @@
-import { useRef, useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
   Code2,
   Cpu,
   GraduationCap,
-  Pause,
-  Play,
   Rocket,
   Sparkles,
   Star,
   Zap,
 } from "lucide-react";
-import { bizWhatsApp, contact, showreel, socials, waLink } from "../data";
+import { bizWhatsApp, contact, socials, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -39,21 +36,6 @@ const codeSnippets = [
 ];
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
-
-  const toggleVideo = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      void v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-32">
       {/* ═══════════════════════════════════════════════════════════
@@ -270,71 +252,59 @@ export default function Hero() {
           </div>
 
           {/* ═══════════════════════════════════════════════════════════
-              RIGHT - VIDEO SHOWCASE
+              RIGHT - TEAM PHOTO SHOWCASE (More Trust!)
           ═══════════════════════════════════════════════════════════ */}
           <div className="relative">
-            {/* Main video container */}
-            <div className="group relative overflow-hidden rounded-3xl border border-gold-500/20 bg-ink-900/90 shadow-2xl shadow-black/60 backdrop-blur-xl glow-gold">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 border-b border-gold-500/10 bg-ink-900/80 px-4 py-3 sm:px-5">
-                <span className="h-3 w-3 rounded-full bg-rose-500" />
-                <span className="h-3 w-3 rounded-full bg-amber-500" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500" />
-                <span className="ml-3 inline-flex items-center gap-2 text-xs font-medium text-stone-400">
+            {/* Main team photo container */}
+            <div className="group relative overflow-hidden rounded-3xl border-2 border-gold-500/30 bg-ink-900/90 shadow-2xl shadow-gold-500/20 backdrop-blur-xl glow-gold-strong">
+              {/* Header bar */}
+              <div className="flex items-center justify-between border-b border-gold-500/15 bg-gradient-to-r from-ink-900/95 to-ink-800/95 px-4 py-3 sm:px-5">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-rose-500" />
+                  <span className="h-3 w-3 rounded-full bg-amber-500" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-500" />
+                </div>
+                <div className="flex items-center gap-2 text-xs font-medium text-gold-300">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                   </span>
-                  codeorigin.ai — Live Showreel
-                </span>
+                  Our Team — Chitradurga Office
+                </div>
               </div>
 
-              {/* Video */}
-              <div className="relative aspect-video overflow-hidden">
-                <video
-                  ref={videoRef}
-                  className="h-full w-full object-cover"
-                  poster={showreel.poster}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={showreel.src} type="video/mp4" />
-                  <source src={showreel.srcAlt} type="video/mp4" />
-                </video>
+              {/* Real Team Photo */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://raw.githubusercontent.com/bhumikacodeoriginai-hub/code-origin-ai-corporate-website/main/src/assets/team-photo.jpg"
+                  alt="Code Origin.ai Team - Developers, designers and engineers at Chitradurga office"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                  }}
+                />
                 
                 {/* Gradient overlays */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-ink-950/30" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950/20 via-transparent to-ink-950/20" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/30 to-transparent" />
 
-                {/* Caption */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                  <p className="font-display text-base font-bold text-white sm:text-lg">
-                    Engineering that ships.
-                  </p>
-                  <p className="mt-1 flex items-center gap-2 text-xs text-stone-300">
-                    <span className="h-1 w-1 rounded-full bg-gold-400" />
-                    Design
-                    <span className="h-1 w-1 rounded-full bg-gold-400" />
-                    Build
-                    <span className="h-1 w-1 rounded-full bg-gold-400" />
-                    Deploy
-                    <span className="h-1 w-1 rounded-full bg-gold-400" />
-                    Scale
-                  </p>
+                {/* Verified badge */}
+                <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-bold text-emerald-300 ring-1 ring-emerald-500/50 backdrop-blur-md">
+                  <CheckCircle2 className="h-4 w-4" />
+                  Real Team
                 </div>
 
-                {/* Play/pause */}
-                <button
-                  type="button"
-                  onClick={toggleVideo}
-                  aria-label={playing ? "Pause" : "Play"}
-                  className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-ink-950/60 text-white backdrop-blur transition hover:bg-ink-950/80"
-                >
-                  {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-0.5" />}
-                </button>
+                {/* Caption */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <p className="font-display text-xl font-bold text-white sm:text-2xl">
+                    20+ Talented Engineers
+                  </p>
+                  <p className="mt-2 flex items-center gap-2 text-sm text-stone-300">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-500/20 px-3 py-1 text-xs font-semibold text-gold-200">
+                      <Rocket className="h-3 w-3" />
+                      Building Your Vision
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
 
