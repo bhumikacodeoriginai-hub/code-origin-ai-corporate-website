@@ -22,28 +22,68 @@ import Aira from "./components/Aira";
 export default function App() {
   return (
     <div className="min-h-screen bg-ink-950 text-stone-200">
-      <Navbar />
-      <main>
+      {/* Skip link target is handled in index.html */}
+      <header role="banner">
+        <Navbar />
+      </header>
+      
+      <main id="main-content" role="main" aria-label="Main content">
+        {/* Hero Section */}
         <Hero />
+        
+        {/* Social Proof */}
         <TrustedBy />
         <Stats />
+        
+        {/* About the Company */}
         <About />
+        
+        {/* Services Offered */}
         <Services />
+        
+        {/* Portfolio / Work */}
         <Projects />
+        
+        {/* Technology Stack */}
         <TechStack />
+        
+        {/* Why Choose Us - 3 Audiences */}
         <WhyChooseUs />
+        
+        {/* Client Testimonials */}
         <Testimonials />
+        
+        {/* Code Pilot Program Intro */}
         <CodePilot />
+        
+        {/* Internship Details */}
         <Internship />
+        
+        {/* Skill Enhancement for Professionals */}
         <ForProfessionals />
+        
+        {/* Frequently Asked Questions */}
         <FAQ />
+        
+        {/* Our Process */}
         <Process />
+        
+        {/* Call to Action */}
         <CTA />
+        
+        {/* Contact Forms */}
         <Contact />
       </main>
-      <Footer />
-      <FloatingWhatsApp />
-      <Aira />
+      
+      <footer role="contentinfo">
+        <Footer />
+      </footer>
+      
+      {/* Floating UI Elements */}
+      <aside aria-label="Quick contact options">
+        <FloatingWhatsApp />
+        <Aira />
+      </aside>
     </div>
   );
 }
