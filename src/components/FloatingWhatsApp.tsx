@@ -156,6 +156,8 @@ export default function FloatingWhatsApp() {
         onClick={handleMainClick}
         aria-label="Chat with us on WhatsApp"
         aria-expanded={isExpanded}
+        data-cta="whatsapp"
+        data-cta-location="floating-button"
         className={`group relative flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 gpu-accelerate btn-press ${
           isExpanded
             ? "h-12 w-12 bg-ink-800 border border-gold-500/30 shadow-black/50"

@@ -162,6 +162,8 @@ export default function Hero() {
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#contact"
+                data-cta="start-project"
+                data-cta-location="hero"
                 className="btn-shine group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/30 transition hover:shadow-gold-500/50 sm:w-auto"
               >
                 <Zap className="h-4 w-4" />
@@ -172,6 +174,8 @@ export default function Hero() {
                 href={bizWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cta="whatsapp"
+                data-cta-location="hero"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-wa/40 bg-wa/15 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-wa/25 sm:w-auto"
               >
                 <WhatsAppIcon className="h-5 w-5 text-wa" />
@@ -183,6 +187,8 @@ export default function Hero() {
             <div className="mt-4 flex items-center justify-center gap-4 lg:justify-start">
               <a
                 href="#apply-internship"
+                data-cta="internship-apply"
+                data-cta-location="hero"
                 className="inline-flex items-center gap-2 text-sm font-medium text-emerald-300 transition hover:text-emerald-200"
               >
                 <GraduationCap className="h-4 w-4" />
@@ -194,6 +200,8 @@ export default function Hero() {
                 href={waLink("Hi! I'm interested in the Code Pilot program. Please share details.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cta="internship-enquiry"
+                data-cta-location="hero"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-400 transition hover:text-gold-300"
               >
                 <WhatsAppIcon className="h-4 w-4" />

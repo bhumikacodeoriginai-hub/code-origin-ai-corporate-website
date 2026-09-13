@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import Logo from "./Logo";
-import { contact, navLinks, socials } from "../data";
+import { company, contact, navLinks, socials } from "../data";
 import { WhatsAppIcon } from "./icons";
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -145,6 +145,8 @@ export default function Footer() {
                 href={contact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cta="whatsapp"
+                data-cta-location="footer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-wa/15 px-4 py-2.5 text-sm font-semibold text-wa transition hover:bg-wa/25"
               >
                 <WhatsAppIcon className="h-4 w-4" />
@@ -154,6 +156,8 @@ export default function Footer() {
                 href={contact.gmailHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cta="email"
+                data-cta-location="footer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-gold-500/20 bg-white/5 px-4 py-2.5 text-sm font-semibold text-stone-200 transition hover:bg-gold-500/10 hover:text-gold-300"
               >
                 <Mail className="h-4 w-4" />
@@ -180,7 +184,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-sm text-stone-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Code Origin.AI Private Limited — Established 2024. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {company.legalName} — Established {company.foundedYear}. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="transition hover:text-gold-400">
               @codeoriginai

@@ -77,6 +77,8 @@ export default function Navbar() {
         <div className="hidden lg:block">
           <a
             href="#contact"
+            data-cta="start-project"
+            data-cta-location="navbar"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/20 transition hover:shadow-gold-500/40"
           >
             Start a Project
@@ -107,16 +109,18 @@ export default function Navbar() {
               </a>
             ))}
             <div className="mt-3 flex flex-col gap-2 border-t border-gold-500/10 pt-3 text-sm text-stone-400">
-              <a href={contact.phoneHref} className="flex items-center gap-2">
+              <a href={contact.phoneHref} data-cta="phone" data-cta-location="navbar-mobile" className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold-500" /> {contact.phone}
               </a>
-              <a href={contact.emailHref} className="flex items-center gap-2">
+              <a href={contact.emailHref} data-cta="email" data-cta-location="navbar-mobile" className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gold-500" /> {contact.email}
               </a>
             </div>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
+              data-cta="start-project"
+              data-cta-location="navbar-mobile"
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-3 text-sm font-semibold text-ink-950"
             >
               Start a Project

@@ -24,6 +24,20 @@ export const stats = [
   { value: 5, suffix: "+", label: "Internship Streams" },
 ];
 
+/* ═══════════════════════════════════════════════════════════
+   Centralized company identity — single source of truth for the
+   official brand across the site. Update brand facts here only.
+═══════════════════════════════════════════════════════════ */
+export const company = {
+  name: "Code Origin.AI",
+  legalName: "Code Origin.AI Private Limited",
+  tagline: "Engineering Intelligent Digital Solutions for Modern Businesses",
+  foundedYear: 2024,
+  city: "Chitradurga",
+  region: "Karnataka",
+  country: "India",
+};
+
 /* Official contact details */
 export const EMAIL = "aicodeorigin@gmail.com";
 
