@@ -71,17 +71,6 @@ export const codePilotPhotos: GalleryPhoto[] = [
   { src: "/images/training-7.jpg", alt: "Code Pilot mentor guiding a student one-on-one" },
 ];
 
-/* Landscape training photos used as Code Pilot track card imagery. */
-export const codePilotTrackImages = [
-  "/images/training-2.jpg",
-  "/images/training-4.jpg",
-  "/images/training-5.jpg",
-  "/images/training-6.jpg",
-  "/images/training-8.jpg",
-  "/images/training-9.jpg",
-  "/images/training-10.jpg",
-  "/images/training-11.jpg",
-];
 
 /* Official contact details */
 export const EMAIL = "aicodeorigin@gmail.com";
