@@ -4,90 +4,23 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Homepage -->
+
+  <!--
+    Single-page application: the homepage is the one canonical, indexable URL.
+    In-page anchors (#about, #services, …) are NOT listed separately because
+    search engines ignore URL fragments and would treat them as duplicates of
+    the homepage. Listing only real URLs is the current best practice.
+  -->
   <url>
     <loc>https://www.codeorigin.ai/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-      <image:title>Code Origin.AI - AI &amp; Cloud Software Development</image:title>
-      <image:caption>Code Origin.AI builds custom AI, cloud and web solutions for businesses</image:caption>
+      <image:loc>https://www.codeorigin.ai/images/companypic.jpg</image:loc>
+      <image:title>Code Origin.AI — AI &amp; Cloud Software Development Company</image:title>
+      <image:caption>The Code Origin.AI team at our Chitradurga office</image:caption>
     </image:image>
   </url>
-  
-  <!-- About Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#about</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Services Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#services</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Projects / Portfolio Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#projects</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Tech Stack Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#techstack</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Testimonials Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#testimonials</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Code Pilot / Internship Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#internship</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Skill Enhancement / Professionals Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#professionals</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- FAQ Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#faq</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Contact Section -->
-  <url>
-    <loc>https://www.codeorigin.ai/#contact</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
+
 </urlset>
