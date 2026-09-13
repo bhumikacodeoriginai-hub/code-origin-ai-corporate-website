@@ -3,6 +3,7 @@ import { codepilotTracks, contact, eligibilityStreams, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import TechLogo, { siLogo } from "./TechLogo";
 
 const infoChips = [
   { icon: Clock, label: "Duration", value: "3 – 6 months" },
@@ -106,25 +107,48 @@ export default function Internship() {
                 {
                   icon: Megaphone,
                   title: "Digital Marketing",
-                  desc: "SEO, social media, paid ads, content & analytics — a fast, tool-based entry into IT with strong hiring demand.",
+                  desc: "SEO, Google & Meta ads, content and GA4 analytics — a fast, tool-based entry into IT with strong hiring demand.",
+                  logos: [
+                    { name: "Google Ads", url: siLogo("googleads", "4285F4") },
+                    { name: "Google Analytics", url: siLogo("googleanalytics", "E37400") },
+                    { name: "Meta", url: siLogo("meta", "0467DF") },
+                    { name: "HubSpot", url: siLogo("hubspot", "FF7A59") },
+                  ],
                 },
                 {
                   icon: Bot,
                   title: "Job-Oriented AI",
                   desc: "Practical AI: ChatGPT & GenAI tools, prompt engineering and AI automation — no heavy maths to get started.",
+                  logos: [
+                    { name: "OpenAI", url: siLogo("openai", "FFFFFF") },
+                    { name: "LangChain", url: siLogo("langchain", "1C3C3C") },
+                    { name: "Python", url: siLogo("python", "3776AB") },
+                    { name: "Hugging Face", url: siLogo("huggingface", "FFD21E") },
+                  ],
                 },
                 {
                   icon: Code2,
-                  title: "Technical Foundations",
-                  desc: "Computer & web basics, then one job-ready track — frontend, software testing or data analytics.",
+                  title: "Data & Web Foundations",
+                  desc: "Computer & web basics, then a job-ready track — data analytics, software testing or frontend.",
+                  logos: [
+                    { name: "SQL / MySQL", url: siLogo("mysql", "4479A1") },
+                    { name: "Python", url: siLogo("python", "3776AB") },
+                    { name: "JavaScript", url: siLogo("javascript", "F7DF1E") },
+                    { name: "Figma", url: siLogo("figma", "F24E1E") },
+                  ],
                 },
               ].map((s) => (
-                <div key={s.title} className="rounded-xl border border-emerald-500/15 bg-ink-900/40 p-5">
+                <div key={s.title} className="group rounded-xl border border-emerald-500/15 bg-ink-900/40 p-5 transition duration-300 hover:border-emerald-500/40">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300">
                     <s.icon className="h-5 w-5" />
                   </span>
                   <h4 className="mt-4 font-semibold text-white">{s.title}</h4>
                   <p className="mt-1.5 text-sm leading-relaxed text-stone-400">{s.desc}</p>
+                  <div className="mt-4 flex items-center gap-3 border-t border-emerald-500/10 pt-4">
+                    {s.logos.map((lg) => (
+                      <TechLogo key={lg.name} name={lg.name} url={lg.url} className="h-5 w-5" />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

@@ -14,13 +14,19 @@ import { waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import TechLogo, { siLogo } from "./TechLogo";
 
 const programs = [
   {
     title: "Full Stack Development",
     duration: "3-6 months",
     mode: "Remote / Weekend",
-    skills: ["React", "Next.js", "TypeScript", "Node.js"],
+    logos: [
+      { name: "React", url: siLogo("react", "61DAFB") },
+      { name: "Next.js", url: siLogo("nextdotjs", "FFFFFF") },
+      { name: "TypeScript", url: siLogo("typescript", "3178C6") },
+      { name: "Node.js", url: siLogo("nodedotjs", "5FA04E") },
+    ],
     icon: Laptop,
     color: "from-blue-600/30 to-blue-400/30",
   },
@@ -28,7 +34,12 @@ const programs = [
     title: "Generative AI & ML",
     duration: "4-6 months",
     mode: "Remote / Weekend",
-    skills: ["Python", "LLMs", "LangChain", "RAG & Agents"],
+    logos: [
+      { name: "Python", url: siLogo("python", "3776AB") },
+      { name: "OpenAI", url: siLogo("openai", "FFFFFF") },
+      { name: "LangChain", url: siLogo("langchain", "1C3C3C") },
+      { name: "Hugging Face", url: siLogo("huggingface", "FFD21E") },
+    ],
     icon: Sparkles,
     color: "from-purple-600/30 to-purple-400/30",
   },
@@ -36,7 +47,12 @@ const programs = [
     title: "Cloud & DevOps",
     duration: "3-4 months",
     mode: "Remote / Weekend",
-    skills: ["AWS", "Docker", "Kubernetes", "Terraform"],
+    logos: [
+      { name: "AWS", url: siLogo("amazonwebservices", "FF9900") },
+      { name: "Docker", url: siLogo("docker", "2496ED") },
+      { name: "Kubernetes", url: siLogo("kubernetes", "326CE5") },
+      { name: "Terraform", url: siLogo("terraform", "7B42BC") },
+    ],
     icon: Globe2,
     color: "from-cyan-600/30 to-cyan-400/30",
   },
@@ -44,7 +60,12 @@ const programs = [
     title: "Data Engineering",
     duration: "3-5 months",
     mode: "Remote / Weekend",
-    skills: ["Python", "SQL", "Spark", "Airflow"],
+    logos: [
+      { name: "Python", url: siLogo("python", "3776AB") },
+      { name: "PostgreSQL", url: siLogo("postgresql", "4169E1") },
+      { name: "Apache Spark", url: siLogo("apachespark", "E25A1C") },
+      { name: "Apache Airflow", url: siLogo("apacheairflow", "017CEE") },
+    ],
     icon: TrendingUp,
     color: "from-orange-600/30 to-orange-400/30",
   },
@@ -118,11 +139,9 @@ export default function ForProfessionals() {
                     <Globe2 className="h-3 w-3" /> {p.mode}
                   </span>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {p.skills.map((s) => (
-                    <span key={s} className="rounded-full border border-blue-500/20 bg-blue-500/5 px-2.5 py-1 text-xs text-stone-300">
-                      {s}
-                    </span>
+                <div className="mt-4 flex items-center gap-3 border-t border-blue-500/10 pt-4">
+                  {p.logos.map((lg) => (
+                    <TechLogo key={lg.name} name={lg.name} url={lg.url} className="h-5 w-5" />
                   ))}
                 </div>
                 <a
