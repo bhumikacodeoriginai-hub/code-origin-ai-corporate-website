@@ -27,7 +27,7 @@ export default function Projects() {
               Projects we've <span className="text-gradient">shipped</span> & are building
             </>
           }
-          subtitle="14+ projects and counting — 8 live in production and 6 more actively in development for clients across industries."
+          subtitle="70+ projects delivered across industries — from live production platforms to solutions in active development. Here's a selection of our work."
         />
 
         {/* Filters */}
@@ -44,8 +44,6 @@ export default function Projects() {
               )}
             >
               {f}
-              {f === "Deployed" && <span className="ml-1.5 text-xs opacity-80">8</span>}
-              {f === "In Development" && <span className="ml-1.5 text-xs opacity-80">6</span>}
             </button>
           ))}
         </Reveal>
@@ -116,20 +114,20 @@ export default function Projects() {
           <div className="flex flex-wrap items-center justify-center gap-6 rounded-2xl border border-gold-500/10 bg-gold-500/[0.02] p-6">
             <div className="flex items-center gap-2 text-sm">
               <Sparkles className="h-4 w-4 text-gold-400" />
-              <span className="font-bold text-white">14+</span>
-              <span className="text-stone-400">Total Projects</span>
+              <span className="font-bold text-white">70+</span>
+              <span className="text-stone-400">Projects Delivered</span>
             </div>
             <div className="h-4 w-px bg-gold-500/20" />
             <div className="flex items-center gap-2 text-sm">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span className="font-bold text-emerald-400">8</span>
-              <span className="text-stone-400">Live in Production</span>
+              <span className="font-bold text-emerald-400">10+</span>
+              <span className="text-stone-400">Industries Served</span>
             </div>
             <div className="h-4 w-px bg-gold-500/20" />
             <div className="flex items-center gap-2 text-sm">
-              <Loader2 className="h-4 w-4 text-amber-400 animate-spin" />
-              <span className="font-bold text-amber-400">6</span>
-              <span className="text-stone-400">In Development</span>
+              <CheckCircle2 className="h-4 w-4 text-gold-400" />
+              <span className="font-bold text-gold-300">100%</span>
+              <span className="text-stone-400">On-Time Delivery</span>
             </div>
           </div>
         </Reveal>

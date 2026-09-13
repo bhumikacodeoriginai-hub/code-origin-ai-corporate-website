@@ -3,8 +3,8 @@ import { Award, CheckCircle, Clock, Rocket } from "lucide-react";
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: 10, suffix: "+", label: "Projects Delivered", icon: Rocket, color: "text-gold-400" },
-  { value: 6, suffix: "", label: "Live Deployments", icon: CheckCircle, color: "text-emerald-400" },
+  { value: 70, suffix: "+", label: "Projects Delivered", icon: Rocket, color: "text-gold-400" },
+  { value: 10, suffix: "+", label: "Industries Served", icon: CheckCircle, color: "text-emerald-400" },
   { value: 100, suffix: "%", label: "On-Time Delivery", icon: Clock, color: "text-gold-400" },
   { value: 5, suffix: ".0★", label: "Client Rating", icon: Award, color: "text-gold-400" },
 ];

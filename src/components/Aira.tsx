@@ -285,9 +285,9 @@ Shall I help you get started with a quote?`,
 
   if (/(portfolio|work|projects|case study|delivered|previous work|examples)/i.test(t)) {
     return {
-      text: `📦 **Our Portfolio — 14+ Projects Delivered**
+      text: `📦 **Our Portfolio — 70+ Projects Delivered**
 
-**Live Deployments (8):**
+**Featured Live Deployments:**
 
 🏭 **Arjun Realty** — Real Estate / Warehousing
 → Corporate website & warehouse management
@@ -295,9 +295,9 @@ Shall I help you get started with a quote?`,
 → Trusted by Amazon, Zepto, Swiggy
 → Visit: arjun-realty.com
 
-⚡ **Sri Annapurneshwari Electricals** — Electrical / Retail
+⚡ **Srinivas Electricals** — Solar & Electrical Retail
 → E-commerce & inventory management platform
-→ Trusted electrical store since 2001
+→ Solar, inverters & batteries — Bangalore
 → Stack: React, Node.js, MongoDB
 
 🏥 **MediCare+** — HealthTech
@@ -324,7 +324,11 @@ Shall I help you get started with a quote?`,
 → Property listing with virtual tours
 → Stack: Next.js, PostgreSQL, AWS
 
-**In Development (6):**
+🏫 **7 Hills Education Ecosystem** — EdTech
+→ Admissions, ERP, learning & parent portal
+→ Stack: React, Spring Boot, PostgreSQL, Azure
+
+**In Development:**
 💍 **Advaita Matrimony** — Modern matrimonial platform
 🕉️ **Srividya University** — Vedic science learning platform
 • GenAI Assistant (AI/ML)
@@ -1010,8 +1014,8 @@ Code Origin.AI is a software development company founded in 2024, building custo
 3. **Upskill professionals** with industry-relevant courses
 
 **Our track record:**
-• 14+ projects delivered
-• 8 live deployments
+• 70+ projects delivered
+• Live deployments across 10+ industries
 • 100% on-time delivery
 • 5.0★ average client rating
 

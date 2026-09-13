@@ -48,16 +48,28 @@ const featuredClients = {
       since: "2024",
     },
     {
-      name: "Sri Annapurneshwari Electricals",
+      name: "Srinivas Electricals",
       url: null,
       tagline: "Solar, Battery & Electrical Store",
-      description: "E-commerce & Inventory Platform | Chitradurga's Finest Since 2001",
+      description: "E-commerce & Inventory Platform | Solar, Inverters & Batteries | Bangalore",
       trustedBy: "1000+ Happy Customers",
-      highlights: ["Solar Panels", "Batteries & Inverters", "Since 2001"],
+      highlights: ["Solar Panels", "Batteries & Inverters", "Bangalore"],
       icon: Zap,
       color: "from-yellow-500 to-amber-500",
       bgGlow: "bg-yellow-500/20",
-      since: "2001",
+      since: "2024",
+    },
+    {
+      name: "7 Hills Education Ecosystem",
+      url: null,
+      tagline: "Connected Education Platform",
+      description: "Admissions, Student & Staff Management, Learning & Parent Communication",
+      trustedBy: "Students, Staff & Parents",
+      highlights: ["Admissions & ERP", "Learning Platform", "Parent Portal"],
+      icon: BookOpen,
+      color: "from-indigo-500 to-blue-500",
+      bgGlow: "bg-indigo-500/20",
+      since: "2025",
     },
   ],
   inProgress: [
@@ -85,8 +97,8 @@ const featuredClients = {
 };
 
 const metrics = [
-  { value: "8", label: "Products Live", icon: CheckCircle2, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
-  { value: "6", label: "In Development", icon: Clock, color: "text-amber-400", bgColor: "bg-amber-500/10" },
+  { value: "70+", label: "Projects Delivered", icon: CheckCircle2, color: "text-emerald-400", bgColor: "bg-emerald-500/10" },
+  { value: "10+", label: "Industries Served", icon: Building2, color: "text-amber-400", bgColor: "bg-amber-500/10" },
   { value: "5+", label: "Internship Tracks", icon: GraduationCap, color: "text-blue-400", bgColor: "bg-blue-500/10" },
 ];
 

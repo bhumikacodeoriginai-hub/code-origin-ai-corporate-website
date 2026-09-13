@@ -28,7 +28,7 @@ const values = [
 ];
 
 const stats = [
-  { value: "14+", label: "Projects Delivered" },
+  { value: "70+", label: "Projects Delivered" },
   { value: "100%", label: "On-time Delivery" },
   { value: "5.0★", label: "Client Rating" },
   { value: "20+", label: "Team Members" },
@@ -81,7 +81,7 @@ export default function About() {
                 <Award className="h-8 w-8 text-gold-400" />
                 <div>
                   <p className="font-display text-2xl font-bold text-white">
-                    <span className="text-gradient">14+</span>
+                    <span className="text-gradient">70+</span>
                   </p>
                   <p className="text-xs font-medium text-stone-400">Projects delivered</p>
                 </div>

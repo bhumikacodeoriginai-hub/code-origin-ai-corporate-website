@@ -233,7 +233,7 @@ export default function Hero() {
                 <span className="text-stone-500">rating</span>
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 14+ projects
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 70+ projects
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% on-time
@@ -372,7 +372,7 @@ export default function Hero() {
             {[
               { icon: Cpu, label: "Enterprise AI & Cloud" },
               { icon: CheckCircle2, label: "AWS-Certified Team" },
-              { icon: Rocket, label: "14+ Projects Shipped" },
+              { icon: Rocket, label: "70+ Projects Shipped" },
             ].map((item) => (
               <span
                 key={item.label}

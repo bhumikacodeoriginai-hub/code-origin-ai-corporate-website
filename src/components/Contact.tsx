@@ -460,7 +460,7 @@ ${internForm.message || "No additional message"}
                 <h4 className="font-display text-sm font-bold text-white">Why Code Origin.AI?</h4>
                 <ul className="mt-3 space-y-2">
                   {[
-                    "14+ projects delivered successfully",
+                    "70+ projects delivered successfully",
                     "100% on-time delivery track record",
                     "24/7 support & maintenance",
                     "AWS-certified engineering team",

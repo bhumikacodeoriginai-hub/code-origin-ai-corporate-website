@@ -18,9 +18,9 @@ export const showreel = {
 };
 
 export const stats = [
-  { value: 14, suffix: "+", label: "Projects Delivered" },
-  { value: 8, suffix: "", label: "Live Deployments" },
-  { value: 6, suffix: "", label: "In Development" },
+  { value: 70, suffix: "+", label: "Projects Delivered" },
+  { value: 10, suffix: "+", label: "Industries Served" },
+  { value: 100, suffix: "%", label: "On-Time Delivery" },
   { value: 5, suffix: "+", label: "Internship Streams" },
 ];
 
@@ -119,10 +119,10 @@ export const projects: Project[] = [
     emoji: "🏭",
   },
   {
-    name: "Sri Annapurneshwari Electricals",
+    name: "Srinivas Electricals",
     category: "Solar & Battery / Electrical Retail",
     description:
-      "Complete e-commerce and business management platform for Chitradurga's most trusted electrical store since 2001. Solar panels, inverters, batteries, and complete electrical solutions with inventory management and billing system.",
+      "Complete e-commerce and business management platform for a trusted Bangalore electrical retailer. Solar panels, inverters, batteries and electrical solutions with inventory management and billing.",
     tags: ["React", "Node.js", "MongoDB", "Razorpay"],
     status: "Deployed",
     emoji: "⚡",
@@ -144,6 +144,15 @@ export const projects: Project[] = [
     tags: ["React", "Django", "MySQL", "AWS S3"],
     status: "In Development",
     emoji: "🕉️",
+  },
+  {
+    name: "7 Hills Education Ecosystem",
+    category: "EdTech / Education",
+    description:
+      "Unified education platform connecting admissions, student & staff management, learning content, attendance and parent communication for a growing institution — all in one connected ecosystem.",
+    tags: ["React", "Spring Boot", "PostgreSQL", "Azure"],
+    status: "Deployed",
+    emoji: "🏫",
   },
   {
     name: "FinTrack Pro",
@@ -412,11 +421,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "After 23 years in the electrical business, we finally have a modern digital presence thanks to Code Origin.AI. The inventory system and billing platform they built has transformed how we operate. Our customers love the new online experience!",
-    name: "Sri Annapurneshwari Electricals",
-    initials: "SA",
+      "Code Origin.AI gave our electrical business a modern digital presence. The e-commerce store, inventory system and billing platform they built have transformed how we operate — and our customers love the new online experience.",
+    name: "Srinivas Electricals",
+    initials: "SE",
     rating: 5,
-    role: "Electrical Retail",
+    role: "Solar & Electrical Retail, Bangalore",
   },
   {
     quote:
@@ -433,6 +442,14 @@ export const testimonials: Testimonial[] = [
     initials: "SU",
     rating: 5,
     role: "Vedic Education",
+  },
+  {
+    quote:
+      "Code Origin.AI understood exactly what a modern education institution needs. They built us a connected ecosystem that our staff, students and parents genuinely enjoy using every day.",
+    name: "7 Hills Education Ecosystem",
+    initials: "7H",
+    rating: 5,
+    role: "Education",
   },
   {
     quote:
@@ -494,7 +511,7 @@ export const industries = [
 
 /* Quick trust signals for the hero / about sections */
 export const trustSignals = [
-  { value: "14+", label: "Projects delivered" },
+  { value: "70+", label: "Projects delivered" },
   { value: "100%", label: "On-time delivery" },
   { value: "24/7", label: "Support & monitoring" },
   { value: "5.0★", label: "Average client rating" },
