@@ -33,7 +33,7 @@ export default function About() {
         <Reveal className="relative">
           <div className="relative overflow-hidden rounded-3xl border border-gold-500/15">
             <img
-              src="https://images.pexels.com/photos/8297442/pexels-photo-8297442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
               alt="Code Origin.ai engineering team collaborating"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"
@@ -43,7 +43,7 @@ export default function About() {
 
           <div className="absolute -bottom-8 -right-4 hidden w-52 overflow-hidden rounded-2xl border border-gold-500/20 shadow-2xl lg:block">
             <img
-              src="https://images.pexels.com/photos/1181370/pexels-photo-1181370.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80"
               alt="Developers reviewing code together"
               loading="lazy"
               className="aspect-square w-full object-cover"

@@ -66,7 +66,7 @@ export default function TechStack() {
           <div className="grid items-center gap-8 rounded-3xl border border-gold-500/15 bg-white/[0.02] p-6 sm:p-8 lg:grid-cols-2">
             <div className="relative overflow-hidden rounded-2xl border border-gold-500/15">
               <img
-                src="https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
                 alt="Engineer working inside a modern data center"
                 loading="lazy"
                 className="aspect-[16/10] w-full object-cover"

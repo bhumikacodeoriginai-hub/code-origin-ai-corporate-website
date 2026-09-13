@@ -61,7 +61,7 @@ export default function Hero() {
       ═══════════════════════════════════════════════════════════ */}
       <div className="absolute inset-0 -z-30">
         <img
-          src="https://images.pexels.com/photos/17483873/pexels-photo-17483873.png?auto=compress&cs=tinysrgb&w=1920"
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover opacity-30"
