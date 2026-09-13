@@ -83,7 +83,7 @@ export default function CodePilot() {
                 <div className="mt-3 flex items-center gap-4">
                   <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400">
                     <CheckCircle2 className="h-3.5 w-3.5" />
-                    500+ Alumni
+                    Live Mentorship
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs text-gold-400">
                     <CheckCircle2 className="h-3.5 w-3.5" />
@@ -91,7 +91,7 @@ export default function CodePilot() {
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs text-blue-400">
                     <CheckCircle2 className="h-3.5 w-3.5" />
-                    90% Placement
+                    Placement Support
                   </span>
                 </div>
               </div>

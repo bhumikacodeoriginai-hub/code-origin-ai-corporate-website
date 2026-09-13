@@ -194,7 +194,7 @@ Which track interests you? Or would you like to know about eligibility & how to 
 → Build a professional portfolio
 → Get mentored by industry experts
 → Certificate + Letter of Recommendation
-→ High chances of placement/PPO
+→ Placement assistance & PPO opportunities
 
 **Option 2: Direct Opportunities**
 → We occasionally hire freshers with strong fundamentals
@@ -225,7 +225,7 @@ We understand the unique challenges of upskilling while working. That's why we c
 • 🕐 **Flexible timing** — weekend batches & self-paced options
 • 💼 **Real projects** — not just theory, actual client work
 • 🎯 **Industry-relevant** — skills that are in demand NOW
-• 📈 **Career advancement** — many alumni got promotions/switches
+• 📈 **Career advancement** — skills to target promotions & role switches
 
 **Popular tracks for professionals:**
 1. **AI & Machine Learning** — The hottest skill in 2026
