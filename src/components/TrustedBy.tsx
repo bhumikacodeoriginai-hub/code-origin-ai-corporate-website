@@ -41,34 +41,23 @@ const featuredClients = {
       tagline: "Premium Warehousing Infrastructure",
       description: "42 World-Class Warehouses | 4,00,000+ Sqft | India & UAE",
       trustedBy: "Amazon, Zepto, Swiggy",
+      highlights: ["42 Warehouses", "4,00,000+ Sqft", "India & UAE"],
       icon: Warehouse,
       color: "from-teal-500 to-emerald-500",
       bgGlow: "bg-teal-500/20",
       since: "2024",
-      images: [
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1504383633899-33d7657a3d42?auto=format&fit=crop&w=400&q=80",
-      ],
     },
     {
       name: "Sri Annapurneshwari Electricals",
       url: null,
-      tagline: "Trusted Electrical Store",
+      tagline: "Solar, Battery & Electrical Store",
       description: "E-commerce & Inventory Platform | Chitradurga's Finest Since 2001",
       trustedBy: "1000+ Happy Customers",
+      highlights: ["Solar Panels", "Batteries & Inverters", "Since 2001"],
       icon: Zap,
       color: "from-yellow-500 to-amber-500",
       bgGlow: "bg-yellow-500/20",
       since: "2001",
-      // Solar panels, batteries, inverters - NO human photos
-      images: [
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=400&q=80",
-      ],
     },
   ],
   inProgress: [
@@ -162,66 +151,63 @@ export default function TrustedBy() {
               {featuredClients.delivered.map((client) => (
                 <div
                   key={client.name}
-                  className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.08] via-ink-900/80 to-ink-900/80 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/40 hover:shadow-2xl hover:shadow-emerald-500/10"
+                  className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.08] via-ink-900/80 to-ink-900/80 p-6 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/40 hover:shadow-2xl hover:shadow-emerald-500/10 sm:p-8"
                 >
-                  {/* 4 Image Grid */}
-                  <div className="grid grid-cols-2 gap-1 p-1">
-                    {client.images.map((img, idx) => (
-                      <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                        <img
-                          src={img}
-                          alt={`${client.name} - Image ${idx + 1}`}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 to-transparent" />
-                      </div>
-                    ))}
-                  </div>
-                  
+                  {/* Decorative glow */}
+                  <div className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full ${client.bgGlow} blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-70`} />
+
                   {/* Status badge */}
-                  <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30 backdrop-blur-sm">
+                  <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30 backdrop-blur-sm">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Live
                   </span>
-                  
-                  {/* Content */}
-                  <div className="relative p-6 sm:p-8">
-                    {/* Header */}
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${client.color} shadow-xl`}>
-                          <client.icon className="h-7 w-7 text-white" />
-                        </span>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h3 className="font-display text-lg font-bold text-white sm:text-xl">{client.name}</h3>
-                            {client.url && (
-                              <a 
-                                href={client.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-stone-500 transition-colors hover:text-emerald-400"
-                              >
-                                <ExternalLink className="h-4 w-4" />
-                              </a>
-                            )}
-                          </div>
-                          <p className="text-sm font-medium text-emerald-400">{client.tagline}</p>
-                        </div>
+
+                  {/* Header */}
+                  <div className="relative flex items-center gap-4">
+                    <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${client.color} shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                      <client.icon className="h-8 w-8 text-white" />
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-display text-lg font-bold text-white sm:text-xl">{client.name}</h3>
+                        {client.url && (
+                          <a
+                            href={client.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-stone-500 transition-colors hover:text-emerald-400"
+                            aria-label={`Visit ${client.name}`}
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        )}
                       </div>
+                      <p className="text-sm font-medium text-emerald-400">{client.tagline}</p>
                     </div>
-                    
-                    {/* Description */}
-                    <p className="mt-4 text-sm text-stone-400 leading-relaxed">{client.description}</p>
-                    
-                    {/* Footer */}
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/5">
-                      <p className="text-xs text-stone-500">
-                        <span className="font-semibold text-stone-400">Trusted by:</span> {client.trustedBy}
-                      </p>
-                      <span className="text-xs font-medium text-stone-500">Since {client.since}</span>
-                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="relative mt-5 text-sm leading-relaxed text-stone-400">{client.description}</p>
+
+                  {/* Highlight chips */}
+                  <div className="relative mt-5 flex flex-wrap gap-2">
+                    {client.highlights.map((h) => (
+                      <span
+                        key={h}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.06] px-3 py-1.5 text-xs font-medium text-emerald-200"
+                      >
+                        <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="relative mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/5 pt-4">
+                    <p className="text-xs text-stone-500">
+                      <span className="font-semibold text-stone-400">Trusted by:</span> {client.trustedBy}
+                    </p>
+                    <span className="text-xs font-medium text-stone-500">Since {client.since}</span>
                   </div>
                 </div>
               ))}
