@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import Logo from "./Logo";
 import { company, contact, navLinks, socials } from "../data";
 import { WhatsAppIcon } from "./icons";
@@ -63,6 +63,22 @@ export default function Footer() {
               Your trusted technology partner for AI, cloud and custom software solutions. We help
               businesses grow and train the next generation of engineers through Code Pilot.
             </p>
+
+            {/* Registered company trust badge — MCA (Govt. of India) */}
+            <div className="mt-6 max-w-sm rounded-xl border border-gold-500/25 bg-gold-500/[0.05] px-4 py-3">
+              <div className="flex items-center gap-2 text-xs font-semibold text-gold-300">
+                <ShieldCheck className="h-4 w-4 shrink-0" />
+                Registered Company — Govt. of India (MCA)
+              </div>
+              <p className="mt-2 text-xs text-stone-300">{company.registeredName}</p>
+              <p className="mt-1 text-xs text-stone-400">
+                CIN:{" "}
+                <span className="select-all font-mono font-semibold tracking-wide text-stone-100">
+                  {company.cin}
+                </span>
+              </p>
+            </div>
+
             <div className="mt-6 flex flex-wrap gap-3">
               {socialLinks.map((s) => (
                 <a
@@ -184,7 +200,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-sm text-stone-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} {company.legalName} — Established {company.foundedYear}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {company.legalName} · CIN: {company.cin} — All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="transition hover:text-gold-400">
               @codeoriginai

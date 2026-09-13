@@ -12,9 +12,10 @@ import {
   Phone,
   Rocket,
   Send,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { contact, waLink } from "../data";
+import { company, contact, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -426,6 +427,27 @@ ${internForm.message || "No additional message"}
                       <Navigation className="h-3.5 w-3.5" />
                       Get directions
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Registered Company Card — CIN trust signal */}
+              <div className="rounded-2xl border border-gold-500/25 bg-gold-500/[0.05] p-5">
+                <div className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-600/25 to-gold-400/25 text-gold-300">
+                    <ShieldCheck className="h-5 w-5" />
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-xs font-medium uppercase tracking-wider text-stone-500">
+                      Registered Company · Govt. of India (MCA)
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-white">{company.registeredName}</p>
+                    <p className="mt-1 text-sm text-stone-400">
+                      CIN:{" "}
+                      <span className="select-all font-mono font-semibold tracking-wide text-stone-100">
+                        {company.cin}
+                      </span>
+                    </p>
                   </div>
                 </div>
               </div>

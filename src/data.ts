@@ -31,6 +31,10 @@ export const stats = [
 export const company = {
   name: "Code Origin.AI",
   legalName: "Code Origin.AI Private Limited",
+  /* Registered company name exactly as on the MCA incorporation certificate */
+  registeredName: "CODE ORIGIN.AI PRIVATE LIMITED",
+  /* Corporate Identification Number issued by the Ministry of Corporate Affairs (MCA), India */
+  cin: "U62010KA2026PTC219868",
   tagline: "Engineering Intelligent Digital Solutions for Modern Businesses",
   foundedYear: 2024,
   city: "Chitradurga",
