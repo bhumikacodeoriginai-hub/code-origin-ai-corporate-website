@@ -324,7 +324,7 @@ ${internForm.message || "No additional message"}
               }`}
             >
               <GraduationCap className="h-4 w-4" />
-              Internship Application
+              Code Pilot Application
             </button>
           </div>
         </Reveal>
@@ -582,7 +582,7 @@ ${internForm.message || "No additional message"}
                     <GraduationCap className="h-6 w-6" />
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-white">Apply for Internship</h3>
+                    <h3 className="font-display text-xl font-bold text-white">Apply for Code Pilot</h3>
                     <p className="text-sm text-stone-400">Code Pilot 2026 — Applications Open</p>
                   </div>
                 </div>

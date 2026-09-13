@@ -154,10 +154,10 @@ export default function WhyChooseUs() {
       },
     },
     students: {
-      primary: { label: "Apply for Internship", href: "#contact" },
+      primary: { label: "Apply for Code Pilot", href: "#contact" },
       secondary: {
         label: "Enquire on WhatsApp",
-        href: waLink("Hi! I'm a student interested in the Code Pilot internship. Please share details."),
+        href: waLink("Hi! I'm a student interested in the Code Pilot program. Please share details."),
       },
     },
     professionals: {
@@ -259,7 +259,7 @@ export default function WhyChooseUs() {
             </h3>
             <p className="mx-auto mt-3 max-w-lg text-stone-400">
               {activeTab === "business" && "Let's discuss your project and show you how we can help."}
-              {activeTab === "students" && "Join 100+ interns who've started their journey with us."}
+              {activeTab === "students" && "Join 100+ students who've started their journey with us."}
               {activeTab === "professionals" && "Explore flexible programs designed for your schedule."}
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">

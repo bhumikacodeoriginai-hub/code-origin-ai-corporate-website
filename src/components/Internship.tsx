@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Clock, GraduationCap, Mail, MapPin, Wallet } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, GraduationCap, Mail, MapPin, Wallet, ExternalLink } from "lucide-react";
 import { codepilotTracks, contact, eligibilityStreams, waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
@@ -26,20 +26,39 @@ const latestTech = [
   "Playwright",
 ];
 
+/* Email resume link - works on all devices */
+const emailResumeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=${encodeURIComponent("Code Pilot 2026 Application - Resume Attached")}&body=${encodeURIComponent(`Hi Code Origin.ai Team,
+
+I am interested in the Code Pilot 2026 internship program.
+
+Please find my resume attached.
+
+Name: 
+Phone: 
+College: 
+Degree: 
+Preferred Track: 
+
+Thank you!`)}`;
+
 export default function Internship() {
   return (
     <section id="internship" className="relative py-24 sm:py-28">
       <div className="absolute inset-0 -z-10 bg-dots opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute -left-20 top-1/4 -z-10 h-80 w-80 rounded-full bg-emerald-600/15 blur-[100px] animate-pulse" />
+      <div className="absolute -right-20 bottom-1/4 -z-10 h-80 w-80 rounded-full bg-gold-600/15 blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
-          eyebrow="Internships"
+          eyebrow="Code Pilot Program"
           title={
             <>
-              Code Pilot <span className="text-gradient">Internship</span> opportunities
+              Launch your <span className="text-gradient">tech career</span> with us
             </>
           }
-          subtitle="We invite freshly graduated students to build real software with us. No prior experience required — just curiosity, commitment and the drive to learn."
+          subtitle="For students & freshers — build real software, learn from senior engineers, and get job-ready. No prior experience required — just curiosity, commitment and the drive to learn."
         />
 
         <Reveal className="mt-12 flex justify-center">
@@ -67,7 +86,7 @@ export default function Internship() {
         <Reveal className="mt-12">
           <div className="rounded-2xl border border-gold-500/15 bg-white/[0.02] p-6 sm:p-8">
             <h3 className="text-center font-display text-xl font-semibold text-white sm:text-2xl">
-              Internship <span className="text-gradient">courses</span> we offer
+              Training <span className="text-gradient">tracks</span> we offer
             </h3>
             <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-stone-400">
               Choose from eight hands-on programs covering development, AI, cloud, security and marketing.
@@ -136,7 +155,7 @@ export default function Internship() {
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={waLink(
-                  "Hi Code Origin.ai! I'd like to apply for the Code Pilot 2026 internship. Please share the details."
+                  "Hi Code Origin.ai! I'd like to apply for the Code Pilot 2026 program. Please share the details."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -153,11 +172,14 @@ export default function Internship() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={contact.emailHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                href={emailResumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 active:scale-[0.98]"
               >
                 <Mail className="h-4 w-4" />
                 Email your resume
+                <ExternalLink className="h-3 w-3 opacity-60" />
               </a>
             </div>
           </div>

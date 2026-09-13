@@ -594,3 +594,284 @@ button:focus-visible {
   background: linear-gradient(to top, rgba(3, 3, 3, 0.9), transparent 50%);
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WOW EFFECTS - Ultra Premium Design
+═══════════════════════════════════════════════════════════ */
+
+/* Animated gradient background */
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #0d0d0d, #151515);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Spotlight effect on hover */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent 40%);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Neon glow text */
+.text-neon {
+  text-shadow: 
+    0 0 5px rgba(212, 175, 55, 0.5),
+    0 0 10px rgba(212, 175, 55, 0.4),
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+/* Morphing blob animation */
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.blob-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+/* 3D tilt card effect */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+}
+
+/* Glowing border animation */
+@keyframes border-glow-animate {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(212, 175, 55, 0.3),
+      inset 0 0 5px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(212, 175, 55, 0.5),
+      inset 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.border-glow-animate {
+  animation: border-glow-animate 3s ease-in-out infinite;
+}
+
+/* Typing cursor effect */
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "|";
+  animation: blink-cursor 1s infinite;
+  color: #d4af37;
+}
+
+/* Ripple effect on click */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Particle effect background */
+@keyframes particle-float {
+  0%, 100% { 
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { 
+    transform: translateY(-100vh) translateX(20px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  animation: particle-float 10s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE OPTIMIZATION - Smooth Touch Response
+═══════════════════════════════════════════════════════════ */
+
+/* Faster touch response */
+* {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling momentum */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .animate-float,
+  .animate-float-delayed {
+    animation-duration: 10s;
+  }
+  
+  /* Faster transitions for touch */
+  a, button {
+    transition-duration: 0.15s;
+  }
+}
+
+/* Active state for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  a:active,
+  button:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+  
+  .card-hover:active {
+    transform: scale(0.98);
+  }
+  
+  /* Disable hover effects that don't work on touch */
+  .card-hover:hover {
+    transform: none;
+  }
+  
+  /* Use active instead */
+  .card-hover:active {
+    transform: scale(0.98);
+    box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Hardware acceleration for smooth animations */
+.gpu-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth button press animation */
+.btn-press {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.96);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKELETON LOADING
+═══════════════════════════════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.05) 25%,
+    rgba(212, 175, 55, 0.1) 50%,
+    rgba(212, 175, 55, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INTERSECTION OBSERVER ANIMATIONS
+═══════════════════════════════════════════════════════════ */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOCUS VISIBLE IMPROVEMENTS
+═══════════════════════════════════════════════════════════ */
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #e6c654;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT STYLES
+═══════════════════════════════════════════════════════════ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
