@@ -118,7 +118,7 @@ export default function Hero() {
             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
-            href="#contact"
+            href="#apply-internship"
             className="group inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-xs font-semibold text-emerald-200 backdrop-blur transition hover:bg-emerald-500/20"
           >
             <GraduationCap className="h-3.5 w-3.5 text-emerald-400" />
@@ -200,7 +200,7 @@ export default function Hero() {
             {/* Student CTA */}
             <div className="mt-4 flex items-center justify-center gap-4 lg:justify-start">
               <a
-                href="#contact"
+                href="#apply-internship"
                 className="inline-flex items-center gap-2 text-sm font-medium text-emerald-300 transition hover:text-emerald-200"
               >
                 <GraduationCap className="h-4 w-4" />
@@ -229,7 +229,7 @@ export default function Hero() {
                 <span className="text-stone-500">rating</span>
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 10+ projects
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 11+ projects
               </span>
               <span className="inline-flex items-center gap-2 text-stone-400">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% on-time
@@ -344,7 +344,7 @@ export default function Hero() {
                 <Cpu className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-white">6 Live</p>
+                <p className="text-sm font-bold text-white">7 Live</p>
                 <p className="text-xs text-stone-400">In production</p>
               </div>
             </div>
@@ -383,7 +383,7 @@ export default function Hero() {
             {[
               { icon: Cpu, label: "Enterprise AI & Cloud" },
               { icon: CheckCircle2, label: "AWS-Certified Team" },
-              { icon: Rocket, label: "10+ Projects Shipped" },
+              { icon: Rocket, label: "11+ Projects Shipped" },
             ].map((item) => (
               <span
                 key={item.label}

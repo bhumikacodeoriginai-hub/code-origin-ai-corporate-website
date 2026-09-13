@@ -18,8 +18,8 @@ export const showreel = {
 };
 
 export const stats = [
-  { value: 10, suffix: "+", label: "Projects Delivered" },
-  { value: 6, suffix: "", label: "Live Deployments" },
+  { value: 11, suffix: "+", label: "Projects Delivered" },
+  { value: 7, suffix: "", label: "Live Deployments" },
   { value: 4, suffix: "", label: "In Development" },
   { value: 5, suffix: "+", label: "Internship Streams" },
 ];
@@ -78,6 +78,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "Arjun Realty",
+    category: "Real Estate / Logistics",
+    description:
+      "Corporate website and warehousing management platform for India's premium warehousing infrastructure provider with 42 world-class warehouses and 4,00,000+ sqft delivered across India & UAE.",
+    tags: ["Next.js", "Node.js", "PostgreSQL"],
+    status: "Deployed",
+    emoji: "🏭",
+  },
   {
     name: "FinTrack Pro",
     category: "FinTech",
@@ -338,6 +347,13 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
+      "Code Origin.ai delivered an exceptional website and application for Arjun Realty. Their understanding of our warehousing business was impressive. The platform handles our 42 warehouses across India & UAE seamlessly. Highly professional team!",
+    name: "Arjun Realty",
+    initials: "AR",
+    rating: 5,
+  },
+  {
+    quote:
       "Working with the team was a smooth experience from start to finish. They understood exactly what I wanted and delivered on time. Very happy with the result.",
     name: "Kantha Raj",
     initials: "K",
@@ -371,13 +387,6 @@ export const testimonials: Testimonial[] = [
     initials: "A",
     rating: 5,
   },
-  {
-    quote:
-      "Excellent service and support. The whole process was transparent and stress-free. My website looks modern and professional. Highly satisfied.",
-    name: "Priya",
-    initials: "P",
-    rating: 5,
-  },
 ];
 
 /* Trusted across industries — shown as a scrolling strip */
@@ -388,13 +397,14 @@ export const industries = [
   "EdTech",
   "Logistics",
   "Real Estate",
+  "Warehousing",
   "SaaS",
   "AI / ML",
 ];
 
 /* Quick trust signals for the hero / about sections */
 export const trustSignals = [
-  { value: "10+", label: "Projects delivered" },
+  { value: "11+", label: "Projects delivered" },
   { value: "100%", label: "On-time delivery" },
   { value: "24/7", label: "Support & monitoring" },
   { value: "5.0★", label: "Average client rating" },

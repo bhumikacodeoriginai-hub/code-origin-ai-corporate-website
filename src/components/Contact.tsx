@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useState, useEffect, type ChangeEvent, type FormEvent } from "react";
 import {
   ArrowRight,
   Briefcase,
@@ -182,6 +182,29 @@ function CopyButton({ text }: { text: string }) {
 ─────────────────────────────────────────────────────────── */
 export default function Contact() {
   const [activeTab, setActiveTab] = useState<"business" | "internship">("business");
+
+  // Auto-switch to internship tab if URL has ?tab=internship or hash is #contact-internship
+  useEffect(() => {
+    const checkAndSwitchTab = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get("tab");
+      const hash = window.location.hash;
+      
+      if (tabParam === "internship" || hash === "#contact-internship" || hash === "#apply-internship") {
+        setActiveTab("internship");
+        // Scroll to contact section after a short delay
+        setTimeout(() => {
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    };
+    
+    checkAndSwitchTab();
+    
+    // Listen for hash changes (for in-page navigation)
+    window.addEventListener("hashchange", checkAndSwitchTab);
+    return () => window.removeEventListener("hashchange", checkAndSwitchTab);
+  }, []);
 
   // Business form state
   const [bizForm, setBizForm] = useState<BusinessForm>(initialBusinessForm);
@@ -412,7 +435,7 @@ ${internForm.message || "No additional message"}
                 <h4 className="font-display text-sm font-bold text-white">Why Code Origin.ai?</h4>
                 <ul className="mt-3 space-y-2">
                   {[
-                    "10+ projects delivered successfully",
+                    "11+ projects delivered successfully",
                     "100% on-time delivery track record",
                     "24/7 support & maintenance",
                     "AWS-certified engineering team",

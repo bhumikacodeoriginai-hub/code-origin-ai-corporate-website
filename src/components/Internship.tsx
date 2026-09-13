@@ -165,7 +165,7 @@ export default function Internship() {
                 Apply on WhatsApp
               </a>
               <a
-                href="#contact"
+                href="#apply-internship"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-7 py-3.5 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/30 transition hover:shadow-gold-500/50"
               >
                 Apply via Form
