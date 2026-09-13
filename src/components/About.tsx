@@ -53,13 +53,15 @@ export default function About() {
             {/* Main team image - REAL PHOTO */}
             <div className="relative overflow-hidden rounded-3xl border-2 border-gold-500/30 shadow-2xl shadow-gold-500/10 glow-gold">
               <img
-                src="https://raw.githubusercontent.com/bhumikacodeoriginai-hub/code-origin-ai-corporate-website/main/src/assets/team-photo.jpg"
+                src="/images/team-photo.jpg"
                 alt="Code Origin.ai team - Our talented developers, designers and engineers at our Chitradurga office"
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"
                 onError={(e) => {
                   // Fallback to placeholder if team photo not uploaded yet
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                  const target = e.currentTarget;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/30 to-transparent" />

@@ -45,7 +45,12 @@ const featuredClients = {
       color: "from-teal-500 to-emerald-500",
       bgGlow: "bg-teal-500/20",
       since: "2024",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1504383633899-33d7657a3d42?auto=format&fit=crop&w=400&q=80",
+      ],
     },
     {
       name: "Sri Annapurneshwari Electricals",
@@ -57,7 +62,13 @@ const featuredClients = {
       color: "from-yellow-500 to-amber-500",
       bgGlow: "bg-yellow-500/20",
       since: "2001",
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80",
+      // Solar panels, batteries, inverters - NO human photos
+      images: [
+        "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=400&q=80",
+      ],
     },
   ],
   inProgress: [
@@ -70,7 +81,6 @@ const featuredClients = {
       icon: Heart,
       color: "from-pink-500 to-rose-500",
       bgGlow: "bg-pink-500/20",
-      image: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=600&q=80",
     },
     {
       name: "Srividya University",
@@ -81,7 +91,6 @@ const featuredClients = {
       icon: BookOpen,
       color: "from-orange-500 to-amber-500",
       bgGlow: "bg-orange-500/20",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
     },
   ],
 };
@@ -155,22 +164,26 @@ export default function TrustedBy() {
                   key={client.name}
                   className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/[0.08] via-ink-900/80 to-ink-900/80 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/40 hover:shadow-2xl hover:shadow-emerald-500/10"
                 >
-                  {/* Client Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <img
-                      src={client.image}
-                      alt={`${client.name} project`}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-transparent" />
-                    
-                    {/* Status badge */}
-                    <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30 backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Live
-                    </span>
+                  {/* 4 Image Grid */}
+                  <div className="grid grid-cols-2 gap-1 p-1">
+                    {client.images.map((img, idx) => (
+                      <div key={idx} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                        <img
+                          src={img}
+                          alt={`${client.name} - Image ${idx + 1}`}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 to-transparent" />
+                      </div>
+                    ))}
                   </div>
+                  
+                  {/* Status badge */}
+                  <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30 backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Live
+                  </span>
                   
                   {/* Content */}
                   <div className="relative p-6 sm:p-8">
@@ -232,49 +245,35 @@ export default function TrustedBy() {
               {featuredClients.inProgress.map((client) => (
                 <div
                   key={client.name}
-                  className="group relative overflow-hidden rounded-3xl border border-amber-500/20 bg-gradient-to-br from-amber-500/[0.05] via-ink-900/80 to-ink-900/80 transition-all duration-500 hover:-translate-y-2 hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10"
+                  className="group relative overflow-hidden rounded-3xl border border-amber-500/20 bg-gradient-to-br from-amber-500/[0.05] via-ink-900/80 to-ink-900/80 p-6 sm:p-8 transition-all duration-500 hover:-translate-y-2 hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10"
                 >
-                  {/* Client Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <img
-                      src={client.image}
-                      alt={`${client.name} project`}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-transparent" />
-                    
-                    {/* Status badge */}
-                    <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-3 py-1.5 text-xs font-semibold text-amber-300 ring-1 ring-amber-500/30 backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-                      Building
-                    </span>
-                  </div>
+                  {/* Status badge */}
+                  <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-3 py-1.5 text-xs font-semibold text-amber-300 ring-1 ring-amber-500/30 backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    Building
+                  </span>
                   
-                  {/* Content */}
-                  <div className="relative p-6 sm:p-8">
-                    {/* Header */}
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${client.color} shadow-xl`}>
-                          <client.icon className="h-7 w-7 text-white" />
-                        </span>
-                        <div>
-                          <h3 className="font-display text-lg font-bold text-white sm:text-xl">{client.name}</h3>
-                          <p className="text-sm font-medium text-amber-400">{client.tagline}</p>
-                        </div>
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${client.color} shadow-xl`}>
+                        <client.icon className="h-7 w-7 text-white" />
+                      </span>
+                      <div>
+                        <h3 className="font-display text-lg font-bold text-white sm:text-xl">{client.name}</h3>
+                        <p className="text-sm font-medium text-amber-400">{client.tagline}</p>
                       </div>
                     </div>
-                    
-                    {/* Description */}
-                    <p className="mt-4 text-sm text-stone-400 leading-relaxed">{client.description}</p>
-                    
-                    {/* Features */}
-                    <div className="mt-4 pt-4 border-t border-white/5">
-                      <p className="text-xs font-medium text-stone-500">
-                        <span className="text-amber-400/80">✦</span> {client.features}
-                      </p>
-                    </div>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="mt-4 text-sm text-stone-400 leading-relaxed">{client.description}</p>
+                  
+                  {/* Features */}
+                  <div className="mt-4 pt-4 border-t border-white/5">
+                    <p className="text-xs font-medium text-stone-500">
+                      <span className="text-amber-400/80">✦</span> {client.features}
+                    </p>
                   </div>
                 </div>
               ))}

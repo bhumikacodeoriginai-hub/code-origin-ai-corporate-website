@@ -276,11 +276,14 @@ export default function Hero() {
               {/* Real Team Photo */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://raw.githubusercontent.com/bhumikacodeoriginai-hub/code-origin-ai-corporate-website/main/src/assets/team-photo.jpg"
+                  src="/images/team-photo.jpg"
                   alt="Code Origin.ai Team - Developers, designers and engineers at Chitradurga office"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
+                    // Fallback if team photo not yet uploaded
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
                   }}
                 />
                 
