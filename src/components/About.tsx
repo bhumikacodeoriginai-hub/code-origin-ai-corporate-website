@@ -1,4 +1,4 @@
-import { CheckCircle2, Lightbulb, ShieldCheck, Target, Users } from "lucide-react";
+import { CheckCircle2, Lightbulb, ShieldCheck, Target, Users, Award, Rocket } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -25,41 +25,81 @@ const values = [
   },
 ];
 
+const stats = [
+  { value: "14+", label: "Projects Delivered" },
+  { value: "100%", label: "On-time Delivery" },
+  { value: "5.0★", label: "Client Rating" },
+];
+
 export default function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
+    <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950 via-gold-500/[0.02] to-ink-950" />
+      <div className="absolute -right-40 top-1/3 -z-10 h-96 w-96 rounded-full bg-gold-600/10 blur-[130px]" />
+
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         {/* Image collage */}
-        <Reveal className="relative">
-          <div className="relative overflow-hidden rounded-3xl border border-gold-500/15">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-              alt="Code Origin.ai engineering team collaborating"
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent" />
-          </div>
+        <Reveal className="relative order-2 lg:order-1">
+          <div className="relative">
+            {/* Main image */}
+            <div className="relative overflow-hidden rounded-3xl border border-gold-500/15 shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                alt="Code Origin.ai engineering team collaborating on software development"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/20 to-transparent" />
+              
+              {/* Overlay text */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="flex items-center gap-2">
+                  <Rocket className="h-5 w-5 text-gold-400" />
+                  <span className="text-sm font-semibold text-gold-200">Engineering Excellence</span>
+                </div>
+                <p className="mt-1 text-xs text-stone-400">Building the future, one line of code at a time</p>
+              </div>
+            </div>
 
-          <div className="absolute -bottom-8 -right-4 hidden w-52 overflow-hidden rounded-2xl border border-gold-500/20 shadow-2xl lg:block">
-            <img
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80"
-              alt="Developers reviewing code together"
-              loading="lazy"
-              className="aspect-square w-full object-cover"
-            />
-          </div>
+            {/* Secondary image - floating */}
+            <div className="absolute -bottom-8 -right-4 hidden w-56 overflow-hidden rounded-2xl border border-gold-500/20 shadow-2xl lg:block">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80"
+                alt="Developers reviewing code together in modern office"
+                loading="lazy"
+                className="aspect-square w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/60 to-transparent" />
+            </div>
 
-          <div className="absolute -left-4 bottom-6 rounded-2xl border border-gold-500/20 bg-ink-900/95 px-5 py-4 shadow-xl backdrop-blur">
-            <p className="font-display text-3xl font-bold text-white">
-              <span className="text-gradient">10+</span>
-            </p>
-            <p className="text-xs font-medium text-stone-400">Projects delivered</p>
+            {/* Third image - top left */}
+            <div className="absolute -left-4 -top-4 hidden w-40 overflow-hidden rounded-2xl border border-gold-500/20 shadow-2xl lg:block">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80"
+                alt="Team meeting and brainstorming session"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
+
+            {/* Stats floating card */}
+            <div className="absolute -left-4 bottom-20 rounded-2xl border border-gold-500/20 bg-ink-900/95 p-5 shadow-xl backdrop-blur lg:-left-8">
+              <div className="flex items-center gap-4">
+                <Award className="h-8 w-8 text-gold-400" />
+                <div>
+                  <p className="font-display text-2xl font-bold text-white">
+                    <span className="text-gradient">14+</span>
+                  </p>
+                  <p className="text-xs font-medium text-stone-400">Projects delivered</p>
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
 
-        {/* Text */}
-        <div>
+        {/* Text content */}
+        <div className="order-1 lg:order-2">
           <SectionHeading
             align="left"
             eyebrow="About Us"
@@ -71,12 +111,23 @@ export default function About() {
             subtitle="Code Origin.ai partners with startups and enterprises to design, build and scale AI and cloud-powered products — from first line of code to live deployment and beyond."
           />
 
-          <div className="mt-9 grid gap-6 sm:grid-cols-2">
+          {/* Trust stats row */}
+          <div className="mt-8 flex flex-wrap gap-6">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-display text-2xl font-bold text-gradient">{stat.value}</p>
+                <p className="text-xs text-stone-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Values grid */}
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 80}>
-                <div className="flex gap-3.5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold-500/15 text-gold-300">
-                    <v.icon className="h-5 w-5" />
+                <div className="group flex gap-4 rounded-2xl border border-gold-500/10 bg-white/[0.02] p-4 transition duration-300 hover:border-gold-500/30 hover:bg-gold-500/[0.04]">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold-600/20 to-gold-400/20 text-gold-300 transition group-hover:scale-110">
+                    <v.icon className="h-6 w-6" />
                   </span>
                   <div>
                     <h3 className="font-semibold text-white">{v.title}</h3>
@@ -87,11 +138,12 @@ export default function About() {
             ))}
           </div>
 
-          <Reveal delay={120} className="mt-9 flex flex-wrap items-center gap-3">
-            {["AI / ML", "Cloud", "Web", "Mobile", "UI / UX"].map((t) => (
+          {/* Service tags */}
+          <Reveal delay={120} className="mt-8 flex flex-wrap items-center gap-2">
+            {["AI / ML", "Cloud", "Web", "Mobile", "UI / UX", "DevOps"].map((t) => (
               <span
                 key={t}
-                className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/20 bg-gold-500/5 px-3.5 py-1.5 text-xs font-medium text-stone-200"
+                className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/20 bg-gold-500/5 px-4 py-2 text-xs font-medium text-stone-200 transition hover:bg-gold-500/10"
               >
                 <CheckCircle2 className="h-3.5 w-3.5 text-gold-400" />
                 {t}

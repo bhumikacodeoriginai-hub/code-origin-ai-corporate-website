@@ -13,6 +13,7 @@ import {
   TestTube2,
   Workflow,
   Zap,
+  CheckCircle2,
 } from "lucide-react";
 import { waLink } from "../data";
 import { WhatsAppIcon } from "./icons";
@@ -28,6 +29,7 @@ const services = [
     color: "from-purple-600/30 to-purple-400/30",
     borderColor: "hover:border-purple-500/40",
     iconColor: "text-purple-400",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I'm interested in AI & Machine Learning services. I'd like to discuss building intelligent solutions for my business.",
   },
   {
@@ -38,6 +40,7 @@ const services = [
     color: "from-blue-600/30 to-blue-400/30",
     borderColor: "hover:border-blue-500/40",
     iconColor: "text-blue-400",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need help with Cloud & DevOps. Looking for scalable infrastructure and CI/CD pipelines.",
   },
   {
@@ -48,6 +51,7 @@ const services = [
     color: "from-gold-600/30 to-gold-400/30",
     borderColor: "hover:border-gold-500/40",
     iconColor: "text-gold-400",
+    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I want to build a modern web application. Can we discuss React/Next.js development?",
   },
   {
@@ -58,6 +62,7 @@ const services = [
     color: "from-emerald-600/30 to-emerald-400/30",
     borderColor: "hover:border-emerald-500/40",
     iconColor: "text-emerald-400",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need a mobile app for iOS and Android. Can we discuss React Native or Flutter development?",
   },
   {
@@ -68,6 +73,7 @@ const services = [
     color: "from-cyan-600/30 to-cyan-400/30",
     borderColor: "hover:border-cyan-500/40",
     iconColor: "text-cyan-400",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need backend and API development services. Looking for scalable and secure APIs.",
   },
   {
@@ -78,6 +84,7 @@ const services = [
     color: "from-green-600/30 to-green-400/30",
     borderColor: "hover:border-green-500/40",
     iconColor: "text-green-400",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need automation testing services. Looking for Playwright/Selenium test automation for my project.",
   },
   {
@@ -88,6 +95,7 @@ const services = [
     color: "from-orange-600/30 to-orange-400/30",
     borderColor: "hover:border-orange-500/40",
     iconColor: "text-orange-400",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need data engineering services. Looking to build data pipelines and analytics platforms.",
   },
   {
@@ -98,6 +106,7 @@ const services = [
     color: "from-pink-600/30 to-pink-400/30",
     borderColor: "hover:border-pink-500/40",
     iconColor: "text-pink-400",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need UI/UX design services. Looking for professional design for my app/website.",
   },
   {
@@ -108,6 +117,7 @@ const services = [
     color: "from-amber-600/30 to-amber-400/30",
     borderColor: "hover:border-amber-500/40",
     iconColor: "text-amber-400",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I want to build an e-commerce platform. Can we discuss online store development?",
   },
   {
@@ -118,6 +128,7 @@ const services = [
     color: "from-indigo-600/30 to-indigo-400/30",
     borderColor: "hover:border-indigo-500/40",
     iconColor: "text-indigo-400",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need business automation services. Looking to automate workflows and integrate systems.",
   },
   {
@@ -128,6 +139,7 @@ const services = [
     color: "from-rose-600/30 to-rose-400/30",
     borderColor: "hover:border-rose-500/40",
     iconColor: "text-rose-400",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I need custom software development. Looking for a tailored solution for my business.",
   },
   {
@@ -138,6 +150,7 @@ const services = [
     color: "from-yellow-600/30 to-yellow-400/30",
     borderColor: "hover:border-yellow-500/40",
     iconColor: "text-yellow-400",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80",
     waMessage: "Hi! I'm a startup founder looking to build an MVP. Can we discuss rapid development options?",
   },
 ];
@@ -177,42 +190,53 @@ export default function Services() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {displayedServices.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 80}>
-              <div className={`card-hover group relative flex h-full flex-col rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.03] to-transparent p-6 sm:p-8 ${s.borderColor}`}>
-                {/* Icon */}
-                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${s.color} ${s.iconColor} transition group-hover:scale-110`}>
-                  <s.icon className="h-7 w-7" />
-                </span>
-
-                {/* Content */}
-                <h3 className="mt-6 font-display text-xl font-bold text-white">{s.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-stone-400">{s.desc}</p>
-
-                {/* Features */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {s.features.map((f) => (
-                    <span
-                      key={f}
-                      className="rounded-full border border-gold-500/20 bg-gold-500/5 px-3 py-1 text-xs font-medium text-stone-300"
-                    >
-                      {f}
-                    </span>
-                  ))}
+              <div className={`card-hover group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.03] to-transparent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${s.borderColor}`}>
+                {/* Service Image */}
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={`${s.title} service illustration`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-transparent" />
+                  
+                  {/* Icon overlay */}
+                  <span className={`absolute bottom-4 left-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-ink-900/90 backdrop-blur-sm ${s.iconColor} ring-1 ring-white/10 transition group-hover:scale-110`}>
+                    <s.icon className="h-7 w-7" />
+                  </span>
                 </div>
 
-                {/* Action Button - Now functional! */}
-                <a
-                  href={waLink(s.waMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-400 transition hover:text-gold-300"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  Enquire Now
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-display text-xl font-bold text-white">{s.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-stone-400">{s.desc}</p>
 
-                {/* Corner glow on hover */}
-                <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gold-500/0 blur-3xl transition group-hover:bg-gold-500/10" />
+                  {/* Features */}
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {s.features.map((f) => (
+                      <span
+                        key={f}
+                        className="inline-flex items-center gap-1 rounded-full border border-gold-500/20 bg-gold-500/5 px-3 py-1 text-xs font-medium text-stone-300"
+                      >
+                        <CheckCircle2 className="h-3 w-3 text-gold-400" />
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <a
+                    href={waLink(s.waMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-400 transition hover:text-gold-300"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" />
+                    Enquire Now
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -233,31 +257,44 @@ export default function Services() {
 
         {/* CTA */}
         <Reveal delay={200}>
-          <div className="mt-16 rounded-3xl border border-gold-500/20 bg-gradient-to-br from-gold-600/10 via-ink-900/50 to-ink-900/50 p-8 sm:p-12">
-            <div className="flex flex-col items-center text-center">
-              <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-                Not sure which service you need?
-              </h3>
-              <p className="mt-3 max-w-xl text-stone-400">
-                Tell us about your project and we'll recommend the best approach. Free consultation, no commitment.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="btn-shine group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/40"
-                >
-                  Book Free Consultation
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-                <a
-                  href={waLink("Hi! I'm not sure which service I need. Can you help me understand what's best for my project?")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-wa/30 bg-wa/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-wa/20"
-                >
-                  <WhatsAppIcon className="h-5 w-5 text-wa" />
-                  Quick Chat
-                </a>
+          <div className="mt-16 overflow-hidden rounded-3xl border border-gold-500/20">
+            <div className="relative">
+              {/* Background image */}
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
+                alt="Team collaboration"
+                className="h-64 w-full object-cover sm:h-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink-950/95 via-ink-950/80 to-ink-950/60" />
+              
+              {/* Content overlay */}
+              <div className="absolute inset-0 flex items-center">
+                <div className="px-8 sm:px-12">
+                  <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+                    Not sure which service you need?
+                  </h3>
+                  <p className="mt-3 max-w-xl text-stone-300">
+                    Tell us about your project and we'll recommend the best approach. Free consultation, no commitment.
+                  </p>
+                  <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row">
+                    <a
+                      href="#contact"
+                      className="btn-shine group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/40"
+                    >
+                      Book Free Consultation
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                    <a
+                      href={waLink("Hi! I'm not sure which service I need. Can you help me understand what's best for my project?")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-wa/30 bg-wa/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-wa/20"
+                    >
+                      <WhatsAppIcon className="h-5 w-5 text-wa" />
+                      Quick Chat
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

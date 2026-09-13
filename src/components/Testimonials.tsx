@@ -1,13 +1,15 @@
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, BadgeCheck } from "lucide-react";
 import { industries, testimonials, trustSignals } from "../data";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 sm:py-28">
+    <section id="testimonials" className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950 via-gold-500/[0.04] to-ink-950" />
       <div className="absolute -left-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-gold-600/10 blur-[130px]" />
+      <div className="absolute -right-40 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-purple-600/10 blur-[130px]" />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -22,7 +24,7 @@ export default function Testimonials() {
 
         {/* Trust signals */}
         <Reveal className="mt-12">
-          <div className="grid grid-cols-2 gap-4 rounded-3xl border border-gold-500/15 bg-white/[0.02] p-6 sm:p-8 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.03] to-transparent p-6 sm:p-8 lg:grid-cols-4">
             {trustSignals.map((s) => (
               <div key={s.label} className="text-center">
                 <p className="font-display text-3xl font-bold text-white sm:text-4xl">
@@ -35,24 +37,48 @@ export default function Testimonials() {
         </Reveal>
 
         {/* Testimonials grid */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={(i % 3) * 90} className="h-full">
-              <figure className="group relative flex h-full flex-col rounded-2xl border border-gold-500/15 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-gold-500/40 hover:bg-gold-500/[0.04] sm:p-7">
-                <Quote className="h-8 w-8 text-gold-500/40" />
-                <div className="mt-3 flex items-center gap-1">
-                  {Array.from({ length: t.rating }).map((_, s) => (
-                    <Star key={s} className="h-4 w-4 fill-gold-400 text-gold-400" />
-                  ))}
+              <figure className="group relative flex h-full flex-col rounded-3xl border border-gold-500/15 bg-gradient-to-br from-white/[0.03] to-transparent p-6 transition duration-500 hover:-translate-y-2 hover:border-gold-500/40 hover:shadow-2xl hover:shadow-gold-500/10 sm:p-7">
+                {/* Quote icon */}
+                <div className="flex items-center justify-between">
+                  <Quote className="h-8 w-8 text-gold-500/30" />
+                  <div className="flex items-center gap-0.5">
+                    {Array.from({ length: t.rating }).map((_, s) => (
+                      <Star key={s} className="h-4 w-4 fill-gold-400 text-gold-400" />
+                    ))}
+                  </div>
                 </div>
+                
+                {/* Quote text */}
                 <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-stone-300">
                   "{t.quote}"
                 </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3.5 border-t border-gold-500/10 pt-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-base font-bold text-ink-950">
-                    {t.initials}
-                  </span>
-                  <p className="font-semibold text-white">{t.name}</p>
+                
+                {/* Author info with image */}
+                <figcaption className="mt-6 flex items-center gap-4 border-t border-gold-500/10 pt-5">
+                  {t.image ? (
+                    <div className="relative">
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="h-12 w-12 rounded-full object-cover ring-2 ring-gold-500/20"
+                        loading="lazy"
+                      />
+                      <BadgeCheck className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-ink-950 text-emerald-400" />
+                    </div>
+                  ) : (
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-600 to-gold-400 font-display text-base font-bold text-ink-950">
+                      {t.initials}
+                    </span>
+                  )}
+                  <div>
+                    <p className="font-semibold text-white">{t.name}</p>
+                    {t.role && (
+                      <p className="text-xs text-stone-500">{t.role}</p>
+                    )}
+                  </div>
                 </figcaption>
               </figure>
             </Reveal>
