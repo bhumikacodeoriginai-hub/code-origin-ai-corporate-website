@@ -276,15 +276,9 @@ export default function Hero() {
               {/* Real Team Photo */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src="/images/team-photo.jpg"
+                  src="/images/companypic.jpg"
                   alt="Code Origin.ai Team - Developers, designers and engineers at Chitradurga office"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback if team photo not yet uploaded
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80";
-                  }}
                 />
                 
                 {/* Gradient overlays */}
