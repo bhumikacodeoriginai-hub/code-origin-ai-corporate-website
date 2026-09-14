@@ -42,6 +42,47 @@ export const company = {
   country: "India",
 };
 
+/* ═══════════════════════════════════════════════════════════
+   Vision, Mission & Board of Directors
+═══════════════════════════════════════════════════════════ */
+export const vision =
+  "To be a globally trusted technology partner that turns ambitious ideas into intelligent, scalable digital products — while shaping the engineers who build tomorrow.";
+
+export const mission =
+  "To design, build and deploy reliable AI, cloud and software solutions that solve real business problems, and to develop future-ready tech talent through hands-on, industry-grade training.";
+
+export type Director = {
+  name: string;
+  role: string;
+  focus: string;
+  image: string;
+  initials: string;
+};
+
+export const directors: Director[] = [
+  {
+    name: "Raghavendra N",
+    role: "Co-Founder & CEO",
+    focus: "Vision, strategy & client partnerships",
+    image: "/images/leader-raghavendra.png",
+    initials: "RN",
+  },
+  {
+    name: "Rakshith S",
+    role: "Co-Founder, CFO & CMO",
+    focus: "Finance, growth & brand",
+    image: "/images/leader-rakshith.png",
+    initials: "RS",
+  },
+  {
+    name: "Ramesh",
+    role: "Co-Founder & CTO",
+    focus: "Engineering & technology",
+    image: "/images/leader-ramesh.jpeg",
+    initials: "R",
+  },
+];
+
 /* Real company photos — team, culture & office (served from /public/images).
    Used by the "Life at Code Origin.AI" gallery on the landing page. */
 export type GalleryPhoto = { src: string; alt: string };

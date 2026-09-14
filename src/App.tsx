@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import Stats from "./components/Stats";
 import About from "./components/About";
+import Leadership from "./components/Leadership";
 import Gallery from "./components/Gallery";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
@@ -42,6 +43,9 @@ export default function App() {
         
         {/* About the Company */}
         <About />
+        
+        {/* Vision, Mission & Board of Directors */}
+        <Leadership />
         
         {/* Life at Code Origin.AI — real team & culture photos */}
         <Gallery />
