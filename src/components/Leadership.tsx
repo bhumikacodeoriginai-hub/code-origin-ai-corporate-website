@@ -64,30 +64,36 @@ export default function Leadership() {
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {directors.map((d, i) => (
             <Reveal key={d.name} delay={(i % 3) * 90}>
-              <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gold-500/20 bg-gradient-to-b from-white/[0.05] to-white/[0.01] transition duration-500 hover:-translate-y-2 hover:border-gold-500/45 hover:shadow-2xl hover:shadow-gold-500/10">
-                {/* Portrait */}
+              <figure className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gold-500/15 bg-ink-900/40 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500/40 hover:shadow-2xl hover:shadow-gold-500/10">
+                {/* Executive portrait with name/role overlay */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={d.image}
                     alt={`${d.name} — ${d.role}, Code Origin.AI`}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top grayscale-[0.2] transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent" />
-                  <span className="absolute left-4 top-4 rounded-full bg-ink-950/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-gold-300 ring-1 ring-gold-500/30 backdrop-blur-sm">
+                  {/* readability gradient */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/45 to-transparent" />
+                  {/* subtle gold sheen on hover */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gold-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-ink-950/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold-300 ring-1 ring-gold-500/25 backdrop-blur-sm">
                     Co-Founder
                   </span>
+
+                  <figcaption className="absolute inset-x-0 bottom-0 p-5">
+                    <span className="block h-[3px] w-9 rounded-full bg-gradient-to-r from-gold-500 to-gold-300 transition-all duration-500 group-hover:w-16" />
+                    <h4 className="mt-3 font-display text-xl font-bold leading-tight text-white">{d.name}</h4>
+                    <p className="mt-0.5 text-sm font-semibold text-gold-300">{d.role}</p>
+                  </figcaption>
                 </div>
 
-                {/* Details */}
-                <figcaption className="flex flex-1 flex-col p-6">
-                  <h4 className="font-display text-lg font-bold text-white">{d.name}</h4>
-                  <p className="mt-1 text-sm font-semibold text-gold-400">{d.role}</p>
-                  <p className="mt-3 border-t border-gold-500/10 pt-3 text-sm leading-relaxed text-stone-400">
-                    {d.focus}
-                  </p>
-                </figcaption>
+                {/* Focus / responsibility */}
+                <div className="flex flex-1 items-center border-t border-gold-500/10 p-5">
+                  <p className="text-sm leading-relaxed text-stone-400">{d.focus}</p>
+                </div>
               </figure>
             </Reveal>
           ))}
