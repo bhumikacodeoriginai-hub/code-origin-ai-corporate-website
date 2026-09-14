@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -11,6 +11,7 @@ import {
   Layers,
   LayoutDashboard,
   Megaphone,
+  Play,
   Rocket,
   Server,
   ShieldCheck,
@@ -134,6 +135,49 @@ function TrackLogo({ name, url }: TrackLogoItem) {
   );
 }
 
+/* Portrait promo reel — click-to-play. preload="metadata" so the 6MB file is
+   NOT downloaded until the user taps (zero page-load impact / no lag). */
+function CodePilotVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [started, setStarted] = useState(false);
+  const play = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    void v.play();
+    setStarted(true);
+  };
+  return (
+    <div className="relative mx-auto w-full max-w-[300px] overflow-hidden rounded-[1.75rem] border-2 border-gold-500/30 bg-ink-900 shadow-2xl shadow-gold-500/15">
+      <video
+        ref={videoRef}
+        src="/videos/code-pilot.mp4"
+        className="aspect-[9/16] w-full bg-ink-900 object-cover"
+        playsInline
+        controls={started}
+        preload="metadata"
+        onPlay={() => setStarted(true)}
+      />
+      {!started && (
+        <button
+          type="button"
+          onClick={play}
+          aria-label="Play the Code Pilot video"
+          data-cta="video-play"
+          data-cta-location="codepilot"
+          className="group absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-t from-ink-950/85 via-ink-950/25 to-ink-950/45"
+        >
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/90 text-ink-950 shadow-xl shadow-gold-500/30 ring-4 ring-gold-400/30 transition-transform duration-300 group-hover:scale-110">
+            <Play className="h-7 w-7 translate-x-0.5 fill-current" />
+          </span>
+          <span className="rounded-full bg-ink-950/70 px-4 py-1.5 text-xs font-semibold text-gold-200 backdrop-blur-sm">
+            Watch • 30s
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function CodePilot() {
   return (
     <section id="codepilot" className="relative overflow-hidden py-24 sm:py-32">
@@ -224,6 +268,48 @@ export default function CodePilot() {
                 <p className="text-xs font-medium text-stone-400">Applications Open</p>
                 <p className="font-display text-lg font-bold text-gradient">2026 Batch</p>
               </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Watch Code Pilot — 30-second promo reel */}
+        <div className="mt-20 grid items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <CodePilotVideo />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="text-center lg:text-left">
+              <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-gold-300">
+                <Play className="h-3.5 w-3.5 fill-current" />
+                See it in action
+              </span>
+              <h3 className="mt-5 font-display text-2xl font-bold text-white sm:text-3xl">
+                Code Pilot in <span className="text-gradient">30 seconds</span>
+              </h3>
+              <p className="mx-auto mt-3 max-w-lg text-stone-400 lg:mx-0">
+                See how Code Pilot takes students from the classroom to real, shipped software —
+                live training, senior mentorship and hands-on projects that build a job-ready portfolio.
+              </p>
+              <ul className="mx-auto mt-6 grid max-w-md gap-3 text-left sm:grid-cols-2 lg:mx-0">
+                {[
+                  "Real client-grade projects",
+                  "1-on-1 senior mentorship",
+                  "Industry-recognized certificate",
+                  "Placement support",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-stone-300">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-400" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#apply-internship"
+                className="btn-shine group mt-7 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-7 py-3.5 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/50"
+              >
+                Apply for Code Pilot
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </Reveal>
         </div>
