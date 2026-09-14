@@ -28,7 +28,7 @@ export default function Logo({ className, light = true }: LogoProps) {
   if (!imgError) {
     return (
       <div className={cn("flex items-center", className)}>
-        <span className="inline-flex items-center rounded-xl bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-black/5">
+        <span className="brand-logo inline-flex items-center px-2.5 py-1.5">
           <img
             src={LOGO_SRC}
             alt="Code Origin.AI"
