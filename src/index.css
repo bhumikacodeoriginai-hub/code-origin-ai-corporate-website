@@ -1129,116 +1129,31 @@ p {
 
 
 /* ═══════════════════════════════════════════════════════════
-   BRAND LOGO — premium corporate treatment
-   Refined "glass card" chip with gold ring, layered depth,
-   ambient gold glow, a slow light-sheen sweep and a polished
-   hover lift. Motion is disabled under prefers-reduced-motion
-   via the global guard above.
+   BRAND LOGO — clean corporate chip
+   The logo artwork has dark elements on a white background, so it
+   sits on a subtle light "chip" to stay legible on the site's dark
+   surfaces. Calm and static — only a gentle hover lift, no looping
+   animation.
 ═══════════════════════════════════════════════════════════ */
 .brand-logo {
   position: relative;
-  overflow: hidden;
   border-radius: 0.85rem;
-  background: linear-gradient(160deg, #ffffff 0%, #fdfaf2 55%, #f6eeda 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #fdfaf2 60%, #f6eeda 100%);
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.25),
     0 10px 26px -14px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(212, 175, 55, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 0 22px -8px rgba(212, 175, 55, 0.45);
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.45s ease;
-  animation: logo-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-  will-change: transform;
-}
-
-/* Diagonal light sheen that sweeps across periodically */
-.brand-logo::after {
-  content: "";
-  position: absolute;
-  top: -60%;
-  left: 0;
-  width: 42%;
-  height: 220%;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 255, 255, 0.72) 50%,
-    transparent 100%
-  );
-  transform: translateX(-260%) rotate(22deg);
-  animation: logo-sheen 6.5s ease-in-out infinite;
-  pointer-events: none;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
 }
 
 .brand-logo:hover {
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-1px);
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.3),
-    0 18px 42px -16px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(212, 175, 55, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    0 0 36px -6px rgba(212, 175, 55, 0.7);
-}
-
-.brand-logo img {
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.brand-logo:hover img {
-  transform: scale(1.04);
-}
-
-@keyframes logo-in {
-  from {
-    opacity: 0;
-    transform: translateY(-6px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes logo-sheen {
-  0%,
-  68% {
-    transform: translateX(-260%) rotate(22deg);
-    opacity: 0;
-  }
-  74% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(460%) rotate(22deg);
-    opacity: 0;
-  }
-}
-
-
-/* ═══════════════════════════════════════════════════════════
-   APP ENTRANCE — gentle content fade-in as the loading splash leaves.
-   Failsafe by design: the animation only runs when <body> has the
-   `app-ready` class (added by main.tsx on mount). If JS never runs,
-   the class is never added and content stays fully visible.
-═══════════════════════════════════════════════════════════ */
-@keyframes app-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-body.app-ready main {
-  animation: app-fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.app-ready main {
-    animation: none;
-  }
+    0 16px 38px -16px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(212, 175, 55, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
