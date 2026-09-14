@@ -1,8 +1,42 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Send, Sparkles, X, Zap } from "lucide-react";
+import { Mail, Phone, Send, Sparkles, X, Zap } from "lucide-react";
+import type { ReactNode } from "react";
 import airaAvatar from "../assets/aira-avatar.jpg";
-import { contact, waLink, EMAIL } from "../data";
-import { WhatsAppIcon } from "./icons";
+import { contact, socials, waLink, EMAIL } from "../data";
+import { InstagramIcon, LinkedinIcon, WhatsAppIcon } from "./icons";
+
+/* Turns plain text into React nodes with clickable links — detects URLs,
+   wa.me, email addresses and phone numbers so any contact detail AIRA mentions
+   is tappable (opens WhatsApp / mail app / dialer / the site). */
+const LINK_RE =
+  /(https?:\/\/[^\s]+|www\.[^\s]+|wa\.me\/[^\s]+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\+?\d[\d\s-]{7,}\d)/g;
+
+function linkify(text: string, isUser: boolean): ReactNode[] {
+  const linkClass = isUser
+    ? "font-semibold underline decoration-ink-900/40 underline-offset-2"
+    : "font-medium text-gold-300 underline decoration-gold-400/40 underline-offset-2 transition hover:text-gold-200";
+  return text.split(LINK_RE).map((part, i) => {
+    if (!part) return null;
+    if (i % 2 === 0) return <span key={i}>{part}</span>; // non-match segment
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(part);
+    const isPhone = !part.includes("@") && /^\+?\d[\d\s-]{7,}\d$/.test(part);
+    let href = part;
+    if (isEmail) href = `mailto:${part}`;
+    else if (isPhone) href = `tel:${part.replace(/[^\d+]/g, "")}`;
+    else if (!part.startsWith("http")) href = `https://${part}`;
+    const external = !isEmail && !isPhone;
+    return (
+      <a
+        key={i}
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className={linkClass}
+      >
+        {part}
+      </a>
+    );
+  });
+}
 
 /* ═══════════════════════════════════════════════════════════
    AIRA - AI-Powered Virtual Assistant
@@ -1624,7 +1658,7 @@ Who am I speaking with today? Select an option below or just start typing!`,
                         if (part.startsWith('**') && part.endsWith('**')) {
                           return <strong key={partIdx} className={m.role === "user" ? "font-bold" : "font-semibold text-gold-200"}>{part.slice(2, -2)}</strong>;
                         }
-                        return <span key={partIdx}>{part}</span>;
+                        return <span key={partIdx}>{linkify(part, m.role === "user")}</span>;
                       })}
                       {lineIdx < m.text.split('\n').length - 1 && <br />}
                     </span>
@@ -1695,17 +1729,69 @@ Who am I speaking with today? Select an option below or just start typing!`,
           </form>
 
           {/* ─────────────────────────────────────────────────────
-              FOOTER — WhatsApp CTA
+              FOOTER — Connect / social & contact bar (all tappable)
           ───────────────────────────────────────────────────── */}
-          <a
-            href={waLink("Hi Code Origin.AI! I'd like to speak with your team. Here's my query:")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 border-t border-gold-500/10 bg-wa/10 px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-wa/20 btn-press"
-          >
-            <WhatsAppIcon className="h-4 w-4 text-wa" />
-            Prefer human support? WhatsApp us
-          </a>
+          <div className="border-t border-gold-500/10 bg-ink-950/60 px-4 py-2.5">
+            <p className="mb-2 text-center text-[11px] font-medium text-stone-500">
+              Prefer human support? Connect with us — tap to open
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <a
+                href={waLink("Hi Code Origin.AI! I'd like to speak with your team. Here's my query:")}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+                title="WhatsApp"
+                data-cta="whatsapp"
+                data-cta-location="aira"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-wa/40 bg-wa/10 text-wa transition hover:bg-wa/20 btn-press"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={contact.gmailHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email us"
+                title="Email"
+                data-cta="email"
+                data-cta-location="aira"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/25 bg-white/5 text-stone-300 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-200 btn-press"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+              <a
+                href={contact.phoneHref}
+                aria-label="Call us"
+                title="Call"
+                data-cta="phone"
+                data-cta-location="aira"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/25 bg-white/5 text-stone-300 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-200 btn-press"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
+              <a
+                href={socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/25 bg-white/5 text-stone-300 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-200 btn-press"
+              >
+                <InstagramIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-500/25 bg-white/5 text-stone-300 transition hover:border-gold-400/50 hover:bg-gold-500/10 hover:text-gold-200 btn-press"
+              >
+                <LinkedinIcon className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </>
