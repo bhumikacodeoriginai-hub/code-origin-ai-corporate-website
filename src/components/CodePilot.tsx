@@ -243,21 +243,22 @@ export default function CodePilot() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/30 to-transparent" />
 
-                  {/* Live training badge */}
-                  <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/40 backdrop-blur-sm">
+                  {/* Live training badge — solid dark backing for readability on any image */}
+                  <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-ink-950/80 px-3 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/40 backdrop-blur-sm">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Live Training Session
                   </span>
                 </div>
               </div>
               
-              {/* Info overlay */}
-              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-gold-500/20 bg-ink-900/95 p-5 backdrop-blur">
-                <p className="font-display text-2xl font-bold text-white">From graduate → engineer</p>
+              {/* Info card: below the image on mobile (so the photo stays fully
+                  visible), floating overlay only from lg up. */}
+              <div className="mt-4 rounded-2xl border border-gold-500/20 bg-ink-900/95 p-5 lg:absolute lg:bottom-6 lg:left-6 lg:right-6 lg:mt-0 lg:backdrop-blur">
+                <p className="font-display text-xl font-bold text-white sm:text-2xl">From graduate → engineer</p>
                 <p className="mt-1 text-sm text-stone-300">
                   Structured tracks, real projects and mentorship that turn theory into shipped code.
                 </p>
-                <div className="mt-3 flex items-center gap-4">
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400">
                     <CheckCircle2 className="h-3.5 w-3.5" />
                     Live Mentorship

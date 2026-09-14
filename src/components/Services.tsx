@@ -257,44 +257,41 @@ export default function Services() {
 
         {/* CTA */}
         <Reveal delay={200}>
-          <div className="mt-16 overflow-hidden rounded-3xl border border-gold-500/20">
-            <div className="relative">
-              {/* Background image */}
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
-                alt="Team collaboration"
-                className="h-64 w-full object-cover sm:h-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink-950/95 via-ink-950/80 to-ink-950/60" />
-              
-              {/* Content overlay */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="px-8 sm:px-12">
-                  <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-                    Not sure which service you need?
-                  </h3>
-                  <p className="mt-3 max-w-xl text-stone-300">
-                    Tell us about your project and we'll recommend the best approach. Free consultation, no commitment.
-                  </p>
-                  <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row">
-                    <a
-                      href="#contact"
-                      className="btn-shine group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/40"
-                    >
-                      Book Free Consultation
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                    <a
-                      href={waLink("Hi! I'm not sure which service I need. Can you help me understand what's best for my project?")}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-wa/30 bg-wa/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-wa/20"
-                    >
-                      <WhatsAppIcon className="h-5 w-5 text-wa" />
-                      Quick Chat
-                    </a>
-                  </div>
-                </div>
+          <div className="relative mt-16 overflow-hidden rounded-3xl border border-gold-500/20">
+            {/* Background image — covers the whole card at any height */}
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
+              alt="Team collaboration"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink-950/95 via-ink-950/85 to-ink-950/60" />
+
+            {/* Content defines the card height → never clipped on small screens */}
+            <div className="relative px-6 py-10 sm:px-12 sm:py-16">
+              <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+                Not sure which service you need?
+              </h3>
+              <p className="mt-3 max-w-xl text-stone-300">
+                Tell us about your project and we'll recommend the best approach. Free consultation, no commitment.
+              </p>
+              <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start sm:gap-4">
+                <a
+                  href="#contact"
+                  className="btn-shine group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-8 py-4 text-sm font-semibold text-ink-950 shadow-xl shadow-gold-500/25 transition hover:shadow-gold-500/40"
+                >
+                  Book Free Consultation
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href={waLink("Hi! I'm not sure which service I need. Can you help me understand what's best for my project?")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-wa/30 bg-wa/10 px-8 py-4 text-sm font-semibold text-white transition hover:bg-wa/20"
+                >
+                  <WhatsAppIcon className="h-5 w-5 text-wa" />
+                  Quick Chat
+                </a>
               </div>
             </div>
           </div>
