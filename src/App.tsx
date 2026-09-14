@@ -21,6 +21,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Aira from "./components/Aira";
+import BackToTop from "./components/BackToTop";
 
 export default function App() {
   return (
@@ -96,6 +97,9 @@ export default function App() {
         <FloatingWhatsApp />
         <Aira />
       </aside>
+
+      {/* Scroll-to-top control */}
+      <BackToTop />
     </div>
   );
 }
