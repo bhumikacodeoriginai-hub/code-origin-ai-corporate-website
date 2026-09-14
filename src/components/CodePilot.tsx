@@ -139,41 +139,51 @@ function TrackLogo({ name, url }: TrackLogoItem) {
    NOT downloaded until the user taps (zero page-load impact / no lag). */
 function CodePilotVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [started, setStarted] = useState(false);
-  const play = () => {
+  const [playing, setPlaying] = useState(false);
+  const toggle = () => {
     const v = videoRef.current;
     if (!v) return;
-    void v.play();
-    setStarted(true);
+    if (v.paused) void v.play();
+    else v.pause();
   };
   return (
     <div className="relative mx-auto w-full max-w-[300px] overflow-hidden rounded-[1.75rem] border-2 border-gold-500/30 bg-ink-900 shadow-2xl shadow-gold-500/15">
-      <video
-        ref={videoRef}
-        src="/videos/code-pilot.mp4"
-        className="aspect-[9/16] w-full bg-ink-900 object-cover"
-        playsInline
-        controls={started}
-        preload="metadata"
-        onPlay={() => setStarted(true)}
-      />
-      {!started && (
+      {/* Fixed 9:16 window; the video is scaled from the top-left and the
+          overflow is clipped, which crops the bottom-right corner where the
+          source clip carries an AI-tool watermark. Custom controls are used so
+          the crop never hides a native control bar. */}
+      <div className="relative aspect-[9/16] overflow-hidden">
+        <video
+          ref={videoRef}
+          src="/videos/code-pilot.mp4"
+          className="absolute inset-0 h-full w-full origin-top-left scale-[1.1] bg-ink-900 object-cover"
+          playsInline
+          preload="metadata"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
+        />
         <button
           type="button"
-          onClick={play}
-          aria-label="Play the Code Pilot video"
+          onClick={toggle}
+          aria-label={playing ? "Pause video" : "Play the Code Pilot video"}
           data-cta="video-play"
           data-cta-location="codepilot"
-          className="group absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-t from-ink-950/85 via-ink-950/25 to-ink-950/45"
+          className="group absolute inset-0 flex flex-col items-center justify-center gap-3"
         >
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/90 text-ink-950 shadow-xl shadow-gold-500/30 ring-4 ring-gold-400/30 transition-transform duration-300 group-hover:scale-110">
-            <Play className="h-7 w-7 translate-x-0.5 fill-current" />
-          </span>
-          <span className="rounded-full bg-ink-950/70 px-4 py-1.5 text-xs font-semibold text-gold-200 backdrop-blur-sm">
-            Watch • 30s
-          </span>
+          {!playing && (
+            <>
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/25 to-ink-950/45" />
+              <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/90 text-ink-950 shadow-xl shadow-gold-500/30 ring-4 ring-gold-400/30 transition-transform duration-300 group-hover:scale-110">
+                <Play className="h-7 w-7 translate-x-0.5 fill-current" />
+              </span>
+              <span className="relative rounded-full bg-ink-950/70 px-4 py-1.5 text-xs font-semibold text-gold-200 backdrop-blur-sm">
+                Watch • 30s
+              </span>
+            </>
+          )}
         </button>
-      )}
+      </div>
     </div>
   );
 }
