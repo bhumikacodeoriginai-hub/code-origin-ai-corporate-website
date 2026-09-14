@@ -47,6 +47,8 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1920&q=80"
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/90 via-ink-950/70 to-ink-950" />

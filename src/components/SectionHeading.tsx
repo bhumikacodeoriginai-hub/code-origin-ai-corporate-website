@@ -30,6 +30,14 @@ export default function SectionHeading({
       >
         {title}
       </h2>
+      {/* Animated gold accent line — subtle premium detail shared across sections */}
+      <span
+        aria-hidden="true"
+        className={cn(
+          "mt-5 block h-[3px] w-14 rounded-full bg-gradient-to-r from-gold-600 via-gold-200 to-gold-600 bg-[length:200%_auto] animate-shimmer",
+          align === "center" && "mx-auto"
+        )}
+      />
       {subtitle && (
         <p className={cn("mt-4 text-lg leading-relaxed", light ? "text-stone-400" : "text-stone-600")}>
           {subtitle}
