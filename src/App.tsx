@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import ScrollProgress from "./components/ScrollProgress";
 import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import Stats from "./components/Stats";
@@ -23,6 +24,9 @@ import Aira from "./components/Aira";
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-clip bg-ink-950 text-stone-200">
+      {/* Thin reading-progress indicator (premium, non-interactive) */}
+      <ScrollProgress />
+
       {/* Skip link target is handled in index.html */}
       <header role="banner">
         <Navbar />
