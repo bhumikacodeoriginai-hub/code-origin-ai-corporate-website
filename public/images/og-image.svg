@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Code Origin.AI — AI and Cloud Software Development">
+  <defs>
+    <linearGradient id="og-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C68B2C"/>
+      <stop offset="0.5" stop-color="#F5D67A"/>
+      <stop offset="1" stop-color="#C68B2C"/>
+    </linearGradient>
+    <linearGradient id="og-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0A08"/>
+      <stop offset="1" stop-color="#030303"/>
+    </linearGradient>
+    <radialGradient id="og-glow" cx="78%" cy="18%" r="55%">
+      <stop offset="0" stop-color="#C68B2C" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#C68B2C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+  <!-- Top brand rule -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#og-gold)"/>
+
+  <!-- Emblem -->
+  <g transform="translate(600 175) scale(1.15) translate(-50 -50)">
+    <path d="M 68.35 76.21 A 32 32 0 1 1 68.35 23.79"
+          fill="none" stroke="url(#og-gold)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M 45.28 29.65 A 24 24 0 1 0 45.28 70.35"
+          fill="none" stroke="#EAF0F8" stroke-width="10.5" stroke-linecap="round"/>
+    <circle cx="82" cy="50" r="3.4" fill="#E0A93B"/>
+    <circle cx="74.97" cy="33.03" r="2.6" fill="#E0A93B"/>
+    <circle cx="74.97" cy="66.97" r="2.6" fill="#E0A93B"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="600" y="375" text-anchor="middle"
+        font-family="'Space Grotesk','Segoe UI',Arial,sans-serif" font-size="82" font-weight="700"
+        letter-spacing="-1">
+    <tspan fill="url(#og-gold)">Code</tspan><tspan fill="#FFFFFF"> Origin</tspan><tspan fill="url(#og-gold)">.</tspan><tspan fill="#FFFFFF">AI</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="440" text-anchor="middle"
+        font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="30" font-weight="600"
+        letter-spacing="4" fill="#E6C654">AI &#183; CLOUD &#183; CUSTOM SOFTWARE DEVELOPMENT</text>
+
+  <!-- Sub-tagline -->
+  <text x="600" y="492" text-anchor="middle"
+        font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="26" fill="#A8A29E">Engineering intelligent digital solutions for modern businesses</text>
+
+  <!-- Bottom trust strip -->
+  <text x="600" y="575" text-anchor="middle"
+        font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="22" font-weight="500" letter-spacing="1" fill="#78716C">www.codeorigin.ai&#160;&#160;&#8226;&#160;&#160;Chitradurga, Karnataka, India</text>
+</svg>
