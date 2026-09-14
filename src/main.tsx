@@ -9,11 +9,12 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
-// Remove the instant brand splash once the app has mounted and painted.
+// Once mounted: fade the content in and remove the instant brand splash.
 const splash = document.getElementById("app-splash");
-if (splash) {
-  requestAnimationFrame(() => {
+requestAnimationFrame(() => {
+  document.body.classList.add("app-ready");
+  if (splash) {
     splash.classList.add("is-hidden");
     window.setTimeout(() => splash.remove(), 500);
-  });
-}
+  }
+});

@@ -1214,3 +1214,31 @@ p {
     opacity: 0;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   APP ENTRANCE — gentle content fade-in as the loading splash leaves.
+   Failsafe by design: the animation only runs when <body> has the
+   `app-ready` class (added by main.tsx on mount). If JS never runs,
+   the class is never added and content stays fully visible.
+═══════════════════════════════════════════════════════════ */
+@keyframes app-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body.app-ready main {
+  animation: app-fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.app-ready main {
+    animation: none;
+  }
+}
