@@ -82,7 +82,7 @@ export default function Navbar() {
             href="#contact"
             data-cta="start-project"
             data-cta-location="navbar"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/20 transition hover:shadow-gold-500/40"
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-gold-500/40 active:scale-[0.97]"
           >
             Start a Project
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -128,7 +128,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               data-cta="start-project"
               data-cta-location="navbar-mobile"
-              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-3 text-sm font-semibold text-ink-950"
+              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 px-5 py-3 text-sm font-semibold text-ink-950 transition active:scale-[0.98]"
             >
               Start a Project
               <ArrowRight className="h-4 w-4" />
