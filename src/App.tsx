@@ -22,7 +22,7 @@ import Aira from "./components/Aira";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ink-950 text-stone-200">
+    <div className="min-h-screen overflow-x-clip bg-ink-950 text-stone-200">
       {/* Skip link target is handled in index.html */}
       <header role="banner">
         <Navbar />

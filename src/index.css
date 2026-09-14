@@ -112,6 +112,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  /* Clip horizontal overflow at the document level too — body-only clipping
+     lets the <html> element scroll sideways on mobile when a decorative element
+     extends past the viewport, which shifts the whole layout (incl. the fixed
+     navbar). Guarding both html and body prevents that. */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -120,6 +126,8 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 /* ═══════════════════════════════════════════════════════════
