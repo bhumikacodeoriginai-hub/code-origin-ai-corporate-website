@@ -1,7 +1,47 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { WhatsAppIcon } from "./icons";
-import { waLink, contact } from "../data";
+import { waLink, contact, getBusinessStatus } from "../data";
+
+/* Friendly names for the on-page sections, used to add context to the
+   pre-filled WhatsApp message so the team knows what the lead was viewing. */
+const SECTION_NAMES: Record<string, string> = {
+  home: "Home / Hero",
+  about: "About",
+  services: "Services",
+  projects: "Projects / Work",
+  techstack: "Tech Stack",
+  testimonials: "Client Testimonials",
+  gallery: "Team & Culture",
+  codepilot: "Code Pilot",
+  internship: "Internship",
+  professionals: "Professional Programs",
+  faq: "FAQ",
+  process: "Process",
+  contact: "Contact",
+};
+
+/** Detects which section is at the centre of the viewport (client-side). */
+function currentSectionName(): string | null {
+  if (typeof document === "undefined") return null;
+  const mid = window.innerHeight / 2;
+  let nearest: { name: string; dist: number } | null = null;
+  for (const [id, name] of Object.entries(SECTION_NAMES)) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const r = el.getBoundingClientRect();
+    if (r.top <= mid && r.bottom >= mid) return name; // covers viewport centre
+    const dist = Math.min(Math.abs(r.top - mid), Math.abs(r.bottom - mid));
+    if (!nearest || dist < nearest.dist) nearest = { name, dist };
+  }
+  return nearest?.name ?? null;
+}
+
+/** Appends the current-section context to a pre-filled message. */
+function withContext(message: string): string {
+  const section = currentSectionName();
+  return section ? `${message}\n\n— Sent from the “${section}” section of your website` : message;
+}
 
 /* ═══════════════════════════════════════════════════════════
    FLOATING WHATSAPP BUTTON
@@ -62,15 +102,20 @@ export default function FloatingWhatsApp() {
     setIsExpanded(!isExpanded);
   };
 
+  // Live, timezone-aware business status (recomputed on each open/interaction).
+  const status = getBusinessStatus();
+
   const handleQuickMessage = (message: string) => {
-    // Create WhatsApp link and open
-    const link = waLink(message);
+    // Attach the section the visitor is viewing so the team gets instant context.
+    const link = waLink(withContext(message));
     window.open(link, "_blank", "noopener,noreferrer");
     setIsExpanded(false);
   };
 
   const handleDirectChat = () => {
-    const link = waLink("Hi Code Origin.AI! I'd like to know more about your services.");
+    const link = waLink(
+      withContext("Hi Code Origin.AI! I'd like to know more about your services.")
+    );
     window.open(link, "_blank", "noopener,noreferrer");
     setIsExpanded(false);
   };
@@ -91,7 +136,12 @@ export default function FloatingWhatsApp() {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-bold text-white">Code Origin.AI</p>
-                  <p className="text-xs text-white/80">Typically replies within 1 hour</p>
+                  <p className="flex items-center gap-1.5 text-xs text-white/90">
+                    <span
+                      className={`h-2 w-2 rounded-full ${status.open ? "bg-emerald-300 animate-pulse" : "bg-amber-300"}`}
+                    />
+                    {status.label}
+                  </p>
                 </div>
                 <button
                   onClick={() => setIsExpanded(false)}
@@ -110,6 +160,8 @@ export default function FloatingWhatsApp() {
                 <button
                   key={idx}
                   onClick={() => handleQuickMessage(item.message)}
+                  data-cta="whatsapp"
+                  data-cta-location={`floating-quick-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                   className="w-full flex items-center gap-3 rounded-xl border border-gold-500/15 bg-white/[0.03] px-3 py-2.5 text-left transition hover:bg-white/[0.06] hover:border-gold-500/30 btn-press"
                 >
                   <span className="text-lg">{item.icon}</span>
@@ -128,7 +180,10 @@ export default function FloatingWhatsApp() {
                 Start Chat
               </button>
               <p className="mt-2 text-center text-[10px] text-stone-500">
-                {contact.phone} • Mon-Sat 10AM-7PM
+                {status.reply}
+              </p>
+              <p className="mt-1 text-center text-[10px] text-stone-600">
+                {contact.phone} • Mon–Sat 10 AM–7 PM IST
               </p>
             </div>
           </div>
@@ -142,7 +197,10 @@ export default function FloatingWhatsApp() {
         <div className="absolute bottom-16 right-0 mb-2 animate-[chat-in_0.3s_ease-out]">
           <div className="relative rounded-xl bg-ink-800 px-4 py-2.5 shadow-xl border border-gold-500/20">
             <p className="text-sm font-medium text-white">Need help? Chat with us! 💬</p>
-            <p className="text-xs text-stone-400 mt-0.5">We reply within 1 hour</p>
+            <p className="mt-0.5 flex items-center gap-1.5 text-xs text-stone-400">
+              <span className={`h-1.5 w-1.5 rounded-full ${status.open ? "bg-emerald-400" : "bg-amber-400"}`} />
+              {status.reply}
+            </p>
             {/* Arrow */}
             <div className="absolute -bottom-2 right-4 h-4 w-4 rotate-45 bg-ink-800 border-r border-b border-gold-500/20" />
           </div>

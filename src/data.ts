@@ -112,6 +112,26 @@ export const socials = {
 export const waLink = (message: string) =>
   `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`;
 
+/* Live business-hours status (IST, Mon–Sat 10 AM–7 PM). Lets the UI show an
+   honest "Online now" vs "Away" state + accurate reply-time expectation,
+   independent of the visitor's own timezone. */
+export type BusinessStatus = { open: boolean; label: string; reply: string };
+
+export function getBusinessStatus(now: Date = new Date()): BusinessStatus {
+  // Shift UTC epoch by +5:30 and read UTC parts → IST wall-clock, TZ-independent.
+  const ist = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
+  const day = ist.getUTCDay(); // 0 = Sun … 6 = Sat
+  const hour = ist.getUTCHours() + ist.getUTCMinutes() / 60;
+  const open = day >= 1 && day <= 6 && hour >= 10 && hour < 19;
+  return {
+    open,
+    label: open ? "Online now" : "Away right now",
+    reply: open
+      ? "Typically replies in a few minutes"
+      : "We’ll reply as soon as we’re back · Mon–Sat, 10 AM–7 PM IST",
+  };
+}
+
 export type ProjectStatus = "Deployed" | "In Development";
 
 export type Project = {
